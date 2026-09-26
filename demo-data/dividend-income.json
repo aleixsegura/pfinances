@@ -1,0 +1,72 @@
+{
+  "name": "Dividend Income",
+  "slug": "dividend-income",
+  "id": "wl-dividend-income",
+  "is_active": true,
+  "created": "2025-11-02T10:00:00",
+  "modified": "2026-09-12T09:30:00",
+  "modified_by_device": "MacBook Pro",
+  "symbol_count": 6,
+  "stocks": [
+    {
+      "symbol": "O",
+      "name": "Realty Income Corp",
+      "compactName": "Realty Income",
+      "exchange": "NYSE",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 58.3,
+      "marketCap": 49800000000
+    },
+    {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "compactName": "J&J",
+      "exchange": "NYSE",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 162.1,
+      "marketCap": 398000000000
+    },
+    {
+      "symbol": "KO",
+      "name": "Coca-Cola Co",
+      "compactName": "Coca-Cola",
+      "exchange": "NYSE",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 66.8,
+      "marketCap": 287000000000
+    },
+    {
+      "symbol": "PG",
+      "name": "Procter & Gamble Co",
+      "compactName": "P&G",
+      "exchange": "NYSE",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 168.9,
+      "marketCap": 401000000000
+    },
+    {
+      "symbol": "VWCE.DE",
+      "name": "Vanguard FTSE All-World ETF",
+      "compactName": "FTSE All-World",
+      "exchange": "Xetra",
+      "symbolType": "ETF",
+      "currency": "EUR",
+      "lastPrice": 118.75,
+      "marketCap": 14200000000
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corp",
+      "compactName": "Microsoft",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 421.8,
+      "marketCap": 3130000000000
+    }
+  ]
+}

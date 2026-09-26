@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+@import "@fontsource-variable/lora";
+
+/* Design tokens — one palette ("Woad": blue as a dye rather than a UI color,
+   pale dyed-cloth canvas, indigo ink, desaturated earth semantics). There is
+   deliberately no dark theme. */
+:root {
+  color-scheme: light;
+
+  /* Surfaces — faintly dyed cloth canvas, near-white data cards, a whisper
+     lighter "elevated" surface for popovers, table heads and hover. */
+  --bg-base: #e6e7f0;
+  --bg-surface: #fbfbfe;
+  --bg-elevated: #f3f3fa;
+  --bg-hover: rgba(35, 38, 55, 0.05);
+
+  /* Text tiers — indigo-black and cool slate, never pure black. */
+  --text-primary: #232637;
+  --text-secondary: #64677c;
+  --text-muted: #8b8d9f;
+
+  /* Hairlines — dyed grey, opaque so cards stack cleanly on the canvas. */
+  --hairline: #d7d8e4;
+  --hairline-strong: #c2c4d3;
+
+  /* Semantic — gain is pulled to a sea green so it never reads as "a lighter
+     blue" next to the accent; loss is a soft madder. The accent is the woad
+     dye at full strength: active nav, hero line chart, links and focus. */
+  --gain: #4d7560;
+  --loss: #a45f5f;
+  --gain-subtle: rgba(77, 117, 96, 0.13);
+  --loss-subtle: rgba(164, 95, 95, 0.13);
+  --accent: #46528f;
+  --accent-subtle: rgba(70, 82, 143, 0.12);
+
+  --focus-ring: rgba(70, 82, 143, 0.45);
+
+  /* Shadows — indigo at low alpha; on this canvas a black shadow reads dirty. */
+  --elevation-card: 0 1px 2px rgba(35, 38, 55, 0.06);
+  --elevation-pop: 0 8px 24px rgba(35, 38, 55, 0.14);
+
+  /* Categorical palette, searched rather than picked: every hue sits at OKLCH
+     chroma ~0.067 (the palette is deliberately muted, well below the dataviz
+     validator's chroma floor), so separation comes from lightness spread and
+     hue order instead of saturation. The search constrained adjacent slots to
+     >= 15.5 ΔE for normal vision and >= 6.5 ΔE under simulated protanopia and
+     deuteranopia, with every slot >= 3:1 on --bg-surface; the worst adjacent
+     pair lands at 9.4 ΔE (deutan). Pairs in the 6.5-8 band would be legal only
+     with secondary encoding, so every chart still carries a legend, direct
+     labels and 2px gaps — identity is never color-alone. */
+  --chart-1: #4d5980; /* Woad */
+  --chart-2: #9e735b; /* Clay */
+  --chart-3: #3c6245; /* Forest */
+  --chart-4: #b37f7e; /* Rose */
+  --chart-5: #25666a; /* Deep teal */
+  --chart-6: #897a43; /* Olive gold */
+  --chart-7: #ac7fa7; /* Mauve */
+  --chart-8: #747f53; /* Moss */
+  --chart-9: #355e7a; /* Steel */
+  --chart-10: #967fa8; /* Lilac */
+  --chart-other: #9fa1b0;
+
+  /* Sector slots, in SECTOR_ORDER (sectors.ts) — slot N is that sector's
+     identity, so reordering there means moving these with it. The ramp above
+     was already ordered for adjacent separation *as a ring* (slot 10 neighbours
+     slot 1, the way the donut closes), so these map straight through: the
+     tightest neighbouring pair in the donut is 8.5 ΔE under deuteranopia. */
+  --sector-1: var(--chart-1); /* Technology */
+  --sector-2: var(--chart-2); /* Materials */
+  --sector-3: var(--chart-3); /* Utilities */
+  --sector-4: var(--chart-4); /* Crypto */
+  --sector-5: var(--chart-5); /* Energy */
+  --sector-6: var(--chart-6); /* Healthcare */
+  --sector-7: var(--chart-7); /* Consumer Staples */
+  --sector-8: var(--chart-8); /* Financials */
+  --sector-9: var(--chart-9); /* Currency / FX */
+  --sector-10: var(--chart-10); /* Cash */
+  --sector-other: var(--chart-other);
+}
+
+/* Expose the tokens as the ONLY Tailwind colors (the default palette is
+   reset): utilities like bg-surface / text-gain resolve to the palette. */
+@theme inline {
+  --color-*: initial;
+  /* Manrope sets the whole interface: it carries a real tabular figure set
+     (verified in the binary, unlike DM Sans or Source Sans), and its
+     semi-condensed build fits more holdings on screen than Inter did at the
+     same legibility. Lora takes the display role Outfit had — the only serif
+     considered that also ships tabular figures, which matters because the
+     dashboard's 40px hero number is set in it. */
+  --font-sans:
+    "Manrope Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Lora Variable", Georgia, "Times New Roman", serif;
+
+  /* Named "canvas", not "base": text-base (the font-size utility) would
+     otherwise resolve to this color. */
+  --color-canvas: var(--bg-base);
+  --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
+  --color-hover: var(--bg-hover);
+
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+
+  --color-gain: var(--gain);
+  --color-loss: var(--loss);
+  --color-gain-subtle: var(--gain-subtle);
+  --color-loss-subtle: var(--loss-subtle);
+  --color-accent: var(--accent);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-focus: var(--focus-ring);
+
+  --shadow-card: var(--elevation-card);
+  --shadow-pop: var(--elevation-pop);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-9: var(--chart-9);
+  --color-chart-10: var(--chart-10);
+  --color-chart-other: var(--chart-other);
+
+  --color-sector-1: var(--sector-1);
+  --color-sector-2: var(--sector-2);
+  --color-sector-3: var(--sector-3);
+  --color-sector-4: var(--sector-4);
+  --color-sector-5: var(--sector-5);
+  --color-sector-6: var(--sector-6);
+  --color-sector-7: var(--sector-7);
+  --color-sector-8: var(--sector-8);
+  --color-sector-9: var(--sector-9);
+  --color-sector-10: var(--sector-10);
+  --color-sector-other: var(--sector-other);
+}
+
+@layer base {
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+  }
+}
+
+/* The card recipe every page shares: near-white, dyed hairline, soft radius and
+   a whisper of shadow so cards lift off the canvas instead of drawing a box. */
+@utility card {
+  border-radius: 1rem;
+  border: 1px solid var(--hairline);
+  background: var(--bg-surface);
+  box-shadow: var(--elevation-card);
+}
+
+/* Active-sector table row: the tint is data-driven (each row sets --row-tint
+   inline from its sector), only the recipe lives here. */
+tr.sector-active {
+  background: color-mix(in srgb, var(--row-tint) 14%, transparent);
+  box-shadow: inset 2px 0 0 0 var(--row-tint);
+}
+
+tbody tr.sector-active:hover {
+  background: color-mix(in srgb, var(--row-tint) 18%, transparent);
+}

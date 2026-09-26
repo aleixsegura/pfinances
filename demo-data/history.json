@@ -1,0 +1,3065 @@
+{
+  "baseCurrency": "EUR",
+  "days": [
+    {
+      "date": "2026-03-20",
+      "degiro": {
+        "updatedAt": "2026-03-20T18:00:00",
+        "valueEur": 43968.75,
+        "cashEur": 2229.23
+      },
+      "revolut": {
+        "updatedAt": "2026-03-20T18:05:00",
+        "cryptoValueEur": 18723.18,
+        "cashCurrentEur": 1456.44,
+        "cashSavingsEur": 8750.0
+      },
+      "portfolioValueEur": 62691.93,
+      "cashEur": 14831.21,
+      "totalEur": 77523.14
+    },
+    {
+      "date": "2026-03-21",
+      "degiro": {
+        "updatedAt": "2026-03-21T18:00:00",
+        "valueEur": 44167.96,
+        "cashEur": 2234.54
+      },
+      "revolut": {
+        "updatedAt": "2026-03-21T18:05:00",
+        "cryptoValueEur": 18775.57,
+        "cashCurrentEur": 1458.46,
+        "cashSavingsEur": 8770.83
+      },
+      "portfolioValueEur": 62943.53,
+      "cashEur": 14849.17,
+      "totalEur": 77792.7
+    },
+    {
+      "date": "2026-03-22",
+      "degiro": {
+        "updatedAt": "2026-03-22T18:00:00",
+        "valueEur": 44309.12,
+        "cashEur": 2239.85
+      },
+      "revolut": {
+        "updatedAt": "2026-03-22T18:05:00",
+        "cryptoValueEur": 19090.12,
+        "cashCurrentEur": 1460.49,
+        "cashSavingsEur": 8791.67
+      },
+      "portfolioValueEur": 63399.24,
+      "cashEur": 14829.46,
+      "totalEur": 78228.7
+    },
+    {
+      "date": "2026-03-23",
+      "degiro": {
+        "updatedAt": "2026-03-23T18:00:00",
+        "valueEur": 44661.95,
+        "cashEur": 2245.16
+      },
+      "revolut": {
+        "updatedAt": "2026-03-23T18:05:00",
+        "cryptoValueEur": 19297.85,
+        "cashCurrentEur": 1462.51,
+        "cashSavingsEur": 8812.5
+      },
+      "portfolioValueEur": 63959.8,
+      "cashEur": 14897.37,
+      "totalEur": 78857.17
+    },
+    {
+      "date": "2026-03-24",
+      "degiro": {
+        "updatedAt": "2026-03-24T18:00:00",
+        "valueEur": 44378.27,
+        "cashEur": 2250.46
+      },
+      "revolut": {
+        "updatedAt": "2026-03-24T18:05:00",
+        "cryptoValueEur": 19771.61,
+        "cashCurrentEur": 1464.53,
+        "cashSavingsEur": 8833.33
+      },
+      "portfolioValueEur": 64149.88,
+      "cashEur": 14911.3,
+      "totalEur": 79061.18
+    },
+    {
+      "date": "2026-03-25",
+      "degiro": {
+        "updatedAt": "2026-03-25T18:00:00",
+        "valueEur": 44035.12,
+        "cashEur": 2255.77
+      },
+      "revolut": {
+        "updatedAt": "2026-03-25T18:05:00",
+        "cryptoValueEur": 19359.38,
+        "cashCurrentEur": 1466.55,
+        "cashSavingsEur": 8854.17
+      },
+      "portfolioValueEur": 63394.5,
+      "cashEur": 15007.55,
+      "totalEur": 78402.05
+    },
+    {
+      "date": "2026-03-26",
+      "degiro": {
+        "updatedAt": "2026-03-26T18:00:00",
+        "valueEur": 44189.88,
+        "cashEur": 2261.08
+      },
+      "revolut": {
+        "updatedAt": "2026-03-26T18:05:00",
+        "cryptoValueEur": 19681.35,
+        "cashCurrentEur": 1468.58,
+        "cashSavingsEur": 8875.0
+      },
+      "portfolioValueEur": 63871.23,
+      "cashEur": 15003.22,
+      "totalEur": 78874.45
+    },
+    {
+      "date": "2026-03-27",
+      "degiro": {
+        "updatedAt": "2026-03-27T18:00:00",
+        "valueEur": 44279.53,
+        "cashEur": 2266.39
+      },
+      "revolut": {
+        "updatedAt": "2026-03-27T18:05:00",
+        "cryptoValueEur": 20181.03,
+        "cashCurrentEur": 1470.6,
+        "cashSavingsEur": 8895.83
+      },
+      "portfolioValueEur": 64460.56,
+      "cashEur": 14961.54,
+      "totalEur": 79422.1
+    },
+    {
+      "date": "2026-03-28",
+      "degiro": {
+        "updatedAt": "2026-03-28T18:00:00",
+        "valueEur": 44384.79,
+        "cashEur": 2271.7
+      },
+      "revolut": {
+        "updatedAt": "2026-03-28T18:05:00",
+        "cryptoValueEur": 20540.39,
+        "cashCurrentEur": 1472.62,
+        "cashSavingsEur": 8916.67
+      },
+      "portfolioValueEur": 64925.18,
+      "cashEur": 15014.45,
+      "totalEur": 79939.63
+    },
+    {
+      "date": "2026-03-29",
+      "degiro": {
+        "updatedAt": "2026-03-29T18:00:00",
+        "valueEur": 44792.81,
+        "cashEur": 2277.0
+      },
+      "revolut": {
+        "updatedAt": "2026-03-29T18:05:00",
+        "cryptoValueEur": 20633.01,
+        "cashCurrentEur": 1474.65,
+        "cashSavingsEur": 8937.5
+      },
+      "portfolioValueEur": 65425.82,
+      "cashEur": 15042.72,
+      "totalEur": 80468.54
+    },
+    {
+      "date": "2026-03-30",
+      "degiro": {
+        "updatedAt": "2026-03-30T18:00:00",
+        "valueEur": 44400.19,
+        "cashEur": 2282.31
+      },
+      "revolut": {
+        "updatedAt": "2026-03-30T18:05:00",
+        "cryptoValueEur": 20345.62,
+        "cashCurrentEur": 1476.67,
+        "cashSavingsEur": 8958.33
+      },
+      "portfolioValueEur": 64745.81,
+      "cashEur": 14990.81,
+      "totalEur": 79736.62
+    },
+    {
+      "date": "2026-03-31",
+      "degiro": {
+        "updatedAt": "2026-03-31T18:00:00",
+        "valueEur": 44044.21,
+        "cashEur": 2287.62
+      },
+      "revolut": {
+        "updatedAt": "2026-03-31T18:05:00",
+        "cryptoValueEur": 20067.49,
+        "cashCurrentEur": 1478.69,
+        "cashSavingsEur": 8979.17
+      },
+      "portfolioValueEur": 64111.7,
+      "cashEur": 14975.18,
+      "totalEur": 79086.88
+    },
+    {
+      "date": "2026-04-01",
+      "degiro": {
+        "updatedAt": "2026-04-01T18:00:00",
+        "valueEur": 43883.21,
+        "cashEur": 2292.93
+      },
+      "revolut": {
+        "updatedAt": "2026-04-01T18:05:00",
+        "cryptoValueEur": 20219.73,
+        "cashCurrentEur": 1480.71,
+        "cashSavingsEur": 9000.0
+      },
+      "portfolioValueEur": 64102.94,
+      "cashEur": 15031.9,
+      "totalEur": 79134.84
+    },
+    {
+      "date": "2026-04-02",
+      "degiro": {
+        "updatedAt": "2026-04-02T18:00:00",
+        "valueEur": 43811.85,
+        "cashEur": 2298.23
+      },
+      "revolut": {
+        "updatedAt": "2026-04-02T18:05:00",
+        "cryptoValueEur": 19918.48,
+        "cashCurrentEur": 1482.74,
+        "cashSavingsEur": 9020.83
+      },
+      "portfolioValueEur": 63730.33,
+      "cashEur": 15030.76,
+      "totalEur": 78761.09
+    },
+    {
+      "date": "2026-04-03",
+      "degiro": {
+        "updatedAt": "2026-04-03T18:00:00",
+        "valueEur": 44286.89,
+        "cashEur": 2303.54
+      },
+      "revolut": {
+        "updatedAt": "2026-04-03T18:05:00",
+        "cryptoValueEur": 20082.57,
+        "cashCurrentEur": 1484.76,
+        "cashSavingsEur": 9041.67
+      },
+      "portfolioValueEur": 64369.46,
+      "cashEur": 15100.01,
+      "totalEur": 79469.47
+    },
+    {
+      "date": "2026-04-04",
+      "degiro": {
+        "updatedAt": "2026-04-04T18:00:00",
+        "valueEur": 44020.86,
+        "cashEur": 2308.85
+      },
+      "revolut": {
+        "updatedAt": "2026-04-04T18:05:00",
+        "cryptoValueEur": 20333.92,
+        "cashCurrentEur": 1486.78,
+        "cashSavingsEur": 9062.5
+      },
+      "portfolioValueEur": 64354.78,
+      "cashEur": 15043.2,
+      "totalEur": 79397.98
+    },
+    {
+      "date": "2026-04-05",
+      "degiro": {
+        "updatedAt": "2026-04-05T18:00:00",
+        "valueEur": 43958.26,
+        "cashEur": 2314.16
+      },
+      "revolut": {
+        "updatedAt": "2026-04-05T18:05:00",
+        "cryptoValueEur": 20867.78,
+        "cashCurrentEur": 1488.81,
+        "cashSavingsEur": 9083.33
+      },
+      "portfolioValueEur": 64826.04,
+      "cashEur": 15133.97,
+      "totalEur": 79960.01
+    },
+    {
+      "date": "2026-04-06",
+      "degiro": {
+        "updatedAt": "2026-04-06T18:00:00",
+        "valueEur": 44067.5,
+        "cashEur": 2319.46
+      },
+      "revolut": {
+        "updatedAt": "2026-04-06T18:05:00",
+        "cryptoValueEur": 21079.95,
+        "cashCurrentEur": 1490.83,
+        "cashSavingsEur": 9104.17
+      },
+      "portfolioValueEur": 65147.45,
+      "cashEur": 15180.93,
+      "totalEur": 80328.38
+    },
+    {
+      "date": "2026-04-07",
+      "degiro": {
+        "updatedAt": "2026-04-07T18:00:00",
+        "valueEur": 44389.47,
+        "cashEur": 2324.77
+      },
+      "revolut": {
+        "updatedAt": "2026-04-07T18:05:00",
+        "cryptoValueEur": 20787.62,
+        "cashCurrentEur": 1492.85,
+        "cashSavingsEur": 9125.0
+      },
+      "portfolioValueEur": 65177.09,
+      "cashEur": 15065.73,
+      "totalEur": 80242.82
+    },
+    {
+      "date": "2026-04-08",
+      "degiro": {
+        "updatedAt": "2026-04-08T18:00:00",
+        "valueEur": 44263.83,
+        "cashEur": 2330.08
+      },
+      "revolut": {
+        "updatedAt": "2026-04-08T18:05:00",
+        "cryptoValueEur": 20541.79,
+        "cashCurrentEur": 1494.87,
+        "cashSavingsEur": 9145.83
+      },
+      "portfolioValueEur": 64805.62,
+      "cashEur": 15108.86,
+      "totalEur": 79914.48
+    },
+    {
+      "date": "2026-04-09",
+      "degiro": {
+        "updatedAt": "2026-04-09T18:00:00",
+        "valueEur": 44749.86,
+        "cashEur": 2335.39
+      },
+      "revolut": {
+        "updatedAt": "2026-04-09T18:05:00",
+        "cryptoValueEur": 20958.46,
+        "cashCurrentEur": 1496.9,
+        "cashSavingsEur": 9166.67
+      },
+      "portfolioValueEur": 65708.32,
+      "cashEur": 15139.96,
+      "totalEur": 80848.28
+    },
+    {
+      "date": "2026-04-10",
+      "degiro": {
+        "updatedAt": "2026-04-10T18:00:00",
+        "valueEur": 44958.06,
+        "cashEur": 2340.7
+      },
+      "revolut": {
+        "updatedAt": "2026-04-10T18:05:00",
+        "cryptoValueEur": 20852.02,
+        "cashCurrentEur": 1498.92,
+        "cashSavingsEur": 9187.5
+      },
+      "portfolioValueEur": 65810.08,
+      "cashEur": 15250.43,
+      "totalEur": 81060.51
+    },
+    {
+      "date": "2026-04-11",
+      "degiro": {
+        "updatedAt": "2026-04-11T18:00:00",
+        "valueEur": 44972.71,
+        "cashEur": 2346.0
+      },
+      "revolut": {
+        "updatedAt": "2026-04-11T18:05:00",
+        "cryptoValueEur": 20602.27,
+        "cashCurrentEur": 1500.94,
+        "cashSavingsEur": 9208.33
+      },
+      "portfolioValueEur": 65574.98,
+      "cashEur": 15158.09,
+      "totalEur": 80733.07
+    },
+    {
+      "date": "2026-04-12",
+      "degiro": {
+        "updatedAt": "2026-04-12T18:00:00",
+        "valueEur": 45088.83,
+        "cashEur": 2351.31
+      },
+      "revolut": {
+        "updatedAt": "2026-04-12T18:05:00",
+        "cryptoValueEur": 20353.19,
+        "cashCurrentEur": 1502.97,
+        "cashSavingsEur": 9229.17
+      },
+      "portfolioValueEur": 65442.02,
+      "cashEur": 15226.66,
+      "totalEur": 80668.68
+    },
+    {
+      "date": "2026-04-13",
+      "degiro": {
+        "updatedAt": "2026-04-13T18:00:00",
+        "valueEur": 45539.18,
+        "cashEur": 2356.62
+      },
+      "revolut": {
+        "updatedAt": "2026-04-13T18:05:00",
+        "cryptoValueEur": 20253.86,
+        "cashCurrentEur": 1504.99,
+        "cashSavingsEur": 9250.0
+      },
+      "portfolioValueEur": 65793.04,
+      "cashEur": 15182.74,
+      "totalEur": 80975.78
+    },
+    {
+      "date": "2026-04-14",
+      "degiro": {
+        "updatedAt": "2026-04-14T18:00:00",
+        "valueEur": 46093.96,
+        "cashEur": 2361.93
+      },
+      "revolut": {
+        "updatedAt": "2026-04-14T18:05:00",
+        "cryptoValueEur": 20272.71,
+        "cashCurrentEur": 1507.01,
+        "cashSavingsEur": 9270.83
+      },
+      "portfolioValueEur": 66366.67,
+      "cashEur": 15176.7,
+      "totalEur": 81543.37
+    },
+    {
+      "date": "2026-04-15",
+      "degiro": {
+        "updatedAt": "2026-04-15T18:00:00",
+        "valueEur": 45691.25,
+        "cashEur": 2367.23
+      },
+      "revolut": {
+        "updatedAt": "2026-04-15T18:05:00",
+        "cryptoValueEur": 19863.87,
+        "cashCurrentEur": 1509.03,
+        "cashSavingsEur": 9291.67
+      },
+      "portfolioValueEur": 65555.12,
+      "cashEur": 15277.04,
+      "totalEur": 80832.16
+    },
+    {
+      "date": "2026-04-16",
+      "degiro": {
+        "updatedAt": "2026-04-16T18:00:00",
+        "valueEur": 46041.25,
+        "cashEur": 2372.54
+      },
+      "revolut": {
+        "updatedAt": "2026-04-16T18:05:00",
+        "cryptoValueEur": 19790.78,
+        "cashCurrentEur": 1511.06,
+        "cashSavingsEur": 9312.5
+      },
+      "portfolioValueEur": 65832.03,
+      "cashEur": 15201.35,
+      "totalEur": 81033.38
+    },
+    {
+      "date": "2026-04-17",
+      "degiro": {
+        "updatedAt": "2026-04-17T18:00:00",
+        "valueEur": 45977.99,
+        "cashEur": 2377.85
+      },
+      "revolut": {
+        "updatedAt": "2026-04-17T18:05:00",
+        "cryptoValueEur": 20317.26,
+        "cashCurrentEur": 1513.08,
+        "cashSavingsEur": 9333.33
+      },
+      "portfolioValueEur": 66295.25,
+      "cashEur": 15290.34,
+      "totalEur": 81585.59
+    },
+    {
+      "date": "2026-04-18",
+      "degiro": {
+        "updatedAt": "2026-04-18T18:00:00",
+        "valueEur": 46511.34,
+        "cashEur": 2383.16
+      },
+      "revolut": {
+        "updatedAt": "2026-04-18T18:05:00",
+        "cryptoValueEur": 20712.68,
+        "cashCurrentEur": 1515.1,
+        "cashSavingsEur": 9354.17
+      },
+      "portfolioValueEur": 67224.02,
+      "cashEur": 15222.03,
+      "totalEur": 82446.05
+    },
+    {
+      "date": "2026-04-19",
+      "degiro": {
+        "updatedAt": "2026-04-19T18:00:00",
+        "valueEur": 46794.58,
+        "cashEur": 2388.47
+      },
+      "revolut": {
+        "updatedAt": "2026-04-19T18:05:00",
+        "cryptoValueEur": 20920.11,
+        "cashCurrentEur": 1517.12,
+        "cashSavingsEur": 9375.0
+      },
+      "portfolioValueEur": 67714.69,
+      "cashEur": 15320.61,
+      "totalEur": 83035.3
+    },
+    {
+      "date": "2026-04-20",
+      "degiro": {
+        "updatedAt": "2026-04-20T18:00:00",
+        "valueEur": 46612.04,
+        "cashEur": 2393.77
+      },
+      "revolut": {
+        "updatedAt": "2026-04-20T18:05:00",
+        "cryptoValueEur": 21084.63,
+        "cashCurrentEur": 1519.15,
+        "cashSavingsEur": 9395.83
+      },
+      "portfolioValueEur": 67696.67,
+      "cashEur": 15267.06,
+      "totalEur": 82963.73
+    },
+    {
+      "date": "2026-04-21",
+      "degiro": {
+        "updatedAt": "2026-04-21T18:00:00",
+        "valueEur": 46602.51,
+        "cashEur": 2399.08
+      },
+      "revolut": {
+        "updatedAt": "2026-04-21T18:05:00",
+        "cryptoValueEur": 21042.17,
+        "cashCurrentEur": 1521.17,
+        "cashSavingsEur": 9416.67
+      },
+      "portfolioValueEur": 67644.68,
+      "cashEur": 15416.31,
+      "totalEur": 83060.99
+    },
+    {
+      "date": "2026-04-22",
+      "degiro": {
+        "updatedAt": "2026-04-22T18:00:00",
+        "valueEur": 47045.43,
+        "cashEur": 2404.39
+      },
+      "revolut": {
+        "updatedAt": "2026-04-22T18:05:00",
+        "cryptoValueEur": 20788.49,
+        "cashCurrentEur": 1523.19,
+        "cashSavingsEur": 9437.5
+      },
+      "portfolioValueEur": 67833.92,
+      "cashEur": 15358.31,
+      "totalEur": 83192.23
+    },
+    {
+      "date": "2026-04-23",
+      "degiro": {
+        "updatedAt": "2026-04-23T18:00:00",
+        "valueEur": 46770.61,
+        "cashEur": 2409.7
+      },
+      "revolut": {
+        "updatedAt": "2026-04-23T18:05:00",
+        "cryptoValueEur": 21249.95,
+        "cashCurrentEur": 1525.22,
+        "cashSavingsEur": 9458.33
+      },
+      "portfolioValueEur": 68020.56,
+      "cashEur": 15432.0,
+      "totalEur": 83452.56
+    },
+    {
+      "date": "2026-04-24",
+      "degiro": {
+        "updatedAt": "2026-04-24T18:00:00",
+        "valueEur": 46620.72,
+        "cashEur": 2415.0
+      },
+      "revolut": {
+        "updatedAt": "2026-04-24T18:05:00",
+        "cryptoValueEur": 21414.81,
+        "cashCurrentEur": 1527.24,
+        "cashSavingsEur": 9479.17
+      },
+      "portfolioValueEur": 68035.53,
+      "cashEur": 15404.66,
+      "totalEur": 83440.19
+    },
+    {
+      "date": "2026-04-25",
+      "degiro": {
+        "updatedAt": "2026-04-25T18:00:00",
+        "valueEur": 46321.89,
+        "cashEur": 2420.31
+      },
+      "revolut": {
+        "updatedAt": "2026-04-25T18:05:00",
+        "cryptoValueEur": 21720.56,
+        "cashCurrentEur": 1529.26,
+        "cashSavingsEur": 9500.0
+      },
+      "portfolioValueEur": 68042.45,
+      "cashEur": 15408.03,
+      "totalEur": 83450.48
+    },
+    {
+      "date": "2026-04-26",
+      "degiro": {
+        "updatedAt": "2026-04-26T18:00:00",
+        "valueEur": 46663.01,
+        "cashEur": 2425.62
+      },
+      "revolut": {
+        "updatedAt": "2026-04-26T18:05:00",
+        "cryptoValueEur": 21764.63,
+        "cashCurrentEur": 1531.28,
+        "cashSavingsEur": 9520.83
+      },
+      "portfolioValueEur": 68427.64,
+      "cashEur": 15336.35,
+      "totalEur": 83763.99
+    },
+    {
+      "date": "2026-04-27",
+      "degiro": {
+        "updatedAt": "2026-04-27T18:00:00",
+        "valueEur": 46539.87,
+        "cashEur": 2430.93
+      },
+      "revolut": {
+        "updatedAt": "2026-04-27T18:05:00",
+        "cryptoValueEur": 21222.15,
+        "cashCurrentEur": 1533.31,
+        "cashSavingsEur": 9541.67
+      },
+      "portfolioValueEur": 67762.02,
+      "cashEur": 15499.39,
+      "totalEur": 83261.41
+    },
+    {
+      "date": "2026-04-28",
+      "degiro": {
+        "updatedAt": "2026-04-28T18:00:00",
+        "valueEur": 46985.13,
+        "cashEur": 2436.23
+      },
+      "revolut": {
+        "updatedAt": "2026-04-28T18:05:00",
+        "cryptoValueEur": 21602.59,
+        "cashCurrentEur": 1535.33,
+        "cashSavingsEur": 9562.5
+      },
+      "portfolioValueEur": 68587.72,
+      "cashEur": 15414.46,
+      "totalEur": 84002.18
+    },
+    {
+      "date": "2026-04-29",
+      "degiro": {
+        "updatedAt": "2026-04-29T18:00:00",
+        "valueEur": 46585.82,
+        "cashEur": 2441.54
+      },
+      "revolut": {
+        "updatedAt": "2026-04-29T18:05:00",
+        "cryptoValueEur": 22042.66,
+        "cashCurrentEur": 1537.35,
+        "cashSavingsEur": 9583.33
+      },
+      "portfolioValueEur": 68628.48,
+      "cashEur": 15531.26,
+      "totalEur": 84159.74
+    },
+    {
+      "date": "2026-04-30",
+      "degiro": {
+        "updatedAt": "2026-04-30T18:00:00",
+        "valueEur": 46218.32,
+        "cashEur": 2446.85
+      },
+      "revolut": {
+        "updatedAt": "2026-04-30T18:05:00",
+        "cryptoValueEur": 22035.79,
+        "cashCurrentEur": 1539.38,
+        "cashSavingsEur": 9604.17
+      },
+      "portfolioValueEur": 68254.11,
+      "cashEur": 15405.35,
+      "totalEur": 83659.46
+    },
+    {
+      "date": "2026-05-01",
+      "degiro": {
+        "updatedAt": "2026-05-01T18:00:00",
+        "valueEur": 46540.35,
+        "cashEur": 2452.16
+      },
+      "revolut": {
+        "updatedAt": "2026-05-01T18:05:00",
+        "cryptoValueEur": 22354.26,
+        "cashCurrentEur": 1541.4,
+        "cashSavingsEur": 9625.0
+      },
+      "portfolioValueEur": 68894.61,
+      "cashEur": 15429.33,
+      "totalEur": 84323.94
+    },
+    {
+      "date": "2026-05-02",
+      "degiro": {
+        "updatedAt": "2026-05-02T18:00:00",
+        "valueEur": 46572.33,
+        "cashEur": 2457.47
+      },
+      "revolut": {
+        "updatedAt": "2026-05-02T18:05:00",
+        "cryptoValueEur": 22422.56,
+        "cashCurrentEur": 1543.42,
+        "cashSavingsEur": 9645.83
+      },
+      "portfolioValueEur": 68994.89,
+      "cashEur": 15465.69,
+      "totalEur": 84460.58
+    },
+    {
+      "date": "2026-05-03",
+      "degiro": {
+        "updatedAt": "2026-05-03T18:00:00",
+        "valueEur": 47011.47,
+        "cashEur": 2462.77
+      },
+      "revolut": {
+        "updatedAt": "2026-05-03T18:05:00",
+        "cryptoValueEur": 22341.22,
+        "cashCurrentEur": 1545.44,
+        "cashSavingsEur": 9666.67
+      },
+      "portfolioValueEur": 69352.69,
+      "cashEur": 15471.68,
+      "totalEur": 84824.37
+    },
+    {
+      "date": "2026-05-04",
+      "degiro": {
+        "updatedAt": "2026-05-04T18:00:00",
+        "valueEur": 47110.02,
+        "cashEur": 2468.08
+      },
+      "revolut": {
+        "updatedAt": "2026-05-04T18:05:00",
+        "cryptoValueEur": 22621.79,
+        "cashCurrentEur": 1547.47,
+        "cashSavingsEur": 9687.5
+      },
+      "portfolioValueEur": 69731.81,
+      "cashEur": 15484.48,
+      "totalEur": 85216.29
+    },
+    {
+      "date": "2026-05-05",
+      "degiro": {
+        "updatedAt": "2026-05-05T18:00:00",
+        "valueEur": 46972.8,
+        "cashEur": 2473.39
+      },
+      "revolut": {
+        "updatedAt": "2026-05-05T18:05:00",
+        "cryptoValueEur": 23222.43,
+        "cashCurrentEur": 1549.49,
+        "cashSavingsEur": 9708.33
+      },
+      "portfolioValueEur": 70195.23,
+      "cashEur": 15570.77,
+      "totalEur": 85766.0
+    },
+    {
+      "date": "2026-05-06",
+      "degiro": {
+        "updatedAt": "2026-05-06T18:00:00",
+        "valueEur": 46966.64,
+        "cashEur": 2478.7
+      },
+      "revolut": {
+        "updatedAt": "2026-05-06T18:05:00",
+        "cryptoValueEur": 23253.9,
+        "cashCurrentEur": 1551.51,
+        "cashSavingsEur": 9729.17
+      },
+      "portfolioValueEur": 70220.54,
+      "cashEur": 15500.67,
+      "totalEur": 85721.21
+    },
+    {
+      "date": "2026-05-07",
+      "degiro": {
+        "updatedAt": "2026-05-07T18:00:00",
+        "valueEur": 46739.89,
+        "cashEur": 2484.0
+      },
+      "revolut": {
+        "updatedAt": "2026-05-07T18:05:00",
+        "cryptoValueEur": 23065.19,
+        "cashCurrentEur": 1553.54,
+        "cashSavingsEur": 9750.0
+      },
+      "portfolioValueEur": 69805.08,
+      "cashEur": 15589.93,
+      "totalEur": 85395.01
+    },
+    {
+      "date": "2026-05-08",
+      "degiro": {
+        "updatedAt": "2026-05-08T18:00:00",
+        "valueEur": 46519.79,
+        "cashEur": 2489.31
+      },
+      "revolut": {
+        "updatedAt": "2026-05-08T18:05:00",
+        "cryptoValueEur": 22734.59,
+        "cashCurrentEur": 1555.56,
+        "cashSavingsEur": 9770.83
+      },
+      "portfolioValueEur": 69254.38,
+      "cashEur": 15521.69,
+      "totalEur": 84776.07
+    },
+    {
+      "date": "2026-05-09",
+      "degiro": {
+        "updatedAt": "2026-05-09T18:00:00",
+        "valueEur": 46711.32,
+        "cashEur": 2494.62
+      },
+      "revolut": {
+        "updatedAt": "2026-05-09T18:05:00",
+        "cryptoValueEur": 22419.19,
+        "cashCurrentEur": 1557.58,
+        "cashSavingsEur": 9791.67
+      },
+      "portfolioValueEur": 69130.51,
+      "cashEur": 15669.66,
+      "totalEur": 84800.17
+    },
+    {
+      "date": "2026-05-10",
+      "degiro": {
+        "updatedAt": "2026-05-10T18:00:00",
+        "valueEur": 47138.6,
+        "cashEur": 2499.93
+      },
+      "revolut": {
+        "updatedAt": "2026-05-10T18:05:00",
+        "cryptoValueEur": 21921.17,
+        "cashCurrentEur": 1559.6,
+        "cashSavingsEur": 9812.5
+      },
+      "portfolioValueEur": 69059.77,
+      "cashEur": 15577.41,
+      "totalEur": 84637.18
+    },
+    {
+      "date": "2026-05-11",
+      "degiro": {
+        "updatedAt": "2026-05-11T18:00:00",
+        "valueEur": 47371.98,
+        "cashEur": 2505.23
+      },
+      "revolut": {
+        "updatedAt": "2026-05-11T18:05:00",
+        "cryptoValueEur": 21600.04,
+        "cashCurrentEur": 1561.63,
+        "cashSavingsEur": 9833.33
+      },
+      "portfolioValueEur": 68972.02,
+      "cashEur": 15575.01,
+      "totalEur": 84547.03
+    },
+    {
+      "date": "2026-05-12",
+      "degiro": {
+        "updatedAt": "2026-05-12T18:00:00",
+        "valueEur": 47884.41,
+        "cashEur": 2510.54
+      },
+      "revolut": {
+        "updatedAt": "2026-05-12T18:05:00",
+        "cryptoValueEur": 21690.24,
+        "cashCurrentEur": 1563.65,
+        "cashSavingsEur": 9854.17
+      },
+      "portfolioValueEur": 69574.65,
+      "cashEur": 15643.96,
+      "totalEur": 85218.61
+    },
+    {
+      "date": "2026-05-13",
+      "degiro": {
+        "updatedAt": "2026-05-13T18:00:00",
+        "valueEur": 48243.36,
+        "cashEur": 2515.85
+      },
+      "revolut": {
+        "updatedAt": "2026-05-13T18:05:00",
+        "cryptoValueEur": 22051.4,
+        "cashCurrentEur": 1565.67,
+        "cashSavingsEur": 9875.0
+      },
+      "portfolioValueEur": 70294.76,
+      "cashEur": 15613.31,
+      "totalEur": 85908.07
+    },
+    {
+      "date": "2026-05-14",
+      "degiro": {
+        "updatedAt": "2026-05-14T18:00:00",
+        "valueEur": 47874.76,
+        "cashEur": 2521.16
+      },
+      "revolut": {
+        "updatedAt": "2026-05-14T18:05:00",
+        "cryptoValueEur": 21980.62,
+        "cashCurrentEur": 1567.7,
+        "cashSavingsEur": 9895.83
+      },
+      "portfolioValueEur": 69855.38,
+      "cashEur": 15665.12,
+      "totalEur": 85520.5
+    },
+    {
+      "date": "2026-05-15",
+      "degiro": {
+        "updatedAt": "2026-05-15T18:00:00",
+        "valueEur": 47898.98,
+        "cashEur": 2526.47
+      },
+      "revolut": {
+        "updatedAt": "2026-05-15T18:05:00",
+        "cryptoValueEur": 22255.67,
+        "cashCurrentEur": 1569.72,
+        "cashSavingsEur": 9916.67
+      },
+      "portfolioValueEur": 70154.65,
+      "cashEur": 15719.57,
+      "totalEur": 85874.22
+    },
+    {
+      "date": "2026-05-16",
+      "degiro": {
+        "updatedAt": "2026-05-16T18:00:00",
+        "valueEur": 48468.41,
+        "cashEur": 2531.77
+      },
+      "revolut": {
+        "updatedAt": "2026-05-16T18:05:00",
+        "cryptoValueEur": 21793.65,
+        "cashCurrentEur": 1571.74,
+        "cashSavingsEur": 9937.5
+      },
+      "portfolioValueEur": 70262.06,
+      "cashEur": 15690.77,
+      "totalEur": 85952.83
+    },
+    {
+      "date": "2026-05-17",
+      "degiro": {
+        "updatedAt": "2026-05-17T18:00:00",
+        "valueEur": 48356.66,
+        "cashEur": 2537.08
+      },
+      "revolut": {
+        "updatedAt": "2026-05-17T18:05:00",
+        "cryptoValueEur": 22218.82,
+        "cashCurrentEur": 1573.76,
+        "cashSavingsEur": 9958.33
+      },
+      "portfolioValueEur": 70575.48,
+      "cashEur": 15680.64,
+      "totalEur": 86256.12
+    },
+    {
+      "date": "2026-05-18",
+      "degiro": {
+        "updatedAt": "2026-05-18T18:00:00",
+        "valueEur": 48086.48,
+        "cashEur": 2542.39
+      },
+      "revolut": {
+        "updatedAt": "2026-05-18T18:05:00",
+        "cryptoValueEur": 22168.08,
+        "cashCurrentEur": 1575.79,
+        "cashSavingsEur": 9979.17
+      },
+      "portfolioValueEur": 70254.56,
+      "cashEur": 15722.86,
+      "totalEur": 85977.42
+    },
+    {
+      "date": "2026-05-19",
+      "degiro": {
+        "updatedAt": "2026-05-19T18:00:00",
+        "valueEur": 47911.31,
+        "cashEur": 2547.7
+      },
+      "revolut": {
+        "updatedAt": "2026-05-19T18:05:00",
+        "cryptoValueEur": 21884.95,
+        "cashCurrentEur": 1577.81,
+        "cashSavingsEur": 10000.0
+      },
+      "portfolioValueEur": 69796.26,
+      "cashEur": 15817.56,
+      "totalEur": 85613.82
+    },
+    {
+      "date": "2026-05-20",
+      "degiro": {
+        "updatedAt": "2026-05-20T18:00:00",
+        "valueEur": 47910.33,
+        "cashEur": 2553.0
+      },
+      "revolut": {
+        "updatedAt": "2026-05-20T18:05:00",
+        "cryptoValueEur": 22311.53,
+        "cashCurrentEur": 1579.83,
+        "cashSavingsEur": 10020.83
+      },
+      "portfolioValueEur": 70221.86,
+      "cashEur": 15772.41,
+      "totalEur": 85994.27
+    },
+    {
+      "date": "2026-05-21",
+      "degiro": {
+        "updatedAt": "2026-05-21T18:00:00",
+        "valueEur": 47495.41,
+        "cashEur": 2558.31
+      },
+      "revolut": {
+        "updatedAt": "2026-05-21T18:05:00",
+        "cryptoValueEur": 22908.8,
+        "cashCurrentEur": 1581.86,
+        "cashSavingsEur": 10041.67
+      },
+      "portfolioValueEur": 70404.21,
+      "cashEur": 15832.61,
+      "totalEur": 86236.82
+    },
+    {
+      "date": "2026-05-22",
+      "degiro": {
+        "updatedAt": "2026-05-22T18:00:00",
+        "valueEur": 48044.19,
+        "cashEur": 2563.62
+      },
+      "revolut": {
+        "updatedAt": "2026-05-22T18:05:00",
+        "cryptoValueEur": 23433.92,
+        "cashCurrentEur": 1583.88,
+        "cashSavingsEur": 10062.5
+      },
+      "portfolioValueEur": 71478.11,
+      "cashEur": 15849.14,
+      "totalEur": 87327.25
+    },
+    {
+      "date": "2026-05-23",
+      "degiro": {
+        "updatedAt": "2026-05-23T18:00:00",
+        "valueEur": 47750.49,
+        "cashEur": 2568.93
+      },
+      "revolut": {
+        "updatedAt": "2026-05-23T18:05:00",
+        "cryptoValueEur": 23426.18,
+        "cashCurrentEur": 1585.9,
+        "cashSavingsEur": 10083.33
+      },
+      "portfolioValueEur": 71176.67,
+      "cashEur": 15762.08,
+      "totalEur": 86938.75
+    },
+    {
+      "date": "2026-05-24",
+      "degiro": {
+        "updatedAt": "2026-05-24T18:00:00",
+        "valueEur": 47705.29,
+        "cashEur": 2574.23
+      },
+      "revolut": {
+        "updatedAt": "2026-05-24T18:05:00",
+        "cryptoValueEur": 22890.7,
+        "cashCurrentEur": 1587.92,
+        "cashSavingsEur": 10104.17
+      },
+      "portfolioValueEur": 70595.99,
+      "cashEur": 15803.02,
+      "totalEur": 86399.01
+    },
+    {
+      "date": "2026-05-25",
+      "degiro": {
+        "updatedAt": "2026-05-25T18:00:00",
+        "valueEur": 48273.62,
+        "cashEur": 2579.54
+      },
+      "revolut": {
+        "updatedAt": "2026-05-25T18:05:00",
+        "cryptoValueEur": 22616.92,
+        "cashCurrentEur": 1589.95,
+        "cashSavingsEur": 10125.0
+      },
+      "portfolioValueEur": 70890.54,
+      "cashEur": 15882.31,
+      "totalEur": 86772.85
+    },
+    {
+      "date": "2026-05-26",
+      "degiro": {
+        "updatedAt": "2026-05-26T18:00:00",
+        "valueEur": 48285.26,
+        "cashEur": 2584.85
+      },
+      "revolut": {
+        "updatedAt": "2026-05-26T18:05:00",
+        "cryptoValueEur": 22534.72,
+        "cashCurrentEur": 1591.97,
+        "cashSavingsEur": 10145.83
+      },
+      "portfolioValueEur": 70819.98,
+      "cashEur": 15924.52,
+      "totalEur": 86744.5
+    },
+    {
+      "date": "2026-05-27",
+      "degiro": {
+        "updatedAt": "2026-05-27T18:00:00",
+        "valueEur": 48871.24,
+        "cashEur": 2590.16
+      },
+      "revolut": {
+        "updatedAt": "2026-05-27T18:05:00",
+        "cryptoValueEur": 22610.66,
+        "cashCurrentEur": 1593.99,
+        "cashSavingsEur": 10166.67
+      },
+      "portfolioValueEur": 71481.9,
+      "cashEur": 15900.81,
+      "totalEur": 87382.71
+    },
+    {
+      "date": "2026-05-28",
+      "degiro": {
+        "updatedAt": "2026-05-28T18:00:00",
+        "valueEur": 48560.1,
+        "cashEur": 2595.47
+      },
+      "revolut": {
+        "updatedAt": "2026-05-28T18:05:00",
+        "cryptoValueEur": 22377.81,
+        "cashCurrentEur": 1596.02,
+        "cashSavingsEur": 10187.5
+      },
+      "portfolioValueEur": 70937.91,
+      "cashEur": 15955.35,
+      "totalEur": 86893.26
+    },
+    {
+      "date": "2026-05-29",
+      "degiro": {
+        "updatedAt": "2026-05-29T18:00:00",
+        "valueEur": 48704.53,
+        "cashEur": 2600.77
+      },
+      "revolut": {
+        "updatedAt": "2026-05-29T18:05:00",
+        "cryptoValueEur": 22437.2,
+        "cashCurrentEur": 1598.04,
+        "cashSavingsEur": 10208.33
+      },
+      "portfolioValueEur": 71141.73,
+      "cashEur": 15934.55,
+      "totalEur": 87076.28
+    },
+    {
+      "date": "2026-05-30",
+      "degiro": {
+        "updatedAt": "2026-05-30T18:00:00",
+        "valueEur": 48289.78,
+        "cashEur": 2606.08
+      },
+      "revolut": {
+        "updatedAt": "2026-05-30T18:05:00",
+        "cryptoValueEur": 22546.44,
+        "cashCurrentEur": 1600.06,
+        "cashSavingsEur": 10229.17
+      },
+      "portfolioValueEur": 70836.22,
+      "cashEur": 15909.84,
+      "totalEur": 86746.06
+    },
+    {
+      "date": "2026-05-31",
+      "degiro": {
+        "updatedAt": "2026-05-31T18:00:00",
+        "valueEur": 48724.15,
+        "cashEur": 2611.39
+      },
+      "revolut": {
+        "updatedAt": "2026-05-31T18:05:00",
+        "cryptoValueEur": 22148.58,
+        "cashCurrentEur": 1602.08,
+        "cashSavingsEur": 10250.0
+      },
+      "portfolioValueEur": 70872.73,
+      "cashEur": 15997.58,
+      "totalEur": 86870.31
+    },
+    {
+      "date": "2026-06-01",
+      "degiro": {
+        "updatedAt": "2026-06-01T18:00:00",
+        "valueEur": 48333.85,
+        "cashEur": 2616.7
+      },
+      "revolut": {
+        "updatedAt": "2026-06-01T18:05:00",
+        "cryptoValueEur": 21790.93,
+        "cashCurrentEur": 1604.11,
+        "cashSavingsEur": 10270.83
+      },
+      "portfolioValueEur": 70124.78,
+      "cashEur": 15953.59,
+      "totalEur": 86078.37
+    },
+    {
+      "date": "2026-06-02",
+      "degiro": {
+        "updatedAt": "2026-06-02T18:00:00",
+        "valueEur": 48579.77,
+        "cashEur": 2622.0
+      },
+      "revolut": {
+        "updatedAt": "2026-06-02T18:05:00",
+        "cryptoValueEur": 21495.82,
+        "cashCurrentEur": 1606.13,
+        "cashSavingsEur": 10291.67
+      },
+      "portfolioValueEur": 70075.59,
+      "cashEur": 15892.09,
+      "totalEur": 85967.68
+    },
+    {
+      "date": "2026-06-03",
+      "degiro": {
+        "updatedAt": "2026-06-03T18:00:00",
+        "valueEur": 49056.92,
+        "cashEur": 2627.31
+      },
+      "revolut": {
+        "updatedAt": "2026-06-03T18:05:00",
+        "cryptoValueEur": 21217.19,
+        "cashCurrentEur": 1608.15,
+        "cashSavingsEur": 10312.5
+      },
+      "portfolioValueEur": 70274.11,
+      "cashEur": 15982.51,
+      "totalEur": 86256.62
+    },
+    {
+      "date": "2026-06-04",
+      "degiro": {
+        "updatedAt": "2026-06-04T18:00:00",
+        "valueEur": 49246.22,
+        "cashEur": 2632.62
+      },
+      "revolut": {
+        "updatedAt": "2026-06-04T18:05:00",
+        "cryptoValueEur": 21135.84,
+        "cashCurrentEur": 1610.18,
+        "cashSavingsEur": 10333.33
+      },
+      "portfolioValueEur": 70382.06,
+      "cashEur": 15995.27,
+      "totalEur": 86377.33
+    },
+    {
+      "date": "2026-06-05",
+      "degiro": {
+        "updatedAt": "2026-06-05T18:00:00",
+        "valueEur": 49331.57,
+        "cashEur": 2637.93
+      },
+      "revolut": {
+        "updatedAt": "2026-06-05T18:05:00",
+        "cryptoValueEur": 21629.63,
+        "cashCurrentEur": 1612.2,
+        "cashSavingsEur": 10354.17
+      },
+      "portfolioValueEur": 70961.2,
+      "cashEur": 15949.09,
+      "totalEur": 86910.29
+    },
+    {
+      "date": "2026-06-06",
+      "degiro": {
+        "updatedAt": "2026-06-06T18:00:00",
+        "valueEur": 49627.07,
+        "cashEur": 2643.23
+      },
+      "revolut": {
+        "updatedAt": "2026-06-06T18:05:00",
+        "cryptoValueEur": 21340.67,
+        "cashCurrentEur": 1614.22,
+        "cashSavingsEur": 10375.0
+      },
+      "portfolioValueEur": 70967.74,
+      "cashEur": 15994.23,
+      "totalEur": 86961.97
+    },
+    {
+      "date": "2026-06-07",
+      "degiro": {
+        "updatedAt": "2026-06-07T18:00:00",
+        "valueEur": 49875.72,
+        "cashEur": 2648.54
+      },
+      "revolut": {
+        "updatedAt": "2026-06-07T18:05:00",
+        "cryptoValueEur": 21124.61,
+        "cashCurrentEur": 1616.24,
+        "cashSavingsEur": 10395.83
+      },
+      "portfolioValueEur": 71000.33,
+      "cashEur": 15996.0,
+      "totalEur": 86996.33
+    },
+    {
+      "date": "2026-06-08",
+      "degiro": {
+        "updatedAt": "2026-06-08T18:00:00",
+        "valueEur": 50213.63,
+        "cashEur": 2653.85
+      },
+      "revolut": {
+        "updatedAt": "2026-06-08T18:05:00",
+        "cryptoValueEur": 20657.23,
+        "cashCurrentEur": 1618.27,
+        "cashSavingsEur": 10416.67
+      },
+      "portfolioValueEur": 70870.86,
+      "cashEur": 16033.22,
+      "totalEur": 86904.08
+    },
+    {
+      "date": "2026-06-09",
+      "degiro": {
+        "updatedAt": "2026-06-09T18:00:00",
+        "valueEur": 50826.38,
+        "cashEur": 2659.16
+      },
+      "revolut": {
+        "updatedAt": "2026-06-09T18:05:00",
+        "cryptoValueEur": 21206.74,
+        "cashCurrentEur": 1620.29,
+        "cashSavingsEur": 10437.5
+      },
+      "portfolioValueEur": 72033.12,
+      "cashEur": 15986.15,
+      "totalEur": 88019.27
+    },
+    {
+      "date": "2026-06-10",
+      "degiro": {
+        "updatedAt": "2026-06-10T18:00:00",
+        "valueEur": 50568.07,
+        "cashEur": 2664.47
+      },
+      "revolut": {
+        "updatedAt": "2026-06-10T18:05:00",
+        "cryptoValueEur": 20953.1,
+        "cashCurrentEur": 1622.31,
+        "cashSavingsEur": 10458.33
+      },
+      "portfolioValueEur": 71521.17,
+      "cashEur": 16138.18,
+      "totalEur": 87659.35
+    },
+    {
+      "date": "2026-06-11",
+      "degiro": {
+        "updatedAt": "2026-06-11T18:00:00",
+        "valueEur": 51054.26,
+        "cashEur": 2669.77
+      },
+      "revolut": {
+        "updatedAt": "2026-06-11T18:05:00",
+        "cryptoValueEur": 21381.33,
+        "cashCurrentEur": 1624.34,
+        "cashSavingsEur": 10479.17
+      },
+      "portfolioValueEur": 72435.59,
+      "cashEur": 16062.52,
+      "totalEur": 88498.11
+    },
+    {
+      "date": "2026-06-12",
+      "degiro": {
+        "updatedAt": "2026-06-12T18:00:00",
+        "valueEur": 50732.53,
+        "cashEur": 2675.08
+      },
+      "revolut": {
+        "updatedAt": "2026-06-12T18:05:00",
+        "cryptoValueEur": 21766.96,
+        "cashCurrentEur": 1626.36,
+        "cashSavingsEur": 10500.0
+      },
+      "portfolioValueEur": 72499.49,
+      "cashEur": 16130.44,
+      "totalEur": 88629.93
+    },
+    {
+      "date": "2026-06-13",
+      "degiro": {
+        "updatedAt": "2026-06-13T18:00:00",
+        "valueEur": 50919.71,
+        "cashEur": 2680.39
+      },
+      "revolut": {
+        "updatedAt": "2026-06-13T18:05:00",
+        "cryptoValueEur": 22335.81,
+        "cashCurrentEur": 1628.38,
+        "cashSavingsEur": 10520.83
+      },
+      "portfolioValueEur": 73255.52,
+      "cashEur": 16137.02,
+      "totalEur": 89392.54
+    },
+    {
+      "date": "2026-06-14",
+      "degiro": {
+        "updatedAt": "2026-06-14T18:00:00",
+        "valueEur": 50430.79,
+        "cashEur": 2685.7
+      },
+      "revolut": {
+        "updatedAt": "2026-06-14T18:05:00",
+        "cryptoValueEur": 22719.04,
+        "cashCurrentEur": 1630.4,
+        "cashSavingsEur": 10541.67
+      },
+      "portfolioValueEur": 73149.83,
+      "cashEur": 16094.8,
+      "totalEur": 89244.63
+    },
+    {
+      "date": "2026-06-15",
+      "degiro": {
+        "updatedAt": "2026-06-15T18:00:00",
+        "valueEur": 50674.26,
+        "cashEur": 2691.0
+      },
+      "revolut": {
+        "updatedAt": "2026-06-15T18:05:00",
+        "cryptoValueEur": 23254.87,
+        "cashCurrentEur": 1632.43,
+        "cashSavingsEur": 10562.5
+      },
+      "portfolioValueEur": 73929.13,
+      "cashEur": 16082.91,
+      "totalEur": 90012.04
+    },
+    {
+      "date": "2026-06-16",
+      "degiro": {
+        "updatedAt": "2026-06-16T18:00:00",
+        "valueEur": 50307.73,
+        "cashEur": 2696.31
+      },
+      "revolut": {
+        "updatedAt": "2026-06-16T18:05:00",
+        "cryptoValueEur": 22782.68,
+        "cashCurrentEur": 1634.45,
+        "cashSavingsEur": 10583.33
+      },
+      "portfolioValueEur": 73090.41,
+      "cashEur": 16164.4,
+      "totalEur": 89254.81
+    },
+    {
+      "date": "2026-06-17",
+      "degiro": {
+        "updatedAt": "2026-06-17T18:00:00",
+        "valueEur": 50117.6,
+        "cashEur": 2701.62
+      },
+      "revolut": {
+        "updatedAt": "2026-06-17T18:05:00",
+        "cryptoValueEur": 22918.43,
+        "cashCurrentEur": 1636.47,
+        "cashSavingsEur": 10604.17
+      },
+      "portfolioValueEur": 73036.03,
+      "cashEur": 16205.19,
+      "totalEur": 89241.22
+    },
+    {
+      "date": "2026-06-18",
+      "degiro": {
+        "updatedAt": "2026-06-18T18:00:00",
+        "valueEur": 49852.35,
+        "cashEur": 2706.93
+      },
+      "revolut": {
+        "updatedAt": "2026-06-18T18:05:00",
+        "cryptoValueEur": 23090.54,
+        "cashCurrentEur": 1638.49,
+        "cashSavingsEur": 10625.0
+      },
+      "portfolioValueEur": 72942.89,
+      "cashEur": 16147.14,
+      "totalEur": 89090.03
+    },
+    {
+      "date": "2026-06-19",
+      "degiro": {
+        "updatedAt": "2026-06-19T18:00:00",
+        "valueEur": 49901.16,
+        "cashEur": 2712.23
+      },
+      "revolut": {
+        "updatedAt": "2026-06-19T18:05:00",
+        "cryptoValueEur": 23594.21,
+        "cashCurrentEur": 1640.52,
+        "cashSavingsEur": 10645.83
+      },
+      "portfolioValueEur": 73495.37,
+      "cashEur": 16254.74,
+      "totalEur": 89750.11
+    },
+    {
+      "date": "2026-06-20",
+      "degiro": {
+        "updatedAt": "2026-06-20T18:00:00",
+        "valueEur": 49514.8,
+        "cashEur": 2717.54
+      },
+      "revolut": {
+        "updatedAt": "2026-06-20T18:05:00",
+        "cryptoValueEur": 23509.17,
+        "cashCurrentEur": 1642.54,
+        "cashSavingsEur": 10666.67
+      },
+      "portfolioValueEur": 73023.97,
+      "cashEur": 16178.17,
+      "totalEur": 89202.14
+    },
+    {
+      "date": "2026-06-21",
+      "degiro": {
+        "updatedAt": "2026-06-21T18:00:00",
+        "valueEur": 49034.72,
+        "cashEur": 2722.85
+      },
+      "revolut": {
+        "updatedAt": "2026-06-21T18:05:00",
+        "cryptoValueEur": 23855.5,
+        "cashCurrentEur": 1644.56,
+        "cashSavingsEur": 10687.5
+      },
+      "portfolioValueEur": 72890.22,
+      "cashEur": 16250.31,
+      "totalEur": 89140.53
+    },
+    {
+      "date": "2026-06-22",
+      "degiro": {
+        "updatedAt": "2026-06-22T18:00:00",
+        "valueEur": 48838.19,
+        "cashEur": 2728.16
+      },
+      "revolut": {
+        "updatedAt": "2026-06-22T18:05:00",
+        "cryptoValueEur": 24169.31,
+        "cashCurrentEur": 1646.59,
+        "cashSavingsEur": 10708.33
+      },
+      "portfolioValueEur": 73007.5,
+      "cashEur": 16251.15,
+      "totalEur": 89258.65
+    },
+    {
+      "date": "2026-06-23",
+      "degiro": {
+        "updatedAt": "2026-06-23T18:00:00",
+        "valueEur": 48820.6,
+        "cashEur": 2733.47
+      },
+      "revolut": {
+        "updatedAt": "2026-06-23T18:05:00",
+        "cryptoValueEur": 23554.39,
+        "cashCurrentEur": 1648.61,
+        "cashSavingsEur": 10729.17
+      },
+      "portfolioValueEur": 72374.99,
+      "cashEur": 16189.45,
+      "totalEur": 88564.44
+    },
+    {
+      "date": "2026-06-24",
+      "degiro": {
+        "updatedAt": "2026-06-24T18:00:00",
+        "valueEur": 49292.39,
+        "cashEur": 2738.77
+      },
+      "revolut": {
+        "updatedAt": "2026-06-24T18:05:00",
+        "cryptoValueEur": 24066.43,
+        "cashCurrentEur": 1650.63,
+        "cashSavingsEur": 10750.0
+      },
+      "portfolioValueEur": 73358.82,
+      "cashEur": 16279.17,
+      "totalEur": 89637.99
+    },
+    {
+      "date": "2026-06-25",
+      "degiro": {
+        "updatedAt": "2026-06-25T18:00:00",
+        "valueEur": 49716.12,
+        "cashEur": 2744.08
+      },
+      "revolut": {
+        "updatedAt": "2026-06-25T18:05:00",
+        "cryptoValueEur": 24181.49,
+        "cashCurrentEur": 1652.65,
+        "cashSavingsEur": 10770.83
+      },
+      "portfolioValueEur": 73897.61,
+      "cashEur": 16230.1,
+      "totalEur": 90127.71
+    },
+    {
+      "date": "2026-06-26",
+      "degiro": {
+        "updatedAt": "2026-06-26T18:00:00",
+        "valueEur": 49369.66,
+        "cashEur": 2749.39
+      },
+      "revolut": {
+        "updatedAt": "2026-06-26T18:05:00",
+        "cryptoValueEur": 23947.2,
+        "cashCurrentEur": 1654.68,
+        "cashSavingsEur": 10791.67
+      },
+      "portfolioValueEur": 73316.86,
+      "cashEur": 16364.68,
+      "totalEur": 89681.54
+    },
+    {
+      "date": "2026-06-27",
+      "degiro": {
+        "updatedAt": "2026-06-27T18:00:00",
+        "valueEur": 49752.24,
+        "cashEur": 2754.7
+      },
+      "revolut": {
+        "updatedAt": "2026-06-27T18:05:00",
+        "cryptoValueEur": 24413.17,
+        "cashCurrentEur": 1656.7,
+        "cashSavingsEur": 10812.5
+      },
+      "portfolioValueEur": 74165.41,
+      "cashEur": 16379.17,
+      "totalEur": 90544.58
+    },
+    {
+      "date": "2026-06-28",
+      "degiro": {
+        "updatedAt": "2026-06-28T18:00:00",
+        "valueEur": 49496.02,
+        "cashEur": 2760.0
+      },
+      "revolut": {
+        "updatedAt": "2026-06-28T18:05:00",
+        "cryptoValueEur": 24100.99,
+        "cashCurrentEur": 1658.72,
+        "cashSavingsEur": 10833.33
+      },
+      "portfolioValueEur": 73597.01,
+      "cashEur": 16266.35,
+      "totalEur": 89863.36
+    },
+    {
+      "date": "2026-06-29",
+      "degiro": {
+        "updatedAt": "2026-06-29T18:00:00",
+        "valueEur": 49862.14,
+        "cashEur": 2765.31
+      },
+      "revolut": {
+        "updatedAt": "2026-06-29T18:05:00",
+        "cryptoValueEur": 24599.75,
+        "cashCurrentEur": 1660.75,
+        "cashSavingsEur": 10854.17
+      },
+      "portfolioValueEur": 74461.89,
+      "cashEur": 16329.4,
+      "totalEur": 90791.29
+    },
+    {
+      "date": "2026-06-30",
+      "degiro": {
+        "updatedAt": "2026-06-30T18:00:00",
+        "valueEur": 50055.96,
+        "cashEur": 2770.62
+      },
+      "revolut": {
+        "updatedAt": "2026-06-30T18:05:00",
+        "cryptoValueEur": 24161.92,
+        "cashCurrentEur": 1662.77,
+        "cashSavingsEur": 10875.0
+      },
+      "portfolioValueEur": 74217.88,
+      "cashEur": 16427.6,
+      "totalEur": 90645.48
+    },
+    {
+      "date": "2026-07-01",
+      "degiro": {
+        "updatedAt": "2026-07-01T18:00:00",
+        "valueEur": 50519.32,
+        "cashEur": 2775.93
+      },
+      "revolut": {
+        "updatedAt": "2026-07-01T18:05:00",
+        "cryptoValueEur": 24779.31,
+        "cashCurrentEur": 1664.79,
+        "cashSavingsEur": 10895.83
+      },
+      "portfolioValueEur": 75298.63,
+      "cashEur": 16423.06,
+      "totalEur": 91721.69
+    },
+    {
+      "date": "2026-07-02",
+      "degiro": {
+        "updatedAt": "2026-07-02T18:00:00",
+        "valueEur": 51005.66,
+        "cashEur": 2781.23
+      },
+      "revolut": {
+        "updatedAt": "2026-07-02T18:05:00",
+        "cryptoValueEur": 24168.63,
+        "cashCurrentEur": 1666.81,
+        "cashSavingsEur": 10916.67
+      },
+      "portfolioValueEur": 75174.29,
+      "cashEur": 16425.69,
+      "totalEur": 91599.98
+    },
+    {
+      "date": "2026-07-03",
+      "degiro": {
+        "updatedAt": "2026-07-03T18:00:00",
+        "valueEur": 50880.06,
+        "cashEur": 2786.54
+      },
+      "revolut": {
+        "updatedAt": "2026-07-03T18:05:00",
+        "cryptoValueEur": 24728.3,
+        "cashCurrentEur": 1668.84,
+        "cashSavingsEur": 10937.5
+      },
+      "portfolioValueEur": 75608.36,
+      "cashEur": 16450.68,
+      "totalEur": 92059.04
+    },
+    {
+      "date": "2026-07-04",
+      "degiro": {
+        "updatedAt": "2026-07-04T18:00:00",
+        "valueEur": 51350.43,
+        "cashEur": 2791.85
+      },
+      "revolut": {
+        "updatedAt": "2026-07-04T18:05:00",
+        "cryptoValueEur": 25144.3,
+        "cashCurrentEur": 1670.86,
+        "cashSavingsEur": 10958.33
+      },
+      "portfolioValueEur": 76494.73,
+      "cashEur": 16379.56,
+      "totalEur": 92874.29
+    },
+    {
+      "date": "2026-07-05",
+      "degiro": {
+        "updatedAt": "2026-07-05T18:00:00",
+        "valueEur": 51738.47,
+        "cashEur": 2797.16
+      },
+      "revolut": {
+        "updatedAt": "2026-07-05T18:05:00",
+        "cryptoValueEur": 24635.15,
+        "cashCurrentEur": 1672.88,
+        "cashSavingsEur": 10979.17
+      },
+      "portfolioValueEur": 76373.62,
+      "cashEur": 16490.86,
+      "totalEur": 92864.48
+    },
+    {
+      "date": "2026-07-06",
+      "degiro": {
+        "updatedAt": "2026-07-06T18:00:00",
+        "valueEur": 52210.55,
+        "cashEur": 2802.47
+      },
+      "revolut": {
+        "updatedAt": "2026-07-06T18:05:00",
+        "cryptoValueEur": 24284.92,
+        "cashCurrentEur": 1674.91,
+        "cashSavingsEur": 11000.0
+      },
+      "portfolioValueEur": 76495.47,
+      "cashEur": 16496.47,
+      "totalEur": 92991.94
+    },
+    {
+      "date": "2026-07-07",
+      "degiro": {
+        "updatedAt": "2026-07-07T18:00:00",
+        "valueEur": 52229.23,
+        "cashEur": 2807.77
+      },
+      "revolut": {
+        "updatedAt": "2026-07-07T18:05:00",
+        "cryptoValueEur": 24045.71,
+        "cashCurrentEur": 1676.93,
+        "cashSavingsEur": 11020.83
+      },
+      "portfolioValueEur": 76274.94,
+      "cashEur": 16507.57,
+      "totalEur": 92782.51
+    },
+    {
+      "date": "2026-07-08",
+      "degiro": {
+        "updatedAt": "2026-07-08T18:00:00",
+        "valueEur": 51980.39,
+        "cashEur": 2813.08
+      },
+      "revolut": {
+        "updatedAt": "2026-07-08T18:05:00",
+        "cryptoValueEur": 23451.69,
+        "cashCurrentEur": 1678.95,
+        "cashSavingsEur": 11041.67
+      },
+      "portfolioValueEur": 75432.08,
+      "cashEur": 16425.77,
+      "totalEur": 91857.85
+    },
+    {
+      "date": "2026-07-09",
+      "degiro": {
+        "updatedAt": "2026-07-09T18:00:00",
+        "valueEur": 51847.92,
+        "cashEur": 2818.39
+      },
+      "revolut": {
+        "updatedAt": "2026-07-09T18:05:00",
+        "cryptoValueEur": 23912.54,
+        "cashCurrentEur": 1680.97,
+        "cashSavingsEur": 11062.5
+      },
+      "portfolioValueEur": 75760.46,
+      "cashEur": 16563.99,
+      "totalEur": 92324.45
+    },
+    {
+      "date": "2026-07-10",
+      "degiro": {
+        "updatedAt": "2026-07-10T18:00:00",
+        "valueEur": 51659.71,
+        "cashEur": 2823.7
+      },
+      "revolut": {
+        "updatedAt": "2026-07-10T18:05:00",
+        "cryptoValueEur": 24101.25,
+        "cashCurrentEur": 1683.0,
+        "cashSavingsEur": 11083.33
+      },
+      "portfolioValueEur": 75760.96,
+      "cashEur": 16487.79,
+      "totalEur": 92248.75
+    },
+    {
+      "date": "2026-07-11",
+      "degiro": {
+        "updatedAt": "2026-07-11T18:00:00",
+        "valueEur": 52270.41,
+        "cashEur": 2829.0
+      },
+      "revolut": {
+        "updatedAt": "2026-07-11T18:05:00",
+        "cryptoValueEur": 24157.61,
+        "cashCurrentEur": 1685.02,
+        "cashSavingsEur": 11104.17
+      },
+      "portfolioValueEur": 76428.02,
+      "cashEur": 16588.56,
+      "totalEur": 93016.58
+    },
+    {
+      "date": "2026-07-12",
+      "degiro": {
+        "updatedAt": "2026-07-12T18:00:00",
+        "valueEur": 51892.24,
+        "cashEur": 2834.31
+      },
+      "revolut": {
+        "updatedAt": "2026-07-12T18:05:00",
+        "cryptoValueEur": 24767.47,
+        "cashCurrentEur": 1687.04,
+        "cashSavingsEur": 11125.0
+      },
+      "portfolioValueEur": 76659.71,
+      "cashEur": 16481.42,
+      "totalEur": 93141.13
+    },
+    {
+      "date": "2026-07-13",
+      "degiro": {
+        "updatedAt": "2026-07-13T18:00:00",
+        "valueEur": 52484.44,
+        "cashEur": 2839.62
+      },
+      "revolut": {
+        "updatedAt": "2026-07-13T18:05:00",
+        "cryptoValueEur": 24471.59,
+        "cashCurrentEur": 1689.07,
+        "cashSavingsEur": 11145.83
+      },
+      "portfolioValueEur": 76956.03,
+      "cashEur": 16484.7,
+      "totalEur": 93440.73
+    },
+    {
+      "date": "2026-07-14",
+      "degiro": {
+        "updatedAt": "2026-07-14T18:00:00",
+        "valueEur": 52473.47,
+        "cashEur": 2844.93
+      },
+      "revolut": {
+        "updatedAt": "2026-07-14T18:05:00",
+        "cryptoValueEur": 24777.14,
+        "cashCurrentEur": 1691.09,
+        "cashSavingsEur": 11166.67
+      },
+      "portfolioValueEur": 77250.61,
+      "cashEur": 16532.01,
+      "totalEur": 93782.62
+    },
+    {
+      "date": "2026-07-15",
+      "degiro": {
+        "updatedAt": "2026-07-15T18:00:00",
+        "valueEur": 52660.77,
+        "cashEur": 2850.23
+      },
+      "revolut": {
+        "updatedAt": "2026-07-15T18:05:00",
+        "cryptoValueEur": 24802.66,
+        "cashCurrentEur": 1693.11,
+        "cashSavingsEur": 11187.5
+      },
+      "portfolioValueEur": 77463.43,
+      "cashEur": 16557.94,
+      "totalEur": 94021.37
+    },
+    {
+      "date": "2026-07-16",
+      "degiro": {
+        "updatedAt": "2026-07-16T18:00:00",
+        "valueEur": 52814.39,
+        "cashEur": 2855.54
+      },
+      "revolut": {
+        "updatedAt": "2026-07-16T18:05:00",
+        "cryptoValueEur": 24492.31,
+        "cashCurrentEur": 1695.13,
+        "cashSavingsEur": 11208.33
+      },
+      "portfolioValueEur": 77306.7,
+      "cashEur": 16624.18,
+      "totalEur": 93930.88
+    },
+    {
+      "date": "2026-07-17",
+      "degiro": {
+        "updatedAt": "2026-07-17T18:00:00",
+        "valueEur": 52300.15,
+        "cashEur": 2860.85
+      },
+      "revolut": {
+        "updatedAt": "2026-07-17T18:05:00",
+        "cryptoValueEur": 25052.71,
+        "cashCurrentEur": 1697.16,
+        "cashSavingsEur": 11229.17
+      },
+      "portfolioValueEur": 77352.86,
+      "cashEur": 16611.44,
+      "totalEur": 93964.3
+    },
+    {
+      "date": "2026-07-18",
+      "degiro": {
+        "updatedAt": "2026-07-18T18:00:00",
+        "valueEur": 52617.16,
+        "cashEur": 2866.16
+      },
+      "revolut": {
+        "updatedAt": "2026-07-18T18:05:00",
+        "cryptoValueEur": 25383.22,
+        "cashCurrentEur": 1699.18,
+        "cashSavingsEur": 11250.0
+      },
+      "portfolioValueEur": 78000.38,
+      "cashEur": 16647.07,
+      "totalEur": 94647.45
+    },
+    {
+      "date": "2026-07-19",
+      "degiro": {
+        "updatedAt": "2026-07-19T18:00:00",
+        "valueEur": 52524.7,
+        "cashEur": 2871.47
+      },
+      "revolut": {
+        "updatedAt": "2026-07-19T18:05:00",
+        "cryptoValueEur": 24818.18,
+        "cashCurrentEur": 1701.2,
+        "cashSavingsEur": 11270.83
+      },
+      "portfolioValueEur": 77342.88,
+      "cashEur": 16660.55,
+      "totalEur": 94003.43
+    },
+    {
+      "date": "2026-07-20",
+      "degiro": {
+        "updatedAt": "2026-07-20T18:00:00",
+        "valueEur": 52393.08,
+        "cashEur": 2876.77
+      },
+      "revolut": {
+        "updatedAt": "2026-07-20T18:05:00",
+        "cryptoValueEur": 24585.13,
+        "cashCurrentEur": 1703.23,
+        "cashSavingsEur": 11291.67
+      },
+      "portfolioValueEur": 76978.21,
+      "cashEur": 16704.42,
+      "totalEur": 93682.63
+    },
+    {
+      "date": "2026-07-21",
+      "degiro": {
+        "updatedAt": "2026-07-21T18:00:00",
+        "valueEur": 52711.02,
+        "cashEur": 2882.08
+      },
+      "revolut": {
+        "updatedAt": "2026-07-21T18:05:00",
+        "cryptoValueEur": 24336.64,
+        "cashCurrentEur": 1705.25,
+        "cashSavingsEur": 11312.5
+      },
+      "portfolioValueEur": 77047.66,
+      "cashEur": 16632.77,
+      "totalEur": 93680.43
+    },
+    {
+      "date": "2026-07-22",
+      "degiro": {
+        "updatedAt": "2026-07-22T18:00:00",
+        "valueEur": 52669.65,
+        "cashEur": 2887.39
+      },
+      "revolut": {
+        "updatedAt": "2026-07-22T18:05:00",
+        "cryptoValueEur": 24221.73,
+        "cashCurrentEur": 1707.27,
+        "cashSavingsEur": 11333.33
+      },
+      "portfolioValueEur": 76891.38,
+      "cashEur": 16645.09,
+      "totalEur": 93536.47
+    },
+    {
+      "date": "2026-07-23",
+      "degiro": {
+        "updatedAt": "2026-07-23T18:00:00",
+        "valueEur": 52302.43,
+        "cashEur": 2892.7
+      },
+      "revolut": {
+        "updatedAt": "2026-07-23T18:05:00",
+        "cryptoValueEur": 24130.43,
+        "cashCurrentEur": 1709.29,
+        "cashSavingsEur": 11354.17
+      },
+      "portfolioValueEur": 76432.86,
+      "cashEur": 16762.67,
+      "totalEur": 93195.53
+    },
+    {
+      "date": "2026-07-24",
+      "degiro": {
+        "updatedAt": "2026-07-24T18:00:00",
+        "valueEur": 52570.97,
+        "cashEur": 2898.0
+      },
+      "revolut": {
+        "updatedAt": "2026-07-24T18:05:00",
+        "cryptoValueEur": 24653.56,
+        "cashCurrentEur": 1711.32,
+        "cashSavingsEur": 11375.0
+      },
+      "portfolioValueEur": 77224.53,
+      "cashEur": 16725.22,
+      "totalEur": 93949.75
+    },
+    {
+      "date": "2026-07-25",
+      "degiro": {
+        "updatedAt": "2026-07-25T18:00:00",
+        "valueEur": 52405.38,
+        "cashEur": 2903.31
+      },
+      "revolut": {
+        "updatedAt": "2026-07-25T18:05:00",
+        "cryptoValueEur": 24726.45,
+        "cashCurrentEur": 1713.34,
+        "cashSavingsEur": 11395.83
+      },
+      "portfolioValueEur": 77131.83,
+      "cashEur": 16641.36,
+      "totalEur": 93773.19
+    },
+    {
+      "date": "2026-07-26",
+      "degiro": {
+        "updatedAt": "2026-07-26T18:00:00",
+        "valueEur": 52224.12,
+        "cashEur": 2908.62
+      },
+      "revolut": {
+        "updatedAt": "2026-07-26T18:05:00",
+        "cryptoValueEur": 24645.56,
+        "cashCurrentEur": 1715.36,
+        "cashSavingsEur": 11416.67
+      },
+      "portfolioValueEur": 76869.68,
+      "cashEur": 16748.53,
+      "totalEur": 93618.21
+    },
+    {
+      "date": "2026-07-27",
+      "degiro": {
+        "updatedAt": "2026-07-27T18:00:00",
+        "valueEur": 52466.27,
+        "cashEur": 2913.93
+      },
+      "revolut": {
+        "updatedAt": "2026-07-27T18:05:00",
+        "cryptoValueEur": 24610.57,
+        "cashCurrentEur": 1717.39,
+        "cashSavingsEur": 11437.5
+      },
+      "portfolioValueEur": 77076.84,
+      "cashEur": 16740.99,
+      "totalEur": 93817.83
+    },
+    {
+      "date": "2026-07-28",
+      "degiro": {
+        "updatedAt": "2026-07-28T18:00:00",
+        "valueEur": 52200.26,
+        "cashEur": 2919.23
+      },
+      "revolut": {
+        "updatedAt": "2026-07-28T18:05:00",
+        "cryptoValueEur": 24586.28,
+        "cashCurrentEur": 1719.41,
+        "cashSavingsEur": 11458.33
+      },
+      "portfolioValueEur": 76786.54,
+      "cashEur": 16828.87,
+      "totalEur": 93615.41
+    },
+    {
+      "date": "2026-07-29",
+      "degiro": {
+        "updatedAt": "2026-07-29T18:00:00",
+        "valueEur": 52604.67,
+        "cashEur": 2924.54
+      },
+      "revolut": {
+        "updatedAt": "2026-07-29T18:05:00",
+        "cryptoValueEur": 24168.33,
+        "cashCurrentEur": 1721.43,
+        "cashSavingsEur": 11479.17
+      },
+      "portfolioValueEur": 76773.0,
+      "cashEur": 16712.82,
+      "totalEur": 93485.82
+    },
+    {
+      "date": "2026-07-30",
+      "degiro": {
+        "updatedAt": "2026-07-30T18:00:00",
+        "valueEur": 52687.33,
+        "cashEur": 2929.85
+      },
+      "revolut": {
+        "updatedAt": "2026-07-30T18:05:00",
+        "cryptoValueEur": 24348.17,
+        "cashCurrentEur": 1723.45,
+        "cashSavingsEur": 11500.0
+      },
+      "portfolioValueEur": 77035.5,
+      "cashEur": 16767.35,
+      "totalEur": 93802.85
+    },
+    {
+      "date": "2026-07-31",
+      "degiro": {
+        "updatedAt": "2026-07-31T18:00:00",
+        "valueEur": 53121.48,
+        "cashEur": 2935.16
+      },
+      "revolut": {
+        "updatedAt": "2026-07-31T18:05:00",
+        "cryptoValueEur": 24681.2,
+        "cashCurrentEur": 1725.48,
+        "cashSavingsEur": 11520.83
+      },
+      "portfolioValueEur": 77802.68,
+      "cashEur": 16835.83,
+      "totalEur": 94638.51
+    },
+    {
+      "date": "2026-08-01",
+      "degiro": {
+        "updatedAt": "2026-08-01T18:00:00",
+        "valueEur": 52864.94,
+        "cashEur": 2940.47
+      },
+      "revolut": {
+        "updatedAt": "2026-08-01T18:05:00",
+        "cryptoValueEur": 24299.97,
+        "cashCurrentEur": 1727.5,
+        "cashSavingsEur": 11541.67
+      },
+      "portfolioValueEur": 77164.91,
+      "cashEur": 16746.66,
+      "totalEur": 93911.57
+    },
+    {
+      "date": "2026-08-02",
+      "degiro": {
+        "updatedAt": "2026-08-02T18:00:00",
+        "valueEur": 52633.14,
+        "cashEur": 2945.77
+      },
+      "revolut": {
+        "updatedAt": "2026-08-02T18:05:00",
+        "cryptoValueEur": 24278.48,
+        "cashCurrentEur": 1729.52,
+        "cashSavingsEur": 11562.5
+      },
+      "portfolioValueEur": 76911.62,
+      "cashEur": 16893.1,
+      "totalEur": 93804.72
+    },
+    {
+      "date": "2026-08-03",
+      "degiro": {
+        "updatedAt": "2026-08-03T18:00:00",
+        "valueEur": 52203.09,
+        "cashEur": 2951.08
+      },
+      "revolut": {
+        "updatedAt": "2026-08-03T18:05:00",
+        "cryptoValueEur": 24179.27,
+        "cashCurrentEur": 1731.55,
+        "cashSavingsEur": 11583.33
+      },
+      "portfolioValueEur": 76382.36,
+      "cashEur": 16872.43,
+      "totalEur": 93254.79
+    },
+    {
+      "date": "2026-08-04",
+      "degiro": {
+        "updatedAt": "2026-08-04T18:00:00",
+        "valueEur": 51916.27,
+        "cashEur": 2956.39
+      },
+      "revolut": {
+        "updatedAt": "2026-08-04T18:05:00",
+        "cryptoValueEur": 24440.09,
+        "cashCurrentEur": 1733.57,
+        "cashSavingsEur": 11604.17
+      },
+      "portfolioValueEur": 76356.36,
+      "cashEur": 16865.27,
+      "totalEur": 93221.63
+    },
+    {
+      "date": "2026-08-05",
+      "degiro": {
+        "updatedAt": "2026-08-05T18:00:00",
+        "valueEur": 51687.66,
+        "cashEur": 2961.7
+      },
+      "revolut": {
+        "updatedAt": "2026-08-05T18:05:00",
+        "cryptoValueEur": 24651.77,
+        "cashCurrentEur": 1735.59,
+        "cashSavingsEur": 11625.0
+      },
+      "portfolioValueEur": 76339.43,
+      "cashEur": 16801.61,
+      "totalEur": 93141.04
+    },
+    {
+      "date": "2026-08-06",
+      "degiro": {
+        "updatedAt": "2026-08-06T18:00:00",
+        "valueEur": 52036.83,
+        "cashEur": 2967.0
+      },
+      "revolut": {
+        "updatedAt": "2026-08-06T18:05:00",
+        "cryptoValueEur": 25013.53,
+        "cashCurrentEur": 1737.61,
+        "cashSavingsEur": 11645.83
+      },
+      "portfolioValueEur": 77050.36,
+      "cashEur": 16832.25,
+      "totalEur": 93882.61
+    },
+    {
+      "date": "2026-08-07",
+      "degiro": {
+        "updatedAt": "2026-08-07T18:00:00",
+        "valueEur": 52015.17,
+        "cashEur": 2972.31
+      },
+      "revolut": {
+        "updatedAt": "2026-08-07T18:05:00",
+        "cryptoValueEur": 24596.49,
+        "cashCurrentEur": 1739.64,
+        "cashSavingsEur": 11666.67
+      },
+      "portfolioValueEur": 76611.66,
+      "cashEur": 16982.87,
+      "totalEur": 93594.53
+    },
+    {
+      "date": "2026-08-08",
+      "degiro": {
+        "updatedAt": "2026-08-08T18:00:00",
+        "valueEur": 52099.78,
+        "cashEur": 2977.62
+      },
+      "revolut": {
+        "updatedAt": "2026-08-08T18:05:00",
+        "cryptoValueEur": 24023.34,
+        "cashCurrentEur": 1741.66,
+        "cashSavingsEur": 11687.5
+      },
+      "portfolioValueEur": 76123.12,
+      "cashEur": 16884.03,
+      "totalEur": 93007.15
+    },
+    {
+      "date": "2026-08-09",
+      "degiro": {
+        "updatedAt": "2026-08-09T18:00:00",
+        "valueEur": 52563.4,
+        "cashEur": 2982.93
+      },
+      "revolut": {
+        "updatedAt": "2026-08-09T18:05:00",
+        "cryptoValueEur": 23978.42,
+        "cashCurrentEur": 1743.68,
+        "cashSavingsEur": 11708.33
+      },
+      "portfolioValueEur": 76541.82,
+      "cashEur": 16986.82,
+      "totalEur": 93528.64
+    },
+    {
+      "date": "2026-08-10",
+      "degiro": {
+        "updatedAt": "2026-08-10T18:00:00",
+        "valueEur": 52822.01,
+        "cashEur": 2988.24
+      },
+      "revolut": {
+        "updatedAt": "2026-08-10T18:05:00",
+        "cryptoValueEur": 24605.9,
+        "cashCurrentEur": 1745.71,
+        "cashSavingsEur": 11729.17
+      },
+      "portfolioValueEur": 77427.91,
+      "cashEur": 16968.38,
+      "totalEur": 94396.29
+    },
+    {
+      "date": "2026-08-11",
+      "degiro": {
+        "updatedAt": "2026-08-11T18:00:00",
+        "valueEur": 53410.3,
+        "cashEur": 2993.54
+      },
+      "revolut": {
+        "updatedAt": "2026-08-11T18:05:00",
+        "cryptoValueEur": 25124.57,
+        "cashCurrentEur": 1747.73,
+        "cashSavingsEur": 11750.0
+      },
+      "portfolioValueEur": 78534.87,
+      "cashEur": 16985.62,
+      "totalEur": 95520.49
+    },
+    {
+      "date": "2026-08-12",
+      "degiro": {
+        "updatedAt": "2026-08-12T18:00:00",
+        "valueEur": 53733.84,
+        "cashEur": 2998.85
+      },
+      "revolut": {
+        "updatedAt": "2026-08-12T18:05:00",
+        "cryptoValueEur": 25141.64,
+        "cashCurrentEur": 1749.75,
+        "cashSavingsEur": 11770.83
+      },
+      "portfolioValueEur": 78875.48,
+      "cashEur": 17034.95,
+      "totalEur": 95910.43
+    },
+    {
+      "date": "2026-08-13",
+      "degiro": {
+        "updatedAt": "2026-08-13T18:00:00",
+        "valueEur": 53856.63,
+        "cashEur": 3004.16
+      },
+      "revolut": {
+        "updatedAt": "2026-08-13T18:05:00",
+        "cryptoValueEur": 25679.27,
+        "cashCurrentEur": 1751.77,
+        "cashSavingsEur": 11791.67
+      },
+      "portfolioValueEur": 79535.9,
+      "cashEur": 17035.55,
+      "totalEur": 96571.45
+    },
+    {
+      "date": "2026-08-14",
+      "degiro": {
+        "updatedAt": "2026-08-14T18:00:00",
+        "valueEur": 53892.93,
+        "cashEur": 3009.47
+      },
+      "revolut": {
+        "updatedAt": "2026-08-14T18:05:00",
+        "cryptoValueEur": 25363.99,
+        "cashCurrentEur": 1753.8,
+        "cashSavingsEur": 11812.5
+      },
+      "portfolioValueEur": 79256.92,
+      "cashEur": 16970.67,
+      "totalEur": 96227.59
+    },
+    {
+      "date": "2026-08-15",
+      "degiro": {
+        "updatedAt": "2026-08-15T18:00:00",
+        "valueEur": 54122.6,
+        "cashEur": 3014.77
+      },
+      "revolut": {
+        "updatedAt": "2026-08-15T18:05:00",
+        "cryptoValueEur": 25730.55,
+        "cashCurrentEur": 1755.82,
+        "cashSavingsEur": 11833.33
+      },
+      "portfolioValueEur": 79853.15,
+      "cashEur": 17028.97,
+      "totalEur": 96882.12
+    },
+    {
+      "date": "2026-08-16",
+      "degiro": {
+        "updatedAt": "2026-08-16T18:00:00",
+        "valueEur": 54340.24,
+        "cashEur": 3020.08
+      },
+      "revolut": {
+        "updatedAt": "2026-08-16T18:05:00",
+        "cryptoValueEur": 25435.56,
+        "cashCurrentEur": 1757.84,
+        "cashSavingsEur": 11854.17
+      },
+      "portfolioValueEur": 79775.8,
+      "cashEur": 16972.51,
+      "totalEur": 96748.31
+    },
+    {
+      "date": "2026-08-17",
+      "degiro": {
+        "updatedAt": "2026-08-17T18:00:00",
+        "valueEur": 54150.87,
+        "cashEur": 3025.39
+      },
+      "revolut": {
+        "updatedAt": "2026-08-17T18:05:00",
+        "cryptoValueEur": 25140.08,
+        "cashCurrentEur": 1759.87,
+        "cashSavingsEur": 11875.0
+      },
+      "portfolioValueEur": 79290.95,
+      "cashEur": 17025.72,
+      "totalEur": 96316.67
+    },
+    {
+      "date": "2026-08-18",
+      "degiro": {
+        "updatedAt": "2026-08-18T18:00:00",
+        "valueEur": 54265.41,
+        "cashEur": 3030.7
+      },
+      "revolut": {
+        "updatedAt": "2026-08-18T18:05:00",
+        "cryptoValueEur": 24671.19,
+        "cashCurrentEur": 1761.89,
+        "cashSavingsEur": 11895.83
+      },
+      "portfolioValueEur": 78936.6,
+      "cashEur": 17026.08,
+      "totalEur": 95962.68
+    },
+    {
+      "date": "2026-08-19",
+      "degiro": {
+        "updatedAt": "2026-08-19T18:00:00",
+        "valueEur": 54563.89,
+        "cashEur": 3036.0
+      },
+      "revolut": {
+        "updatedAt": "2026-08-19T18:05:00",
+        "cryptoValueEur": 24950.42,
+        "cashCurrentEur": 1763.91,
+        "cashSavingsEur": 11916.67
+      },
+      "portfolioValueEur": 79514.31,
+      "cashEur": 17013.86,
+      "totalEur": 96528.17
+    },
+    {
+      "date": "2026-08-20",
+      "degiro": {
+        "updatedAt": "2026-08-20T18:00:00",
+        "valueEur": 54520.11,
+        "cashEur": 3041.31
+      },
+      "revolut": {
+        "updatedAt": "2026-08-20T18:05:00",
+        "cryptoValueEur": 25017.18,
+        "cashCurrentEur": 1765.93,
+        "cashSavingsEur": 11937.5
+      },
+      "portfolioValueEur": 79537.29,
+      "cashEur": 17084.56,
+      "totalEur": 96621.85
+    },
+    {
+      "date": "2026-08-21",
+      "degiro": {
+        "updatedAt": "2026-08-21T18:00:00",
+        "valueEur": 54235.46,
+        "cashEur": 3046.62
+      },
+      "revolut": {
+        "updatedAt": "2026-08-21T18:05:00",
+        "cryptoValueEur": 24922.48,
+        "cashCurrentEur": 1767.96,
+        "cashSavingsEur": 11958.33
+      },
+      "portfolioValueEur": 79157.94,
+      "cashEur": 17177.24,
+      "totalEur": 96335.18
+    },
+    {
+      "date": "2026-08-22",
+      "degiro": {
+        "updatedAt": "2026-08-22T18:00:00",
+        "valueEur": 54402.61,
+        "cashEur": 3051.93
+      },
+      "revolut": {
+        "updatedAt": "2026-08-22T18:05:00",
+        "cryptoValueEur": 25190.22,
+        "cashCurrentEur": 1769.98,
+        "cashSavingsEur": 11979.17
+      },
+      "portfolioValueEur": 79592.83,
+      "cashEur": 17184.04,
+      "totalEur": 96776.87
+    },
+    {
+      "date": "2026-08-23",
+      "degiro": {
+        "updatedAt": "2026-08-23T18:00:00",
+        "valueEur": 54787.64,
+        "cashEur": 3057.24
+      },
+      "revolut": {
+        "updatedAt": "2026-08-23T18:05:00",
+        "cryptoValueEur": 25042.01,
+        "cashCurrentEur": 1772.0,
+        "cashSavingsEur": 12000.0
+      },
+      "portfolioValueEur": 79829.65,
+      "cashEur": 17062.5,
+      "totalEur": 96892.15
+    },
+    {
+      "date": "2026-08-24",
+      "degiro": {
+        "updatedAt": "2026-08-24T18:00:00",
+        "valueEur": 54676.34,
+        "cashEur": 3062.54
+      },
+      "revolut": {
+        "updatedAt": "2026-08-24T18:05:00",
+        "cryptoValueEur": 25387.61,
+        "cashCurrentEur": 1774.02,
+        "cashSavingsEur": 12020.83
+      },
+      "portfolioValueEur": 80063.95,
+      "cashEur": 17212.49,
+      "totalEur": 97276.44
+    },
+    {
+      "date": "2026-08-25",
+      "degiro": {
+        "updatedAt": "2026-08-25T18:00:00",
+        "valueEur": 55289.35,
+        "cashEur": 3067.85
+      },
+      "revolut": {
+        "updatedAt": "2026-08-25T18:05:00",
+        "cryptoValueEur": 25290.0,
+        "cashCurrentEur": 1776.05,
+        "cashSavingsEur": 12041.67
+      },
+      "portfolioValueEur": 80579.35,
+      "cashEur": 17210.03,
+      "totalEur": 97789.38
+    },
+    {
+      "date": "2026-08-26",
+      "degiro": {
+        "updatedAt": "2026-08-26T18:00:00",
+        "valueEur": 55413.58,
+        "cashEur": 3073.16
+      },
+      "revolut": {
+        "updatedAt": "2026-08-26T18:05:00",
+        "cryptoValueEur": 25438.58,
+        "cashCurrentEur": 1778.07,
+        "cashSavingsEur": 12062.5
+      },
+      "portfolioValueEur": 80852.16,
+      "cashEur": 17140.28,
+      "totalEur": 97992.44
+    },
+    {
+      "date": "2026-08-27",
+      "degiro": {
+        "updatedAt": "2026-08-27T18:00:00",
+        "valueEur": 55139.6,
+        "cashEur": 3078.47
+      },
+      "revolut": {
+        "updatedAt": "2026-08-27T18:05:00",
+        "cryptoValueEur": 25363.34,
+        "cashCurrentEur": 1780.09,
+        "cashSavingsEur": 12083.33
+      },
+      "portfolioValueEur": 80502.94,
+      "cashEur": 17124.15,
+      "totalEur": 97627.09
+    },
+    {
+      "date": "2026-08-28",
+      "degiro": {
+        "updatedAt": "2026-08-28T18:00:00",
+        "valueEur": 55008.62,
+        "cashEur": 3083.77
+      },
+      "revolut": {
+        "updatedAt": "2026-08-28T18:05:00",
+        "cryptoValueEur": 25613.91,
+        "cashCurrentEur": 1782.12,
+        "cashSavingsEur": 12104.17
+      },
+      "portfolioValueEur": 80622.53,
+      "cashEur": 17198.64,
+      "totalEur": 97821.17
+    },
+    {
+      "date": "2026-08-29",
+      "degiro": {
+        "updatedAt": "2026-08-29T18:00:00",
+        "valueEur": 54670.81,
+        "cashEur": 3089.08
+      },
+      "revolut": {
+        "updatedAt": "2026-08-29T18:05:00",
+        "cryptoValueEur": 25580.79,
+        "cashCurrentEur": 1784.14,
+        "cashSavingsEur": 12125.0
+      },
+      "portfolioValueEur": 80251.6,
+      "cashEur": 17168.89,
+      "totalEur": 97420.49
+    },
+    {
+      "date": "2026-08-30",
+      "degiro": {
+        "updatedAt": "2026-08-30T18:00:00",
+        "valueEur": 54885.25,
+        "cashEur": 3094.39
+      },
+      "revolut": {
+        "updatedAt": "2026-08-30T18:05:00",
+        "cryptoValueEur": 24953.31,
+        "cashCurrentEur": 1786.16,
+        "cashSavingsEur": 12145.83
+      },
+      "portfolioValueEur": 79838.56,
+      "cashEur": 17225.96,
+      "totalEur": 97064.52
+    },
+    {
+      "date": "2026-08-31",
+      "degiro": {
+        "updatedAt": "2026-08-31T18:00:00",
+        "valueEur": 55030.63,
+        "cashEur": 3099.7
+      },
+      "revolut": {
+        "updatedAt": "2026-08-31T18:05:00",
+        "cryptoValueEur": 24341.4,
+        "cashCurrentEur": 1788.18,
+        "cashSavingsEur": 12166.67
+      },
+      "portfolioValueEur": 79372.03,
+      "cashEur": 17280.22,
+      "totalEur": 96652.25
+    },
+    {
+      "date": "2026-09-01",
+      "degiro": {
+        "updatedAt": "2026-09-01T18:00:00",
+        "valueEur": 54657.14,
+        "cashEur": 3105.0
+      },
+      "revolut": {
+        "updatedAt": "2026-09-01T18:05:00",
+        "cryptoValueEur": 24302.62,
+        "cashCurrentEur": 1790.21,
+        "cashSavingsEur": 12187.5
+      },
+      "portfolioValueEur": 78959.76,
+      "cashEur": 17199.99,
+      "totalEur": 96159.75
+    },
+    {
+      "date": "2026-09-02",
+      "degiro": {
+        "updatedAt": "2026-09-02T18:00:00",
+        "valueEur": 54579.0,
+        "cashEur": 3110.31
+      },
+      "revolut": {
+        "updatedAt": "2026-09-02T18:05:00",
+        "cryptoValueEur": 23943.3,
+        "cashCurrentEur": 1792.23,
+        "cashSavingsEur": 12208.33
+      },
+      "portfolioValueEur": 78522.3,
+      "cashEur": 17258.69,
+      "totalEur": 95780.99
+    },
+    {
+      "date": "2026-09-03",
+      "degiro": {
+        "updatedAt": "2026-09-03T18:00:00",
+        "valueEur": 54960.04,
+        "cashEur": 3115.62
+      },
+      "revolut": {
+        "updatedAt": "2026-09-03T18:05:00",
+        "cryptoValueEur": 23800.85,
+        "cashCurrentEur": 1794.25,
+        "cashSavingsEur": 12229.17
+      },
+      "portfolioValueEur": 78760.89,
+      "cashEur": 17341.15,
+      "totalEur": 96102.04
+    },
+    {
+      "date": "2026-09-04",
+      "degiro": {
+        "updatedAt": "2026-09-04T18:00:00",
+        "valueEur": 55429.24,
+        "cashEur": 3120.93
+      },
+      "revolut": {
+        "updatedAt": "2026-09-04T18:05:00",
+        "cryptoValueEur": 23499.95,
+        "cashCurrentEur": 1796.28,
+        "cashSavingsEur": 12250.0
+      },
+      "portfolioValueEur": 78929.19,
+      "cashEur": 17248.51,
+      "totalEur": 96177.7
+    },
+    {
+      "date": "2026-09-05",
+      "degiro": {
+        "updatedAt": "2026-09-05T18:00:00",
+        "valueEur": 54911.14,
+        "cashEur": 3126.24
+      },
+      "revolut": {
+        "updatedAt": "2026-09-05T18:05:00",
+        "cryptoValueEur": 23558.87,
+        "cashCurrentEur": 1798.3,
+        "cashSavingsEur": 12270.83
+      },
+      "portfolioValueEur": 78470.01,
+      "cashEur": 17409.75,
+      "totalEur": 95879.76
+    },
+    {
+      "date": "2026-09-06",
+      "degiro": {
+        "updatedAt": "2026-09-06T18:00:00",
+        "valueEur": 54797.42,
+        "cashEur": 3131.54
+      },
+      "revolut": {
+        "updatedAt": "2026-09-06T18:05:00",
+        "cryptoValueEur": 23755.56,
+        "cashCurrentEur": 1800.32,
+        "cashSavingsEur": 12291.67
+      },
+      "portfolioValueEur": 78552.98,
+      "cashEur": 17389.28,
+      "totalEur": 95942.26
+    },
+    {
+      "date": "2026-09-07",
+      "degiro": {
+        "updatedAt": "2026-09-07T18:00:00",
+        "valueEur": 55047.94,
+        "cashEur": 3136.85
+      },
+      "revolut": {
+        "updatedAt": "2026-09-07T18:05:00",
+        "cryptoValueEur": 24084.36,
+        "cashCurrentEur": 1802.34,
+        "cashSavingsEur": 12312.5
+      },
+      "portfolioValueEur": 79132.3,
+      "cashEur": 17430.69,
+      "totalEur": 96562.99
+    },
+    {
+      "date": "2026-09-08",
+      "degiro": {
+        "updatedAt": "2026-09-08T18:00:00",
+        "valueEur": 54751.46,
+        "cashEur": 3142.16
+      },
+      "revolut": {
+        "updatedAt": "2026-09-08T18:05:00",
+        "cryptoValueEur": 23485.22,
+        "cashCurrentEur": 1804.37,
+        "cashSavingsEur": 12333.33
+      },
+      "portfolioValueEur": 78236.68,
+      "cashEur": 17317.73,
+      "totalEur": 95554.41
+    },
+    {
+      "date": "2026-09-09",
+      "degiro": {
+        "updatedAt": "2026-09-09T18:00:00",
+        "valueEur": 54368.43,
+        "cashEur": 3147.47
+      },
+      "revolut": {
+        "updatedAt": "2026-09-09T18:05:00",
+        "cryptoValueEur": 23705.23,
+        "cashCurrentEur": 1806.39,
+        "cashSavingsEur": 12354.17
+      },
+      "portfolioValueEur": 78073.66,
+      "cashEur": 17398.01,
+      "totalEur": 95471.67
+    },
+    {
+      "date": "2026-09-10",
+      "degiro": {
+        "updatedAt": "2026-09-10T18:00:00",
+        "valueEur": 54097.88,
+        "cashEur": 3152.77
+      },
+      "revolut": {
+        "updatedAt": "2026-09-10T18:05:00",
+        "cryptoValueEur": 23964.83,
+        "cashCurrentEur": 1808.41,
+        "cashSavingsEur": 12375.0
+      },
+      "portfolioValueEur": 78062.71,
+      "cashEur": 17444.94,
+      "totalEur": 95507.65
+    },
+    {
+      "date": "2026-09-11",
+      "degiro": {
+        "updatedAt": "2026-09-11T18:00:00",
+        "valueEur": 53768.93,
+        "cashEur": 3158.08
+      },
+      "revolut": {
+        "updatedAt": "2026-09-11T18:05:00",
+        "cryptoValueEur": 24110.68,
+        "cashCurrentEur": 1810.44,
+        "cashSavingsEur": 12395.83
+      },
+      "portfolioValueEur": 77879.61,
+      "cashEur": 17456.39,
+      "totalEur": 95336.0
+    },
+    {
+      "date": "2026-09-12",
+      "degiro": {
+        "updatedAt": "2026-09-12T18:00:00",
+        "valueEur": 53378.95,
+        "cashEur": 3163.39
+      },
+      "revolut": {
+        "updatedAt": "2026-09-12T18:05:00",
+        "cryptoValueEur": 24527.16,
+        "cashCurrentEur": 1812.46,
+        "cashSavingsEur": 12416.67
+      },
+      "portfolioValueEur": 77906.11,
+      "cashEur": 17505.53,
+      "totalEur": 95411.64
+    },
+    {
+      "date": "2026-09-13",
+      "degiro": {
+        "updatedAt": "2026-09-13T18:00:00",
+        "valueEur": 52984.24,
+        "cashEur": 3168.7
+      },
+      "revolut": {
+        "updatedAt": "2026-09-13T18:05:00",
+        "cryptoValueEur": 23923.86,
+        "cashCurrentEur": 1814.48,
+        "cashSavingsEur": 12437.5
+      },
+      "portfolioValueEur": 76908.1,
+      "cashEur": 17415.67,
+      "totalEur": 94323.77
+    },
+    {
+      "date": "2026-09-14",
+      "degiro": {
+        "updatedAt": "2026-09-14T18:00:00",
+        "valueEur": 53256.31,
+        "cashEur": 3174.0
+      },
+      "revolut": {
+        "updatedAt": "2026-09-14T18:05:00",
+        "cryptoValueEur": 24512.39,
+        "cashCurrentEur": 1816.5,
+        "cashSavingsEur": 12458.33
+      },
+      "portfolioValueEur": 77768.7,
+      "cashEur": 17443.69,
+      "totalEur": 95212.39
+    },
+    {
+      "date": "2026-09-15",
+      "degiro": {
+        "updatedAt": "2026-09-15T18:00:00",
+        "valueEur": 53573.94,
+        "cashEur": 3179.31
+      },
+      "revolut": {
+        "updatedAt": "2026-09-15T18:05:00",
+        "cryptoValueEur": 23974.53,
+        "cashCurrentEur": 1818.53,
+        "cashSavingsEur": 12479.17
+      },
+      "portfolioValueEur": 77548.47,
+      "cashEur": 17505.17,
+      "totalEur": 95053.64
+    }
+  ]
+}

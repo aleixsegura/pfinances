@@ -1,0 +1,533 @@
+{
+  "updatedAt": "2026-09-15T09:30:00",
+  "source": "degiro+bybit",
+  "baseCurrency": "EUR",
+  "fromDate": "2025-01-01",
+  "toDate": "2026-09-15",
+  "years": [
+    {
+      "year": "2026",
+      "filedIn": "2027",
+      "open": true,
+      "capitalGains": {
+        "totalGainEur": 362.4,
+        "totalLossEur": 0.0,
+        "netEur": 362.4,
+        "deferredLossEur": 0.0,
+        "reintegratedLossEur": 0.0,
+        "estimatedTaxEur": 68.86,
+        "byAsset": [
+          {
+            "key": "aapl-2026",
+            "symbol": "AAPL",
+            "name": "Apple Inc",
+            "assetType": "stock",
+            "platform": "degiro",
+            "isin": null,
+            "currency": "USD",
+            "quantity": 10,
+            "remainingQuantity": 15,
+            "fullExit": false,
+            "acquisitionDate": "2023-01-12",
+            "acquisitionDates": [
+              "2023-01-12"
+            ],
+            "acquisitionValueEur": 1653.0,
+            "disposalDate": "2026-02-10",
+            "disposalDates": [
+              "2026-02-10"
+            ],
+            "disposalValueEur": 2015.4,
+            "buyFeesEur": 3.0,
+            "sellFeesEur": 3.5,
+            "resultEur": 362.4,
+            "computableResultEur": 362.4,
+            "reintegratedLossEur": 0.0,
+            "deferredLossEur": 0.0,
+            "deferred": false,
+            "review": false,
+            "disposals": [
+              {
+                "date": "2026-02-10",
+                "quantity": 10,
+                "platform": "degiro",
+                "ref": null,
+                "note": null,
+                "acquisitionValueEur": 1653.0,
+                "buyFeesEur": 3.0,
+                "disposalValueEur": 2015.4,
+                "sellFeesEur": 3.5,
+                "resultEur": 362.4,
+                "deferred": false,
+                "deferredBecause": [],
+                "deferredQuantity": 0,
+                "deferredLossEur": 0.0,
+                "computableResultEur": 362.4,
+                "reintegratedLossEur": 0.0,
+                "reintegratedFrom": [],
+                "parcels": [
+                  {
+                    "quantity": 10,
+                    "acquisitionDate": "2026-02-10",
+                    "acquisitionValueEur": 1653.0,
+                    "buyFeesEur": 3.0,
+                    "disposalValueEur": 2015.4,
+                    "sellFeesEur": 3.5,
+                    "resultEur": 362.4,
+                    "source": "degiro",
+                    "note": null,
+                    "fxRate": null,
+                    "fxSource": null
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "investmentIncome": {
+        "dividends": {
+          "grossEur": 306.3,
+          "withholdingEur": 45.95,
+          "netEur": 260.35,
+          "payments": [
+            {
+              "date": "2026-02-14",
+              "symbol": "AAPL",
+              "name": "Apple Inc",
+              "currency": "USD",
+              "grossEur": 101.4,
+              "withholdingEur": 15.21,
+              "netEur": 86.19
+            },
+            {
+              "date": "2026-05-16",
+              "symbol": "O",
+              "name": "Realty Income Corp",
+              "currency": "USD",
+              "grossEur": 204.9,
+              "withholdingEur": 30.74,
+              "netEur": 174.16
+            }
+          ]
+        },
+        "staking": {
+          "grossEur": 0.0,
+          "approximate": false,
+          "rewards": []
+        }
+      },
+      "checks": [],
+      "warnings": []
+    },
+    {
+      "year": "2025",
+      "filedIn": "2026",
+      "open": false,
+      "capitalGains": {
+        "totalGainEur": 1710.8,
+        "totalLossEur": 430.0,
+        "netEur": 850.8,
+        "deferredLossEur": 430.0,
+        "reintegratedLossEur": 0.0,
+        "estimatedTaxEur": 161.65,
+        "byAsset": [
+          {
+            "key": "aapl-2025",
+            "symbol": "AAPL",
+            "name": "Apple Inc",
+            "assetType": "stock",
+            "platform": "degiro",
+            "isin": null,
+            "currency": "USD",
+            "quantity": 15,
+            "remainingQuantity": 0,
+            "fullExit": true,
+            "acquisitionDate": "2023-01-12",
+            "acquisitionDates": [
+              "2023-01-12"
+            ],
+            "acquisitionValueEur": 2100.0,
+            "disposalDate": "2025-06-18",
+            "disposalDates": [
+              "2025-06-18"
+            ],
+            "disposalValueEur": 3050.8,
+            "buyFeesEur": 4.5,
+            "sellFeesEur": 5.2,
+            "resultEur": 950.8,
+            "computableResultEur": 950.8,
+            "reintegratedLossEur": 0.0,
+            "deferredLossEur": 0.0,
+            "deferred": false,
+            "review": false,
+            "disposals": [
+              {
+                "date": "2025-06-18",
+                "quantity": 15,
+                "platform": "degiro",
+                "ref": null,
+                "note": null,
+                "acquisitionValueEur": 2100.0,
+                "buyFeesEur": 4.5,
+                "disposalValueEur": 3050.8,
+                "sellFeesEur": 5.2,
+                "resultEur": 950.8,
+                "deferred": false,
+                "deferredBecause": [],
+                "deferredQuantity": 0,
+                "deferredLossEur": 0.0,
+                "computableResultEur": 950.8,
+                "reintegratedLossEur": 0.0,
+                "reintegratedFrom": [],
+                "parcels": [
+                  {
+                    "quantity": 15,
+                    "acquisitionDate": "2025-06-18",
+                    "acquisitionValueEur": 2100.0,
+                    "buyFeesEur": 4.5,
+                    "disposalValueEur": 3050.8,
+                    "sellFeesEur": 5.2,
+                    "resultEur": 950.8,
+                    "source": "degiro",
+                    "note": null,
+                    "fxRate": null,
+                    "fxSource": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "nvda-2025",
+            "symbol": "NVDA",
+            "name": "NVIDIA Corp",
+            "assetType": "stock",
+            "platform": "degiro",
+            "isin": null,
+            "currency": "USD",
+            "quantity": 20,
+            "remainingQuantity": 40,
+            "fullExit": false,
+            "acquisitionDate": "2025-01-20",
+            "acquisitionDates": [
+              "2025-01-20"
+            ],
+            "acquisitionValueEur": 1850.0,
+            "disposalDate": "2025-03-04",
+            "disposalDates": [
+              "2025-03-04"
+            ],
+            "disposalValueEur": 1420.0,
+            "buyFeesEur": 3.0,
+            "sellFeesEur": 3.0,
+            "resultEur": -430.0,
+            "computableResultEur": -860.0,
+            "reintegratedLossEur": 0.0,
+            "deferredLossEur": 430.0,
+            "deferred": true,
+            "review": false,
+            "disposals": [
+              {
+                "date": "2025-03-04",
+                "quantity": 20,
+                "platform": "degiro",
+                "ref": null,
+                "note": null,
+                "acquisitionValueEur": 1850.0,
+                "buyFeesEur": 3.0,
+                "disposalValueEur": 1420.0,
+                "sellFeesEur": 3.0,
+                "resultEur": -430.0,
+                "deferred": true,
+                "deferredBecause": [
+                  "regla-dos-meses"
+                ],
+                "deferredQuantity": 20,
+                "deferredLossEur": 430.0,
+                "computableResultEur": -860.0,
+                "reintegratedLossEur": 0.0,
+                "reintegratedFrom": [],
+                "parcels": [
+                  {
+                    "quantity": 20,
+                    "acquisitionDate": "2025-03-04",
+                    "acquisitionValueEur": 1850.0,
+                    "buyFeesEur": 3.0,
+                    "disposalValueEur": 1420.0,
+                    "sellFeesEur": 3.0,
+                    "resultEur": -430.0,
+                    "source": "degiro",
+                    "note": null,
+                    "fxRate": null,
+                    "fxSource": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "btc-2025",
+            "symbol": "BTC",
+            "name": "Bitcoin",
+            "assetType": "crypto",
+            "platform": "bybit",
+            "isin": null,
+            "currency": "USD",
+            "quantity": 0.05,
+            "remainingQuantity": 0.135,
+            "fullExit": false,
+            "acquisitionDate": "2024-08-10",
+            "acquisitionDates": [
+              "2024-08-10"
+            ],
+            "acquisitionValueEur": 1620.0,
+            "disposalDate": "2025-11-22",
+            "disposalDates": [
+              "2025-11-22"
+            ],
+            "disposalValueEur": 2380.0,
+            "buyFeesEur": 0.0,
+            "sellFeesEur": 0.0,
+            "resultEur": 760.0,
+            "computableResultEur": 760.0,
+            "reintegratedLossEur": 0.0,
+            "deferredLossEur": 0.0,
+            "deferred": false,
+            "review": false,
+            "disposals": [
+              {
+                "date": "2025-11-22",
+                "quantity": 0.05,
+                "platform": "bybit",
+                "ref": null,
+                "note": null,
+                "acquisitionValueEur": 1620.0,
+                "buyFeesEur": 0.0,
+                "disposalValueEur": 2380.0,
+                "sellFeesEur": 0.0,
+                "resultEur": 760.0,
+                "deferred": false,
+                "deferredBecause": [],
+                "deferredQuantity": 0,
+                "deferredLossEur": 0.0,
+                "computableResultEur": 760.0,
+                "reintegratedLossEur": 0.0,
+                "reintegratedFrom": [],
+                "parcels": [
+                  {
+                    "quantity": 0.05,
+                    "acquisitionDate": "2024-08-10",
+                    "acquisitionValueEur": 1620.0,
+                    "buyFeesEur": 0.0,
+                    "disposalValueEur": 2380.0,
+                    "sellFeesEur": 0.0,
+                    "resultEur": 760.0,
+                    "source": "bybit",
+                    "note": null,
+                    "fxRate": null,
+                    "fxSource": null
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "investmentIncome": {
+        "dividends": {
+          "grossEur": 340.2,
+          "withholdingEur": 52.97,
+          "netEur": 287.23,
+          "payments": [
+            {
+              "date": "2025-02-14",
+              "symbol": "AAPL",
+              "name": "Apple Inc",
+              "currency": "USD",
+              "grossEur": 95.2,
+              "withholdingEur": 14.28,
+              "netEur": 80.92
+            },
+            {
+              "date": "2025-05-16",
+              "symbol": "O",
+              "name": "Realty Income Corp",
+              "currency": "USD",
+              "grossEur": 196.4,
+              "withholdingEur": 29.46,
+              "netEur": 166.94
+            },
+            {
+              "date": "2025-08-15",
+              "symbol": "VWCE.DE",
+              "name": "Vanguard FTSE All-World ETF",
+              "currency": "EUR",
+              "grossEur": 48.6,
+              "withholdingEur": 9.23,
+              "netEur": 39.37
+            }
+          ]
+        },
+        "staking": {
+          "grossEur": 42.8,
+          "approximate": true,
+          "rewards": [
+            {
+              "date": "2025-09-30",
+              "platform": "bybit",
+              "symbol": "ETH",
+              "quantity": 0.012,
+              "valueEur": 42.8,
+              "approximate": true,
+              "priceSource": "coingecko"
+            }
+          ]
+        }
+      },
+      "checks": [
+        {
+          "id": "modelo-721",
+          "level": "info",
+          "params": {
+            "threshold": 50000
+          },
+          "message": "Sin obligación de modelo 721 este año."
+        }
+      ],
+      "warnings": [
+        {
+          "id": "regla-dos-meses",
+          "level": "warn",
+          "params": {
+            "symbol": "NVDA",
+            "amountEur": 430.0
+          },
+          "message": "Pérdida de 430,00 € en NVDA diferida por la regla de los dos meses."
+        }
+      ]
+    }
+  ],
+  "trades": [
+    {
+      "id": 1,
+      "platform": "degiro",
+      "date": "2023-01-12",
+      "side": "buy",
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "assetType": "stock",
+      "currency": "USD",
+      "quantity": 15,
+      "price": 140.0,
+      "totalEur": 2100.0,
+      "totalPlusFeesEur": 2104.5,
+      "feesEur": 4.5
+    },
+    {
+      "id": 2,
+      "platform": "degiro",
+      "date": "2025-06-18",
+      "side": "sell",
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "assetType": "stock",
+      "currency": "USD",
+      "quantity": 15,
+      "price": 203.39,
+      "totalEur": 3050.8,
+      "totalPlusFeesEur": 3045.6,
+      "feesEur": 5.2
+    },
+    {
+      "id": 3,
+      "platform": "degiro",
+      "date": "2025-01-20",
+      "side": "buy",
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "assetType": "stock",
+      "currency": "USD",
+      "quantity": 20,
+      "price": 92.5,
+      "totalEur": 1850.0,
+      "totalPlusFeesEur": 1853.0,
+      "feesEur": 3.0
+    },
+    {
+      "id": 4,
+      "platform": "degiro",
+      "date": "2025-03-04",
+      "side": "sell",
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "assetType": "stock",
+      "currency": "USD",
+      "quantity": 20,
+      "price": 71.0,
+      "totalEur": 1420.0,
+      "totalPlusFeesEur": 1417.0,
+      "feesEur": 3.0
+    },
+    {
+      "id": 5,
+      "platform": "bybit",
+      "date": "2024-08-10",
+      "side": "buy",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "assetType": "crypto",
+      "currency": "USD",
+      "quantity": 0.05,
+      "price": 32400.0,
+      "totalEur": 1620.0,
+      "totalPlusFeesEur": 1620.0,
+      "feesEur": 0.0
+    },
+    {
+      "id": 6,
+      "platform": "bybit",
+      "date": "2025-11-22",
+      "side": "sell",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "assetType": "crypto",
+      "currency": "USD",
+      "quantity": 0.05,
+      "price": 47600.0,
+      "totalEur": 2380.0,
+      "totalPlusFeesEur": 2380.0,
+      "feesEur": 0.0
+    },
+    {
+      "id": 7,
+      "platform": "degiro",
+      "date": "2023-01-12",
+      "side": "buy",
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "assetType": "stock",
+      "currency": "USD",
+      "quantity": 10,
+      "price": 165.3,
+      "totalEur": 1653.0,
+      "totalPlusFeesEur": 1656.0,
+      "feesEur": 3.0
+    },
+    {
+      "id": 8,
+      "platform": "degiro",
+      "date": "2026-02-10",
+      "side": "sell",
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "assetType": "stock",
+      "currency": "USD",
+      "quantity": 10,
+      "price": 201.54,
+      "totalEur": 2015.4,
+      "totalPlusFeesEur": 2011.9,
+      "feesEur": 3.5
+    }
+  ]
+}

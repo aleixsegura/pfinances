@@ -1,0 +1,18 @@
+{
+  "sectors": {
+    "AAPL": "Technology",
+    "MSFT": "Technology",
+    "NVDA": "Technology",
+    "GOOGL": "Technology",
+    "META": "Technology",
+    "AMZN": "Technology",
+    "ASML.AS": "Technology",
+    "ASML": "Technology",
+    "TSLA": "Technology",
+    "JNJ": "Healthcare",
+    "KO": "Consumer Staples",
+    "PG": "Consumer Staples",
+    "O": "Financials"
+  },
+  "degiroAliases": {}
+}

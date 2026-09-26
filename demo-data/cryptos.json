@@ -1,0 +1,52 @@
+{
+  "name": "Cryptos",
+  "slug": "cryptos",
+  "id": "wl-cryptos",
+  "is_active": true,
+  "created": "2025-11-02T10:00:00",
+  "modified": "2026-09-12T09:30:00",
+  "modified_by_device": "MacBook Pro",
+  "symbol_count": 4,
+  "stocks": [
+    {
+      "symbol": "BTC-USD",
+      "name": "Bitcoin",
+      "compactName": "Bitcoin",
+      "exchange": "Crypto",
+      "symbolType": "CRYPTO_CURRENCY",
+      "currency": "USD",
+      "lastPrice": 96500.0,
+      "marketCap": 1900000000000
+    },
+    {
+      "symbol": "ETH-USD",
+      "name": "Ethereum",
+      "compactName": "Ethereum",
+      "exchange": "Crypto",
+      "symbolType": "CRYPTO_CURRENCY",
+      "currency": "USD",
+      "lastPrice": 3350.0,
+      "marketCap": 402000000000
+    },
+    {
+      "symbol": "SOL-USD",
+      "name": "Solana",
+      "compactName": "Solana",
+      "exchange": "Crypto",
+      "symbolType": "CRYPTO_CURRENCY",
+      "currency": "USD",
+      "lastPrice": 218.4,
+      "marketCap": 98000000000
+    },
+    {
+      "symbol": "ADA-USD",
+      "name": "Cardano",
+      "compactName": "Cardano",
+      "exchange": "Crypto",
+      "symbolType": "CRYPTO_CURRENCY",
+      "currency": "USD",
+      "lastPrice": 0.72,
+      "marketCap": 16000000000
+    }
+  ]
+}

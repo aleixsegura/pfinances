@@ -1,0 +1,92 @@
+{
+  "name": "Tech Growth",
+  "slug": "tech-growth",
+  "id": "wl-tech-growth",
+  "is_active": true,
+  "created": "2025-11-02T10:00:00",
+  "modified": "2026-09-12T09:30:00",
+  "modified_by_device": "MacBook Pro",
+  "symbol_count": 8,
+  "stocks": [
+    {
+      "symbol": "AAPL",
+      "name": "Apple Inc",
+      "compactName": "Apple",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 231.5,
+      "marketCap": 3510000000000
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corp",
+      "compactName": "Microsoft",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 421.8,
+      "marketCap": 3130000000000
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corp",
+      "compactName": "Nvidia",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 118.9,
+      "marketCap": 2910000000000
+    },
+    {
+      "symbol": "ASML.AS",
+      "name": "ASML Holding NV",
+      "compactName": "ASML",
+      "exchange": "Euronext Amsterdam",
+      "symbolType": "STOCK",
+      "currency": "EUR",
+      "lastPrice": 712.4,
+      "marketCap": 312000000000
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc",
+      "compactName": "Alphabet",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 178.2,
+      "marketCap": 2140000000000
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com Inc",
+      "compactName": "Amazon",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 205.6,
+      "marketCap": 1980000000000
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms Inc",
+      "compactName": "Meta",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 561.3,
+      "marketCap": 1420000000000
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla Inc",
+      "compactName": "Tesla",
+      "exchange": "NASDAQ",
+      "symbolType": "STOCK",
+      "currency": "USD",
+      "lastPrice": 268.4,
+      "marketCap": 980000000000
+    }
+  ]
+}
