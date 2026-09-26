@@ -2,24 +2,24 @@
   "updatedAt": "2026-09-15T09:30:00",
   "source": "revolut",
   "baseCurrency": "EUR",
-  "totalCashEur": 14320.55,
-  "totalTodayPlEur": -373.48,
+  "totalCashEur": 14577.95,
+  "totalTodayPlEur": -146.71,
   "cash": [
     {
       "id": "cur-eur",
       "name": "Current EUR",
       "kind": "current",
       "currency": "EUR",
-      "amount": 1820.55,
-      "amountEur": 1820.55
+      "amount": 6577.95,
+      "amountEur": 6577.95
     },
     {
       "id": "sav-eur",
       "name": "Savings EUR",
       "kind": "savings",
       "currency": "EUR",
-      "amount": 12500.0,
-      "amountEur": 12500.0,
+      "amount": 8000.0,
+      "amountEur": 8000.0,
       "interestRate": 3.2,
       "aer": 3.25,
       "earnedInTotalEur": 214.87
@@ -29,32 +29,32 @@
     {
       "symbol": "BTC",
       "name": "Bitcoin",
-      "quantity": 0.185,
+      "quantity": 0.07,
       "currency": "BTC",
       "lastPrice": 96500.0,
       "priceCurrency": "USD",
       "lastPriceEur": 89351.85,
-      "valueEur": 16530.09,
+      "valueEur": 6254.63,
       "avgPrice": 42000.0,
       "avgPriceCurrency": "USD",
-      "costEur": 7194.44,
-      "plEur": 9335.65,
-      "todayPlEur": -305.97
+      "costEur": 2722.22,
+      "plEur": 3532.41,
+      "todayPlEur": -115.77
     },
     {
       "symbol": "ETH",
       "name": "Ethereum",
-      "quantity": 2.4,
+      "quantity": 1.1,
       "currency": "ETH",
       "lastPrice": 3350.0,
       "priceCurrency": "USD",
       "lastPriceEur": 3101.85,
-      "valueEur": 7444.44,
+      "valueEur": 3412.04,
       "avgPrice": 2100.0,
       "avgPriceCurrency": "USD",
-      "costEur": 4666.67,
-      "plEur": 2777.77,
-      "todayPlEur": -67.51
+      "costEur": 2138.89,
+      "plEur": 1273.15,
+      "todayPlEur": -30.94
     }
   ]
 }

@@ -39,22 +39,22 @@ def w(name, obj):
 # ---------------------------------------------------------------------------
 POSITIONS_RAW = [
     dict(id="1001", symbol="AAPL", name="Apple Inc", productType="STOCK",
-         quantity=40, avgPrice=165.30, currency="USD", lastPrice=231.50,
+         quantity=20, avgPrice=165.30, currency="USD", lastPrice=231.50,
          exchange="NASDAQ", fx=1.11),
     dict(id="1002", symbol="MSFT", name="Microsoft Corp", productType="STOCK",
-         quantity=25, avgPrice=310.00, currency="USD", lastPrice=421.80,
+         quantity=12, avgPrice=310.00, currency="USD", lastPrice=421.80,
          exchange="NASDAQ", fx=1.10),
     dict(id="1003", symbol="NVDA", name="NVIDIA Corp", productType="STOCK",
-         quantity=60, avgPrice=45.20, currency="USD", lastPrice=118.90,
+         quantity=35, avgPrice=45.20, currency="USD", lastPrice=118.90,
          exchange="NASDAQ", fx=1.09),
     dict(id="1004", symbol="ASML", name="ASML Holding NV", productType="STOCK",
-         quantity=15, avgPrice=620.00, currency="EUR", lastPrice=712.40,
+         quantity=8, avgPrice=620.00, currency="EUR", lastPrice=712.40,
          exchange="Euronext Amsterdam", fx=None),
     dict(id="1005", symbol="VWCE.DE", name="Vanguard FTSE All-World ETF", productType="ETF",
-         quantity=120, avgPrice=98.40, currency="EUR", lastPrice=118.75,
+         quantity=70, avgPrice=98.40, currency="EUR", lastPrice=118.75,
          exchange="Xetra", fx=None),
     dict(id="1006", symbol="O", name="Realty Income Corp", productType="STOCK",
-         quantity=80, avgPrice=54.10, currency="USD", lastPrice=58.30,
+         quantity=45, avgPrice=54.10, currency="USD", lastPrice=58.30,
          exchange="NYSE", fx=1.12),
 ]
 
@@ -82,7 +82,7 @@ for i, p in enumerate(POSITIONS_RAW):
     total_pl_eur += pl_eur
     total_today_pl_eur += today_pl_eur
 
-degiro_cash_eur = 3184.62
+degiro_cash_eur = 1650.40
 positions_file = dict(
     updatedAt=ts(TODAY),
     source="degiro",
@@ -94,7 +94,7 @@ positions_file = dict(
         cashEur=degiro_cash_eur,
         cashBreakdown=[dict(currency="EUR", amount=degiro_cash_eur, amountEur=degiro_cash_eur)],
         netLiquidationEur=round(total_value_eur + degiro_cash_eur, 2),
-        netDepositsEur=38500.0,
+        netDepositsEur=22000.0,
         accountPlEur=round(total_pl_eur + 612.30, 2),
     ),
     positions=positions,
@@ -104,8 +104,8 @@ w("positions.json", positions_file)
 # ---------------------------------------------------------------------------
 # Revolut (cash + crypto)
 # ---------------------------------------------------------------------------
-btc_qty, btc_price, btc_avg = 0.185, 96500.0, 42000.0
-eth_qty, eth_price, eth_avg = 2.4, 3350.0, 2100.0
+btc_qty, btc_price, btc_avg = 0.07, 96500.0, 42000.0
+eth_qty, eth_price, eth_avg = 1.1, 3350.0, 2100.0
 
 def crypto_position(symbol, name, qty, price, avg_price):
     value_eur = usd_to_eur(qty * price)
@@ -122,11 +122,21 @@ revolut_positions = [
     crypto_position("BTC", "Bitcoin", btc_qty, btc_price, btc_avg),
     crypto_position("ETH", "Ethereum", eth_qty, eth_price, eth_avg),
 ]
+# Net worth the demo dashboard shows (positions + crypto + all cash). The
+# Revolut current account takes whatever is left, so the total is exact.
+TARGET_NET_WORTH_EUR = 54839.64
+SAVINGS_EUR = 8000.0
+CURRENT_EUR = round(
+    TARGET_NET_WORTH_EUR - round(total_value_eur, 2) - degiro_cash_eur - SAVINGS_EUR
+    - sum(p["valueEur"] for p in revolut_positions),
+    2,
+)
+assert CURRENT_EUR > 0, "positions alone exceed TARGET_NET_WORTH_EUR"
 revolut_cash = [
     dict(id="cur-eur", name="Current EUR", kind="current", currency="EUR",
-         amount=1820.55, amountEur=1820.55),
+         amount=CURRENT_EUR, amountEur=CURRENT_EUR),
     dict(id="sav-eur", name="Savings EUR", kind="savings", currency="EUR",
-         amount=12500.0, amountEur=12500.0, interestRate=3.2, aer=3.25,
+         amount=SAVINGS_EUR, amountEur=SAVINGS_EUR, interestRate=3.2, aer=3.25,
          earnedInTotalEur=214.87),
 ]
 total_cash_eur = round(sum(c["amountEur"] for c in revolut_cash), 2)
@@ -167,8 +177,8 @@ for i in range(DAYS):
         degiro=dict(updatedAt=ts(d, 18, 0), valueEur=degiro_val,
                      cashEur=round(degiro_cash_eur * (0.7 + 0.3 * i / DAYS), 2)),
         revolut=dict(updatedAt=ts(d, 18, 5), cryptoValueEur=round(crypto_value, 2),
-                      cashCurrentEur=round(1820.55 * (0.8 + 0.2 * i / DAYS), 2),
-                      cashSavingsEur=round(12500.0 * (0.7 + 0.3 * i / DAYS), 2)),
+                      cashCurrentEur=round(CURRENT_EUR * (0.8 + 0.2 * i / DAYS), 2),
+                      cashSavingsEur=round(SAVINGS_EUR * (0.7 + 0.3 * i / DAYS), 2)),
         portfolioValueEur=portfolio_value_eur,
         cashEur=cash,
         totalEur=round(portfolio_value_eur + cash, 2),
@@ -568,7 +578,7 @@ w("revolut_transactions.json", dict(
     accounts=dict(
         current=dict(id="rev-current", currency="EUR"),
         savings=dict(id="rev-savings", name="Savings EUR", since="2024-03-01",
-                     balanceEur=12500.0, interestRate=3.2, aer=3.25, earnedInTotalEur=214.87),
+                     balanceEur=SAVINGS_EUR, interestRate=3.2, aer=3.25, earnedInTotalEur=214.87),
     ),
     transactions=sorted(transactions, key=lambda t: -t["ts"]),
     months=months,
@@ -597,7 +607,7 @@ w("symbols.json", dict(
 # ---------------------------------------------------------------------------
 # Priced so the demo goal sits part-way, not already reached.
 w("goals.json", dict(
-    flatPriceEur=380000, monthlySavingsEur=1500, investedPct=0.8,
+    flatPriceEur=240000, monthlySavingsEur=1500, investedPct=0.8,
     fixedCostsEur=3000, emergencyFundEur=8000, extraPayments=[],
 ))
 

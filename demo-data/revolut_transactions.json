@@ -14,7 +14,7 @@
       "id": "rev-savings",
       "name": "Savings EUR",
       "since": "2024-03-01",
-      "balanceEur": 12500.0,
+      "balanceEur": 8000.0,
       "interestRate": 3.2,
       "aer": 3.25,
       "earnedInTotalEur": 214.87
