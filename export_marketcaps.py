@@ -27,7 +27,7 @@ A symbol that no source answers for keeps the value from the previous run
 (entries carry their own `at`), so a rate-limited Yahoo never empties the file.
 
 Normally nobody runs this by hand: the web app's dev server starts it (see the
-`financesos:market-caps` plugin in web/vite.config.ts) with --max-age-hours, so
+`plout:market-caps` plugin in web/vite.config.ts) with --max-age-hours, so
 it exits before its first request unless the export is stale or a symbol is new.
 
 Usage:

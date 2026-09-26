@@ -11,7 +11,7 @@ const days = (v: unknown) => (Array.isArray(v) ? v.join(", ") : String(v));
 
 const es: Translations = {
   app: {
-    brand: "FinancesOS",
+    brand: "Plout",
     demoNotice: "Demo con datos sintéticos: no se muestra ninguna cuenta ni posición real.",
   },
   nav: {

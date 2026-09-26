@@ -12,7 +12,7 @@ const days = (v: unknown) => (Array.isArray(v) ? v.join(", ") : String(v));
 
 const en = {
   app: {
-    brand: "FinancesOS",
+    brand: "Plout",
     demoNotice: "Demo with synthetic data: no real account or holding is shown.",
   },
   nav: {

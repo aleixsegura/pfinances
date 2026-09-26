@@ -1,9 +1,9 @@
 ---
 name: verify
-description: Build, run, and drive the FinancesOS web UI to verify changes at the browser surface.
+description: Build, run, and drive the Plout web UI to verify changes at the browser surface.
 ---
 
-# Verifying FinancesOS web/ changes
+# Verifying Plout web/ changes
 
 Vite + React + Tailwind v4 SPA. All commands from `web/` (Node 20, see `.nvmrc`).
 

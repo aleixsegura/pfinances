@@ -1,4 +1,4 @@
-# FinancesOS
+# Plout
 
 A local personal-finance dashboard. A set of Python exporters pull your data straight from the
 sources — Apple Stocks watchlists, DEGIRO (positions, dividends, fees), Revolut (cash + crypto)
@@ -326,7 +326,7 @@ than appending a duplicate; the portfolio-value chart on Holdings reads the resu
 
 ## Web app
 
-`web/` is the FinancesOS dashboard — Vite + React + TypeScript + Tailwind, in a single muted
+`web/` is the Plout dashboard — Vite + React + TypeScript + Tailwind, in a single muted
 palette (dyed-cloth canvas, near-white cards, sea-green gains, madder losses — there is no dark theme),
 in English / Català / Español. It reads `watchlists/` live (Vite's `publicDir` points at it, so no
 data is copied or committed), which means every page degrades gracefully to an empty state until

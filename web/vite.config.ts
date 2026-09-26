@@ -24,7 +24,7 @@ const MARKET_CAPS_MAX_AGE_HOURS = 12;
  */
 function marketCaps(): Plugin {
   return {
-    name: "financesos:market-caps",
+    name: "plout:market-caps",
     apply: "serve",
     configureServer(server: ViteDevServer) {
       const venvPython = path.join(PROJECT_ROOT, ".venv/bin/python");
