@@ -4,12 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { loadSymbolConfig } from "./symbolConfig";
-import { loadGoalDefaults } from "./useGoalSettings";
 import "./index.css";
 
-// Sectors, ticker aliases and goal defaults are read synchronously while
-// rendering, so their (tiny, local) JSON files are loaded first.
-void Promise.all([loadSymbolConfig(), loadGoalDefaults()]).then(() =>
+// Sectors and ticker aliases are read synchronously while rendering, so
+// their (tiny, local) JSON file is loaded first.
+void loadSymbolConfig().then(() =>
   createRoot(document.getElementById("root")!).render(
     <StrictMode>
       <BrowserRouter>

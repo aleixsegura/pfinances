@@ -6,9 +6,6 @@ import HoldingsPage from "./HoldingsPage";
 import TransactionsPage from "./TransactionsPage";
 import DividendsPage from "./DividendsPage";
 import TaxesPage from "./TaxesPage";
-import WatchlistsPage from "./WatchlistsPage";
-import WatchlistPage from "./WatchlistPage";
-import GoalsPage from "./GoalsPage";
 
 export default function App() {
   return (
@@ -20,11 +17,6 @@ export default function App() {
           <Route path="transactions" element={<TransactionsPage />} />
           <Route path="dividends" element={<DividendsPage />} />
           <Route path="taxes" element={<TaxesPage />} />
-          <Route path="watchlists">
-            <Route index element={<WatchlistsPage />} />
-            <Route path=":slug" element={<WatchlistPage />} />
-          </Route>
-          <Route path="goals" element={<GoalsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

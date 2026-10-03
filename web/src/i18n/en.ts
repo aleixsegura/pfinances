@@ -21,8 +21,6 @@ const en = {
     transactions: "Transactions",
     dividends: "Dividends",
     taxes: "Tax return",
-    watchlists: "Watchlists",
-    goals: "Goals",
   },
   sidebar: {
     collapse: "Collapse sidebar",
@@ -39,12 +37,7 @@ const en = {
     updated: (date: string, time: string) => `Updated ${date} · ${time}`,
   },
   errors: {
-    watchlistsIndex: (message: string) =>
-      `Could not load watchlists/index.json — run export_watchlists.py first. (${message})`,
     watchlist: (slug: string, message: string) => `Could not load ${slug}.json (${message})`,
-  },
-  watchlists: {
-    title: "Watchlists",
   },
   stocksTable: {
     name: "Name",
@@ -269,64 +262,6 @@ const en = {
     net: "Net",
     allPayments: "All payments",
     date: "Date",
-  },
-  indicatorChart: {
-    notEnoughHistory: "Not enough history yet.",
-  },
-  goalProgress: {
-    savedTowardGoal: "Saved toward goal",
-    ofGoal: (current: string, goal: string) => `${current} of ${goal}`,
-    toGo: (remaining: string) => `${remaining} to go`,
-    goalReached: "Goal reached",
-  },
-  goals: {
-    title: "Goals",
-    description:
-      "Flat purchase — 20% down payment plus purchase costs for a new build in Catalonia, projected from your current capital and savings rate.",
-    ariaLabel: "Goal key metrics",
-    goal: "Goal",
-    goalAria: (total: string) => `Goal ${total}: down payment plus purchase costs`,
-    downPlusCosts: "20% down + costs",
-    downPayment: (pct: number) => `Down payment ${pct}%`,
-    iva: (pct: number) => `IVA ${pct}%`,
-    ajd: (pct: number) => `AJD ${pct}%`,
-    notaryFixed: "Notary & fixed",
-    availableToday: "Available today",
-    availableTodayAria: (available: string, reserve: string) =>
-      `Available today ${available}, excluding ${reserve} reserve`,
-    exclReserve: (reserve: string) => `excl. ${reserve} reserve`,
-    invested: "Invested",
-    cash: "Cash",
-    reserve: "Reserve",
-    atRate: (rate: string) => `At ${rate}/yr`,
-    moreThan15y: "> 15 y",
-    projection: "Projection",
-    assumptions: "Assumptions",
-    reset: "Reset",
-    flatPrice: "Flat price",
-    monthlySavings: "Monthly savings",
-    shareInvested: "Share of savings invested",
-    centralReturn: "Central return",
-    fixedPurchaseCosts: "Fixed purchase costs",
-    emergencyReserve: "Emergency reserve",
-    keepSavingAfter: "Keep saving after Dec 2027",
-    projectionCaption: (
-      available: string,
-      monthly: string,
-      contribution: string,
-      pct: number,
-    ) =>
-      `From ${available} today: ${monthly}/mo (${contribution}, ${pct}% invested)`,
-    ongoing: "ongoing",
-    untilDec2027: "until Dec 2027",
-    plusExtra: (amount: string) => ` plus ${amount} in pagas extra by Dec 2027`,
-    orientativeNote: ". Orientative — ignores inflation, taxes on gains and flat-price drift.",
-    portfolioUnavailable:
-      "Portfolio data unavailable — run export_degiro.py; the projection starts from 0 €.",
-    now: "now",
-    inMonths: (m: number) => `in ${m} mo`,
-    inYears: (y: number) => `in ${y} y`,
-    inYearsMonths: (y: number, m: number) => `in ${y} y ${m} mo`,
   },
   dashboard: {
     title: "Dashboard",

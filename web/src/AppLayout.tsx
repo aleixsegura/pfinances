@@ -1,6 +1,5 @@
 import { useState, type ReactNode } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { useAppData } from "./data";
 import { useTranslation } from "./i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 
@@ -55,12 +54,6 @@ const icons: Record<string, ReactNode> = {
       <path d="M21 12a9 9 0 1 1-9-9v9h9Z" />
     </svg>
   ),
-  goals: (
-    <svg {...iconProps}>
-      <circle cx="12" cy="12" r="8" />
-      <circle cx="12" cy="12" r="3.5" />
-    </svg>
-  ),
   dividends: (
     <svg {...iconProps}>
       <circle cx="12" cy="12" r="8.5" />
@@ -70,12 +63,6 @@ const icons: Record<string, ReactNode> = {
   taxes: (
     <svg {...iconProps}>
       <path d="M4.5 20.5 19 6M7.5 4.5a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2ZM16.5 14.3a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Z" />
-    </svg>
-  ),
-  watchlists: (
-    <svg {...iconProps}>
-      <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
-      <circle cx="12" cy="12" r="2.8" />
     </svg>
   ),
 };
@@ -90,7 +77,6 @@ const panelIcon = (
 const STORAGE_KEY = "sidebarCollapsed";
 
 export default function AppLayout() {
-  const { indexError } = useAppData();
   const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(() => {
     try {
@@ -112,7 +98,7 @@ export default function AppLayout() {
 
   // Dashboard/Holdings/Transactions are the daily views (where do I stand,
   // what do I hold, what did I spend) and get full nav weight. Everything
-  // else — goals and the retrospective reports — sits below a divider with
+  // else — the retrospective reports — sits below a divider with
   // lighter visual weight; same routes, not nested.
   const primaryItems = [
     { to: "/", end: true, label: t.nav.dashboard, icon: icons.dashboard },
@@ -120,10 +106,8 @@ export default function AppLayout() {
     { to: "/transactions", label: t.nav.transactions, icon: icons.transactions },
   ];
   const secondaryItems = [
-    { to: "/goals", label: t.nav.goals, icon: icons.goals },
     { to: "/dividends", label: t.nav.dividends, icon: icons.dividends },
     { to: "/taxes", label: t.nav.taxes, icon: icons.taxes },
-    { to: "/watchlists", label: t.nav.watchlists, icon: icons.watchlists },
   ];
 
   return (
@@ -205,7 +189,6 @@ export default function AppLayout() {
             {t.app.demoNotice}
           </p>
         )}
-        {indexError && <p className="mb-4 text-loss">{indexError}</p>}
 
         <Outlet />
 

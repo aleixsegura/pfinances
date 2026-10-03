@@ -16,12 +16,9 @@ import type {
   RevolutTransactionsFile,
   TaxesFile,
   WatchlistDetail,
-  WatchlistMeta,
 } from "./types";
 
 interface AppData {
-  watchlists: WatchlistMeta[];
-  indexError: string | null;
   positions: PositionsFile | null;
   revolut: RevolutFile | null;
   history: HistoryFile | null;
@@ -34,9 +31,6 @@ interface AppData {
 const AppDataContext = createContext<AppData | null>(null);
 
 export function AppDataProvider({ children }: { children: ReactNode }) {
-  const { t } = useTranslation();
-  const [watchlists, setWatchlists] = useState<WatchlistMeta[]>([]);
-  const [indexError, setIndexError] = useState<string | null>(null);
   const [positions, setPositions] = useState<PositionsFile | null>(null);
   const [revolut, setRevolut] = useState<RevolutFile | null>(null);
   const [history, setHistory] = useState<HistoryFile | null>(null);
@@ -127,22 +121,9 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
       .catch(() => setTransactions(null));
   }, []);
 
-  useEffect(() => {
-    fetch("/index.json")
-      .then((res) => {
-        const isJson = res.headers.get("content-type")?.includes("application/json");
-        if (!res.ok || !isJson) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((data: { watchlists: WatchlistMeta[] }) => setWatchlists(data.watchlists))
-      .catch((err) => setIndexError(t.errors.watchlistsIndex(err.message)));
-  }, [t]);
-
   return (
     <AppDataContext.Provider
       value={{
-        watchlists,
-        indexError,
         positions,
         revolut,
         history,

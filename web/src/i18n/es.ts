@@ -20,8 +20,6 @@ const es: Translations = {
     transactions: "Movimientos",
     dividends: "Dividendos",
     taxes: "Renta",
-    watchlists: "Listas de seguimiento",
-    goals: "Objetivos",
   },
   sidebar: {
     collapse: "Contraer barra lateral",
@@ -38,12 +36,7 @@ const es: Translations = {
     updated: (date: string, time: string) => `Actualizado ${date} · ${time}`,
   },
   errors: {
-    watchlistsIndex: (message: string) =>
-      `No se pudo cargar watchlists/index.json — ejecuta primero export_watchlists.py. (${message})`,
     watchlist: (slug: string, message: string) => `No se pudo cargar ${slug}.json (${message})`,
-  },
-  watchlists: {
-    title: "Listas de seguimiento",
   },
   stocksTable: {
     name: "Nombre",
@@ -268,60 +261,6 @@ const es: Translations = {
     net: "Neto",
     allPayments: "Todos los pagos",
     date: "Fecha",
-  },
-  indicatorChart: {
-    notEnoughHistory: "Aún no hay suficiente historial.",
-  },
-  goalProgress: {
-    savedTowardGoal: "Ahorrado hacia el objetivo",
-    ofGoal: (current: string, goal: string) => `${current} de ${goal}`,
-    toGo: (remaining: string) => `${remaining} restantes`,
-    goalReached: "Objetivo alcanzado",
-  },
-  goals: {
-    title: "Objetivos",
-    description:
-      "Compra de piso — 20% de entrada más los gastos de compra para un piso de obra nueva en Cataluña, proyectado a partir de tu capital actual y tu tasa de ahorro.",
-    ariaLabel: "Métricas clave del objetivo",
-    goal: "Objetivo",
-    goalAria: (total: string) => `Objetivo ${total}: entrada más gastos de compra`,
-    downPlusCosts: "20% de entrada + gastos",
-    downPayment: (pct: number) => `Entrada ${pct}%`,
-    iva: (pct: number) => `IVA ${pct}%`,
-    ajd: (pct: number) => `AJD ${pct}%`,
-    notaryFixed: "Notaría y fijos",
-    availableToday: "Disponible hoy",
-    availableTodayAria: (available: string, reserve: string) =>
-      `Disponible hoy ${available}, sin contar la reserva de ${reserve}`,
-    exclReserve: (reserve: string) => `sin reserva de ${reserve}`,
-    invested: "Invertido",
-    cash: "Efectivo",
-    reserve: "Reserva",
-    atRate: (rate: string) => `Al ${rate}/año`,
-    moreThan15y: "> 15 a",
-    projection: "Proyección",
-    assumptions: "Supuestos",
-    reset: "Restablecer",
-    flatPrice: "Precio del piso",
-    monthlySavings: "Ahorro mensual",
-    shareInvested: "Parte del ahorro invertida",
-    centralReturn: "Rentabilidad central",
-    fixedPurchaseCosts: "Gastos fijos de compra",
-    emergencyReserve: "Fondo de emergencia",
-    keepSavingAfter: "Sigue ahorrando después de dic. 2027",
-    projectionCaption: (available: string, monthly: string, contribution: string, pct: number) =>
-      `Desde los ${available} de hoy: ${monthly}/mes (${contribution}, ${pct}% invertido)`,
-    ongoing: "continuo",
-    untilDec2027: "hasta dic. 2027",
-    plusExtra: (amount: string) => ` más ${amount} en pagas extra antes de dic. 2027`,
-    orientativeNote:
-      ". Orientativo — ignora la inflación, los impuestos sobre ganancias y la variación del precio del piso.",
-    portfolioUnavailable:
-      "Datos de cartera no disponibles — ejecuta export_degiro.py; la proyección empieza desde 0 €.",
-    now: "ahora",
-    inMonths: (m: number) => `dentro de ${m} m`,
-    inYears: (y: number) => `dentro de ${y} a`,
-    inYearsMonths: (y: number, m: number) => `dentro de ${y} a ${m} m`,
   },
   dashboard: {
     title: "Panel",

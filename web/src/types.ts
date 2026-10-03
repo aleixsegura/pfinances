@@ -9,13 +9,6 @@ export interface WatchlistMeta {
   symbol_count: number;
 }
 
-export interface WatchlistIndex {
-  exported_at: string;
-  source: string;
-  watchlist_count: number;
-  watchlists: WatchlistMeta[];
-}
-
 export interface Stock {
   symbol: string;
   name: string;

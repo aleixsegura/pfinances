@@ -35,7 +35,7 @@ Real data never reaches the repository:
 
 | Exporter | Writes | Feeds |
 |---|---|---|
-| `export_watchlists.py` | `watchlists/*.json/.csv/.md`, `index.json` | Watchlists |
+| `export_watchlists.py` | `watchlists/*.json/.csv/.md`, `index.json` | Holdings (names, exchange and type from your `Holdings` watchlist) |
 | `export_degiro.py` | `positions.json` | Holdings |
 | `export_revolut.py` | `revolut.json`, `revolut_trades.json`, `revolut_transactions.json` | Dashboard, Holdings, Transactions |
 | `export_dividends.py` | `dividends.json` | Dividends |
@@ -339,8 +339,6 @@ you've run the exporter behind it.
 | **Transactions** (`/transactions`) | Month navigator, spend/income KPIs, 12-month stacked bar chart, category donut and breakdown, searchable statement grouped by day, Boosted interest (daily chart, monthly effective rate) | `export_revolut.py` |
 | **Dividends** | Net/gross totals, per-year table, upcoming and all payments | `export_dividends.py` |
 | **Tax return** | Per-fiscal-year capital gains (FIFO), investment income, filing pack | `export_taxes.py` |
-| **Watchlists** | Every Apple Stocks watchlist, one table per list | `export_watchlists.py` |
-| **Goals** | Flat-purchase projection from current capital and savings rate | `export_degiro.py` |
 
 ```bash
 cd web

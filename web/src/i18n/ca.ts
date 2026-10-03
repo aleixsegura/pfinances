@@ -20,8 +20,6 @@ const ca: Translations = {
     transactions: "Moviments",
     dividends: "Dividends",
     taxes: "Renda",
-    watchlists: "Llistes de seguiment",
-    goals: "Objectius",
   },
   sidebar: {
     collapse: "Replega la barra lateral",
@@ -38,13 +36,8 @@ const ca: Translations = {
     updated: (date: string, time: string) => `Actualitzat ${date} · ${time}`,
   },
   errors: {
-    watchlistsIndex: (message: string) =>
-      `No s'ha pogut carregar watchlists/index.json — executa primer export_watchlists.py. (${message})`,
     watchlist: (slug: string, message: string) =>
       `No s'ha pogut carregar ${slug}.json (${message})`,
-  },
-  watchlists: {
-    title: "Llistes de seguiment",
   },
   stocksTable: {
     name: "Nom",
@@ -269,60 +262,6 @@ const ca: Translations = {
     net: "Net",
     allPayments: "Tots els pagaments",
     date: "Data",
-  },
-  indicatorChart: {
-    notEnoughHistory: "Encara no hi ha prou historial.",
-  },
-  goalProgress: {
-    savedTowardGoal: "Estalviat cap a l'objectiu",
-    ofGoal: (current: string, goal: string) => `${current} de ${goal}`,
-    toGo: (remaining: string) => `${remaining} restants`,
-    goalReached: "Objectiu assolit",
-  },
-  goals: {
-    title: "Objectius",
-    description:
-      "Compra de pis — 20% d'entrada més les despeses de compra per a un pis d'obra nova a Catalunya, projectat a partir del teu capital actual i la teva taxa d'estalvi.",
-    ariaLabel: "Mètriques clau de l'objectiu",
-    goal: "Objectiu",
-    goalAria: (total: string) => `Objectiu ${total}: entrada més despeses de compra`,
-    downPlusCosts: "20% d'entrada + despeses",
-    downPayment: (pct: number) => `Entrada ${pct}%`,
-    iva: (pct: number) => `IVA ${pct}%`,
-    ajd: (pct: number) => `AJD ${pct}%`,
-    notaryFixed: "Notaria i fixes",
-    availableToday: "Disponible avui",
-    availableTodayAria: (available: string, reserve: string) =>
-      `Disponible avui ${available}, sense comptar la reserva de ${reserve}`,
-    exclReserve: (reserve: string) => `sense reserva de ${reserve}`,
-    invested: "Invertit",
-    cash: "Efectiu",
-    reserve: "Reserva",
-    atRate: (rate: string) => `Al ${rate}/any`,
-    moreThan15y: "> 15 a",
-    projection: "Projecció",
-    assumptions: "Supòsits",
-    reset: "Restableix",
-    flatPrice: "Preu del pis",
-    monthlySavings: "Estalvi mensual",
-    shareInvested: "Part de l'estalvi invertida",
-    centralReturn: "Rendibilitat central",
-    fixedPurchaseCosts: "Despeses fixes de compra",
-    emergencyReserve: "Fons d'emergència",
-    keepSavingAfter: "Continua estalviant després de des. 2027",
-    projectionCaption: (available: string, monthly: string, contribution: string, pct: number) =>
-      `Des dels ${available} d'avui: ${monthly}/mes (${contribution}, ${pct}% invertit)`,
-    ongoing: "continu",
-    untilDec2027: "fins des. 2027",
-    plusExtra: (amount: string) => ` més ${amount} en pagues extres abans de des. 2027`,
-    orientativeNote:
-      ". Orientatiu — ignora la inflació, els impostos sobre guanys i la variació del preu del pis.",
-    portfolioUnavailable:
-      "Dades de cartera no disponibles — executa export_degiro.py; la projecció comença des de 0 €.",
-    now: "ara",
-    inMonths: (m: number) => `d'aquí ${m} m`,
-    inYears: (y: number) => `d'aquí ${y} a`,
-    inYearsMonths: (y: number, m: number) => `d'aquí ${y} a ${m} m`,
   },
   dashboard: {
     title: "Tauler",

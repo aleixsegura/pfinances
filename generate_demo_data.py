@@ -279,58 +279,6 @@ entries = {
 w("marketcaps.json", dict(updatedAt=ts(TODAY), source="yahoo", unresolved=[], entries=entries))
 
 # ---------------------------------------------------------------------------
-# Watchlists index + detail
-# ---------------------------------------------------------------------------
-def stock(symbol, name, compact, exchange, symbol_type, currency, price):
-    cap_entry = MARKET_CAPS.get(symbol) or MARKET_CAPS.get(symbol.split(".")[0])
-    return dict(symbol=symbol, name=name, compactName=compact, exchange=exchange,
-                symbolType=symbol_type, currency=currency, lastPrice=price,
-                marketCap=cap_entry[0] if cap_entry else None)
-
-WATCHLISTS = {
-    "tech-growth": dict(name="Tech Growth", stocks=[
-        stock("AAPL", "Apple Inc", "Apple", "NASDAQ", "STOCK", "USD", 231.50),
-        stock("MSFT", "Microsoft Corp", "Microsoft", "NASDAQ", "STOCK", "USD", 421.80),
-        stock("NVDA", "NVIDIA Corp", "Nvidia", "NASDAQ", "STOCK", "USD", 118.90),
-        stock("ASML.AS", "ASML Holding NV", "ASML", "Euronext Amsterdam", "STOCK", "EUR", 712.40),
-        stock("GOOGL", "Alphabet Inc", "Alphabet", "NASDAQ", "STOCK", "USD", 178.20),
-        stock("AMZN", "Amazon.com Inc", "Amazon", "NASDAQ", "STOCK", "USD", 205.60),
-        stock("META", "Meta Platforms Inc", "Meta", "NASDAQ", "STOCK", "USD", 561.30),
-        stock("TSLA", "Tesla Inc", "Tesla", "NASDAQ", "STOCK", "USD", 268.40),
-    ]),
-    "dividend-income": dict(name="Dividend Income", stocks=[
-        stock("O", "Realty Income Corp", "Realty Income", "NYSE", "STOCK", "USD", 58.30),
-        stock("JNJ", "Johnson & Johnson", "J&J", "NYSE", "STOCK", "USD", 162.10),
-        stock("KO", "Coca-Cola Co", "Coca-Cola", "NYSE", "STOCK", "USD", 66.80),
-        stock("PG", "Procter & Gamble Co", "P&G", "NYSE", "STOCK", "USD", 168.90),
-        stock("VWCE.DE", "Vanguard FTSE All-World ETF", "FTSE All-World", "Xetra", "ETF", "EUR", 118.75),
-        stock("MSFT", "Microsoft Corp", "Microsoft", "NASDAQ", "STOCK", "USD", 421.80),
-    ]),
-    "cryptos": dict(name="Cryptos", stocks=[
-        stock("BTC-USD", "Bitcoin", "Bitcoin", "Crypto", "CRYPTO_CURRENCY", "USD", 96500.0),
-        stock("ETH-USD", "Ethereum", "Ethereum", "Crypto", "CRYPTO_CURRENCY", "USD", 3350.0),
-        stock("SOL-USD", "Solana", "Solana", "Crypto", "CRYPTO_CURRENCY", "USD", 218.40),
-        stock("ADA-USD", "Cardano", "Cardano", "Crypto", "CRYPTO_CURRENCY", "USD", 0.72),
-    ]),
-}
-
-watchlist_metas = []
-for slug, wl in WATCHLISTS.items():
-    meta = dict(
-        name=wl["name"], slug=slug, id=f"wl-{slug}", is_active=True,
-        created="2025-11-02T10:00:00", modified=ts(TODAY - timedelta(days=3)),
-        modified_by_device="MacBook Pro", symbol_count=len(wl["stocks"]),
-    )
-    watchlist_metas.append(meta)
-    detail = dict(**meta, stocks=wl["stocks"])
-    w(f"{slug}.json", detail)
-
-w("index.json", dict(
-    exported_at=ts(TODAY), source="apple-stocks",
-    watchlist_count=len(watchlist_metas), watchlists=watchlist_metas,
-))
-
-# ---------------------------------------------------------------------------
 # Taxes
 # ---------------------------------------------------------------------------
 def parcel(qty, acq_date, acq_val, buy_fees, disp_val, sell_fees, source="degiro", note=None):
@@ -600,15 +548,6 @@ w("symbols.json", dict(
         "O": "Financials",  # VWCE.DE (all-world ETF) deliberately left as Other
     },
     degiroAliases={},
-))
-
-# ---------------------------------------------------------------------------
-# Goals (defaults for the flat-purchase calculator, see web/src/useGoalSettings.ts)
-# ---------------------------------------------------------------------------
-# Priced so the demo goal sits part-way, not already reached.
-w("goals.json", dict(
-    flatPriceEur=240000, monthlySavingsEur=1500, investedPct=0.8,
-    fixedCostsEur=3000, emergencyFundEur=8000, extraPayments=[],
 ))
 
 print(f"Wrote demo fixtures to {OUT}")
