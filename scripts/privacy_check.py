@@ -72,7 +72,6 @@ def real_terms() -> set[str]:
         collect_terms(data, terms)
         if path.name == "symbols.json":
             terms.update(data.get("sectors", {}))
-            terms.update(data.get("degiroAliases", {}).values())
     public = "\n".join(p.read_text() for p in DEMO.glob("*.json")) if DEMO.is_dir() else ""
     return {
         t

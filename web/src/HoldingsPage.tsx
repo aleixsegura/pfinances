@@ -14,9 +14,6 @@ export default function HoldingsPage() {
   const {
     positions,
     revolut,
-    detail,
-    error,
-    loading,
     stocks,
     showPositions,
     posBySymbol,
@@ -39,15 +36,6 @@ export default function HoldingsPage() {
       ),
     [stocks, showPositions, valueBySymbol, totalCashEur],
   );
-
-  if (loading) return <p className="text-secondary">{t.common.loading}</p>;
-  // The watchlist is enrichment now, not the row source, so a missing or failed
-  // holdings.json only costs sectors and market caps: keep rendering as long as
-  // a broker export came through, and surface its error only when nothing did.
-  if (stocks.length === 0) {
-    if (error) return <p className="text-loss">{error}</p>;
-    if (!detail) return null;
-  }
 
   return (
     <>

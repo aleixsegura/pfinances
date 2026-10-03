@@ -23,7 +23,7 @@ Balances arrive in minor units (cents, satoshis) and are converted with
 Coinbase's public spot API, which also quotes fiat pairs. Every position and
 pocket is normalized to EUR (the portfolio's base currency); crypto positions
 additionally carry `lastPrice` in USD, the currency crypto is conventionally
-quoted in and the one the Apple Stocks app shows.
+quoted in.
 
 If the export stops finding data, Revolut likely changed their internal API:
 rerun with --debug (dumps every retail API response to .revolut-debug/) and
@@ -42,7 +42,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from export_watchlists import ENV_FILE, _load_env_file
+from common import ENV_FILE, load_env_file
 from history import record_snapshot
 
 try:
@@ -119,7 +119,7 @@ HEADERS_GRACE_S = 20   # how long to wait for the app's own transactions call af
 
 
 def get_env(name: str) -> str | None:
-    return os.environ.get(name) or _load_env_file(ENV_FILE).get(name) or None
+    return os.environ.get(name) or load_env_file(ENV_FILE).get(name) or None
 
 
 # ── Network capture ────────────────────────────────────────────────────────────
@@ -480,8 +480,8 @@ class Currencies:
 
 # ── Crypto pricing (Coinbase public spot, keyless) ─────────────────────────────
 
-# Crypto is quoted in USD by convention — that is the number the Apple Stocks
-# app (and every price site) shows — while this portfolio's base currency is
+# Crypto is quoted in USD by convention — that is the number every price site
+# shows — while this portfolio's base currency is
 # EUR. The two sit ~13% apart, so each position carries both: `lastPrice` in
 # QUOTE_CURRENCY for display next to the USD cost basis, and `lastPriceEur` for
 # the portfolio maths.
@@ -804,9 +804,8 @@ def build_positions(captured: dict[str, list[Any]], ccy: Currencies) -> list[dic
         price = crypto_price_eur(symbol)
         value_eur = round(price * quantity, 2) if price is not None else None
         prev_price = crypto_price_eur_at(symbol, prev_day) if price is not None else None
-        # The quote-currency (USD) price is display-only: it is what the Stocks
-        # app shows, so the Holdings table can quote crypto the same way instead
-        # of falling back on the watchlist's cached — and quickly stale — price.
+        # The quote-currency (USD) price is display-only: the Holdings table
+        # quotes crypto in USD, the way every price site does.
         quote_price = spot_price(symbol, QUOTE_CURRENCY)
         pos = {
             "symbol": symbol,

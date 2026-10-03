@@ -261,16 +261,8 @@ w("dividends.json", dict(
 MARKET_CAPS = {
     "AAPL": (3510000000000, "USD"), "MSFT": (3130000000000, "USD"),
     "NVDA": (2910000000000, "USD"), "ASML": (312000000000, "EUR"),
-    "ASML.AS": (312000000000, "EUR"), "VWCE.DE": (14200000000, "EUR"),
-    "O": (49800000000, "USD"),
-    "GOOGL": (2140000000000, "USD"), "AMZN": (1980000000000, "USD"),
-    "META": (1420000000000, "USD"), "TSLA": (980000000000, "USD"),
-    "JNJ": (398000000000, "USD"), "KO": (287000000000, "USD"),
-    "PG": (401000000000, "USD"),
-    "BTC-USD": (1900000000000, "USD"), "BTC": (1900000000000, "USD"),
-    "ETH-USD": (402000000000, "USD"), "ETH": (402000000000, "USD"),
-    "SOL-USD": (98000000000, "USD"), "SOL": (98000000000, "USD"),
-    "ADA-USD": (16000000000, "USD"), "ADA": (16000000000, "USD"),
+    "ASML.AS": (312000000000, "EUR"), "O": (49800000000, "USD"),
+    "BTC": (1900000000000, "USD"), "ETH": (402000000000, "USD"),
 }
 entries = {
     sym: dict(marketCap=cap, currency=cur, source="yahoo", at=ts(TODAY))
@@ -537,17 +529,14 @@ w("revolut_transactions.json", dict(
 ))
 
 # ---------------------------------------------------------------------------
-# Symbols (sector classification + DEGIRO ticker aliases, see web/src/symbolConfig.ts)
+# Symbols (sector classification, see web/src/symbolConfig.ts)
 # ---------------------------------------------------------------------------
 w("symbols.json", dict(
     sectors={
         "AAPL": "Technology", "MSFT": "Technology", "NVDA": "Technology",
-        "GOOGL": "Technology", "META": "Technology", "AMZN": "Technology",
-        "ASML.AS": "Technology", "ASML": "Technology", "TSLA": "Technology",
-        "JNJ": "Healthcare", "KO": "Consumer Staples", "PG": "Consumer Staples",
+        "ASML": "Technology",
         "O": "Financials",  # VWCE.DE (all-world ETF) deliberately left as Other
     },
-    degiroAliases={},
 ))
 
 print(f"Wrote demo fixtures to {OUT}")

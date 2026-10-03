@@ -41,7 +41,7 @@ const MARKET_CAP_UNITS: [number, string][] = [
   [1e3, "K"],
 ];
 
-// Compact "Stocks app" style market cap, e.g. 1,283,428,319,232 -> "1.28T".
+// Compact market cap, e.g. 1,283,428,319,232 -> "1.28T".
 function formatMarketCap(value: number | null): string {
   if (value === null) return "—";
   const abs = Math.abs(value);
@@ -63,14 +63,6 @@ function formatInCurrency(value: number, currency: string): string {
     maximumFractionDigits: 2,
     useGrouping: true,
   }).format(value);
-}
-
-// Watchlist stocks carry a blank `currency` for crypto; recover it from the
-// "BTC-USD" style symbol so BTC/ETH last prices can render with a "$" too.
-function currencyForStock(s: Stock): string | null {
-  if (s.currency) return s.currency;
-  const [, quote] = s.symbol.split("-");
-  return quote ?? null;
 }
 
 const TH =
@@ -267,15 +259,12 @@ export default function StocksTable({
                 <td className={`${TD} ${NUM}`}>
                   {(() => {
                     if (p && p.lastPrice !== null) return formatInCurrency(p.lastPrice, p.currency);
-                    // Revolut crypto: prefer the exporter's live Coinbase spot
-                    // over `s.lastPrice`, which is Apple Stocks' cached quote and
-                    // only refreshes when export_watchlists.py runs.
+                    // Revolut crypto: the exporter's live Coinbase spot.
                     if (rp?.lastPrice != null)
                       return formatInCurrency(rp.lastPrice, rp.priceCurrency ?? "USD");
                     if (rp?.lastPriceEur != null) return eurFormat.format(rp.lastPriceEur);
                     if (s.lastPrice === null) return "—";
-                    const currency = currencyForStock(s);
-                    return currency ? formatInCurrency(s.lastPrice, currency) : formatNumber(s.lastPrice);
+                    return s.currency ? formatInCurrency(s.lastPrice, s.currency) : formatNumber(s.lastPrice);
                   })()}
                 </td>
                 <td

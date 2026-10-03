@@ -35,9 +35,6 @@ const es: Translations = {
     loading: "Cargando…",
     updated: (date: string, time: string) => `Actualizado ${date} · ${time}`,
   },
-  errors: {
-    watchlist: (slug: string, message: string) => `No se pudo cargar ${slug}.json (${message})`,
-  },
   stocksTable: {
     name: "Nombre",
     type: "Tipo",

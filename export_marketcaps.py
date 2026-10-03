@@ -2,26 +2,19 @@
 """
 Export market capitalisations to watchlists/marketcaps.json.
 
-Market cap used to reach the web app only through the Apple Stocks watchlists
-(`export_watchlists.py` reads whatever the Stocks app happens to have cached),
-so anything you hold without adding it to a watchlist — and anything the app
-never cached a `marketCapitalization` for — showed "—" in the table. This
-exporter resolves it from public quote APIs instead, so it no longer depends on
-the phone-synced watchlists at all.
-
-Symbols come from what is already exported: every watchlist file's stocks, the
-DEGIRO positions and the Revolut crypto holdings. ETFs and funds are skipped —
-they have no market cap (their size is AUM, which is not the same number), just
-like in the Stocks app.
+Market cap is resolved from public quote APIs for what is already exported:
+the DEGIRO positions and the Revolut crypto holdings. ETFs and funds are
+skipped — they have no market cap (their size is AUM, which is not the same
+number).
 
 Sources, all keyless and best-effort:
   yahoo      query[12].finance.yahoo.com/v7/finance/quote, batched. Covers
-             non-US listings too (Xetra, Paris, …) via the "VWCE.DE" style
-             suffixes the Stocks app already uses. Needs a cookie + crumb pair
+             non-US listings too (Xetra, Paris, …) via "VWCE.DE" style
+             suffixes, derived from each position's exchange. Needs a cookie + crumb pair
              and rate-limits with 429s, which is why there are fallbacks.
   nasdaq     api.nasdaq.com summary endpoint, one request per US symbol — the
              fallback whenever Yahoo is unavailable for a US-listed stock.
-  coingecko  api.coingecko.com/api/v3/coins/markets for crypto (BTC-USD, …).
+  coingecko  api.coingecko.com/api/v3/coins/markets for crypto (BTC, …).
 
 A symbol that no source answers for keeps the value from the previous run
 (entries carry their own `at`), so a rate-limited Yahoo never empties the file.
@@ -46,28 +39,9 @@ import requests
 
 OUT_NAME = "marketcaps.json"
 
-# Files in watchlists/ that are exporter output, not watchlists.
-NON_WATCHLIST_FILES = {
-    "index.json",
-    "positions.json",
-    "revolut.json",
-    "history.json",
-    "dividends.json",
-    "fees.json",
-    "market.json",
-    OUT_NAME,
-}
-
-# Watchlist `symbolType` / DEGIRO `productType` values with no market cap:
+# DEGIRO `productType` values with no market cap:
 # funds are sized by AUM, and currencies/indices by nothing at all.
 SKIP_TYPES = {"ETF", "MUTUAL_FUND", "FUND", "CURRENCY", "INDEX", "BOND", "FUTURE"}
-
-CRYPTO_TYPES = {"CRYPTO_CURRENCY", "CRYPTOCURRENCY", "CRYPTO"}
-
-# Symbols the Stocks app never cached metadata for arrive with an empty
-# `symbolType`, so their shape is all there is to go on: Yahoo spells futures
-# and FX pairs with an "=" ("CL=F", "EURUSD=X") and crypto as "<coin>-USD".
-CRYPTO_SUFFIX = "-USD"
 
 # Yahoo and Nasdaq both reject default python-requests clients.
 BROWSER_HEADERS = {
@@ -86,13 +60,10 @@ NASDAQ_WORKERS = 8
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/markets"
 
 # DEGIRO's short names for the US exchanges — the positions whose symbol Yahoo
-# lists bare, and whose ticker the Nasdaq fallback can look up. (Watchlist
-# stocks are recognised by symbol shape instead: the Stocks app spells the
-# exchange out in full ("NYSE MKT", "OTC Markets") but suffixes every non-US
-# symbol, so a bare ticker there is US-listed.)
+# lists bare, and whose ticker the Nasdaq fallback can look up.
 US_EXCHANGES = {"NSY", "NDQ", "ASE", "OTC", "ARCA", "BATS", "PCX", "PNK"}
 
-# DEGIRO/Stocks exchange short name → Yahoo symbol suffix. Tradegate (TDG) is
+# DEGIRO exchange short name → Yahoo symbol suffix. Tradegate (TDG) is
 # where DEGIRO books most European trades but Yahoo barely lists it, so its
 # products resolve against Xetra — same ISIN, same company, same market cap.
 YAHOO_SUFFIX_BY_EXCHANGE = {
@@ -112,10 +83,9 @@ YAHOO_SUFFIX_BY_EXCHANGE = {
 class Target:
     """One company to resolve, plus every symbol spelling the app calls it by.
 
-    The same holding is spelled differently by each source — Apple Stocks has
-    Yahoo-style "VWCE.DE", DEGIRO plain "VWCE" — and the web app looks market
-    caps up by whichever symbol the row carries, so one resolved value is
-    written out under all of them.
+    Yahoo spells a holding "VWCE.DE" where DEGIRO says plain "VWCE", and the
+    web app looks market caps up by whichever symbol the row carries, so one
+    resolved value is written out under every spelling.
     """
 
     aliases: set[str] = field(default_factory=set)
@@ -141,40 +111,9 @@ def _read_json(path: Path) -> dict | None:
 def collect_targets(out_dir: Path) -> dict[str, Target]:
     """Everything worth a market cap, keyed by Yahoo symbol (or "crypto:btc")."""
     targets: dict[str, Target] = {}
-    # Watchlist symbols are Yahoo-style already, so a DEGIRO position can reuse
-    # one instead of guessing a suffix from its exchange.
-    key_by_base: dict[str, str] = {}
 
     def target(key: str) -> Target:
         return targets.setdefault(key, Target())
-
-    for path in sorted(out_dir.glob("*.json")):
-        if path.name in NON_WATCHLIST_FILES:
-            continue
-        data = _read_json(path)
-        if not isinstance(data, dict) or "stocks" not in data:
-            continue
-        for stock in data["stocks"]:
-            symbol = stock.get("symbol")
-            if not symbol:
-                continue
-            symbol_type = (stock.get("symbolType") or "").upper()
-            if symbol_type in SKIP_TYPES or "=" in symbol:
-                continue
-            if symbol_type in CRYPTO_TYPES or (
-                not symbol_type and symbol.endswith(CRYPTO_SUFFIX)
-            ):
-                coin = symbol.split("-")[0].lower()
-                entry = target(f"crypto:{coin}")
-                entry.coingecko = coin
-                entry.aliases.add(symbol)
-                continue
-            entry = target(symbol)
-            entry.yahoo = symbol
-            entry.aliases.add(symbol)
-            if "." not in symbol:
-                entry.nasdaq = symbol
-            key_by_base.setdefault(_base(symbol), symbol)
 
     positions = _read_json(out_dir / "positions.json") or {}
     for position in positions.get("positions", []):
@@ -184,18 +123,14 @@ def collect_targets(out_dir: Path) -> dict[str, Target]:
         if (position.get("productType") or "").upper() in SKIP_TYPES:
             continue
         exchange = (position.get("exchange") or "").upper()
-        # A watchlist entry for the same ticker wins: it carries the exchange
-        # Yahoo actually lists the product under.
-        key = key_by_base.get(_base(symbol))
-        if key is None:
-            suffix = YAHOO_SUFFIX_BY_EXCHANGE.get(exchange)
-            if suffix is None:
-                # Unknown exchange: USD products are US-listed often enough to
-                # be worth the bare-symbol guess; anything else is left alone.
-                if position.get("currency") != "USD":
-                    continue
-                suffix = ""
-            key = symbol + suffix
+        suffix = YAHOO_SUFFIX_BY_EXCHANGE.get(exchange)
+        if suffix is None:
+            # Unknown exchange: USD products are US-listed often enough to be
+            # worth the bare-symbol guess; anything else is left alone.
+            if position.get("currency") != "USD":
+                continue
+            suffix = ""
+        key = symbol + suffix
         entry = target(key)
         entry.yahoo = entry.yahoo or key
         entry.aliases.add(symbol)
@@ -321,7 +256,7 @@ def fetch_nasdaq(symbol: str) -> dict | None:
 
 
 def fetch_coingecko(coins: list[str]) -> dict[str, dict]:
-    """Market cap per coin symbol (lowercase), in USD like the Stocks app."""
+    """Market cap per coin symbol (lowercase), in USD."""
     if not coins:
         return {}
     try:
@@ -410,9 +345,9 @@ def build_entries(
 def is_fresh(previous: dict, targets: dict[str, Target], max_age_hours: float) -> bool:
     """Is the last export recent enough, and does it still cover every symbol?
 
-    A new holding (or a symbol added to a watchlist) has no entry yet, so it
-    forces a refresh however recent the file is — buying something shouldn't
-    leave its row blank until the cache happens to expire.
+    A new holding has no entry yet, so it forces a refresh however recent the
+    file is — buying something shouldn't leave its row blank until the cache
+    happens to expire.
     """
     entries = previous.get("entries") if isinstance(previous, dict) else None
     if not entries:
@@ -457,7 +392,7 @@ def main() -> None:
     if not targets:
         raise SystemExit(
             f"No symbols found in {out_dir}/.\n"
-            "  Run export_watchlists.py / export_degiro.py first."
+            "  Run export_degiro.py / export_revolut.py first."
         )
 
     previous = _read_json(out_file) or {}

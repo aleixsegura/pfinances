@@ -40,7 +40,7 @@ const commonProps = {
 // "crypto" symbol for the two coins we actually hold. Monochrome (currentColor)
 // to match the rest of the type icons rather than using brand colors.
 const BRAND_ICONS: Record<string, { label: string; node: JSX.Element }> = {
-  "BTC-USD": {
+  BTC: {
     label: "Bitcoin",
     node: (
       <svg viewBox="0 0 384 512" width={16} height={16} fill="currentColor">
@@ -48,7 +48,7 @@ const BRAND_ICONS: Record<string, { label: string; node: JSX.Element }> = {
       </svg>
     ),
   },
-  "ETH-USD": {
+  ETH: {
     label: "Ethereum",
     node: (
       <svg {...commonProps}>

@@ -28,9 +28,8 @@ Use the claude-in-chrome tools on `http://localhost:<port>/`.
 Flows worth driving:
 - **Dashboard** (landing page `/`): net-worth hero with today/open P/L chips and the value chart, cash accounts, top holdings, spending donut (hover syncs donut ↔ legend), interest sparkline, recent transactions, upcoming dividends (only when `dividends.json` has any). Every card must show its empty state, not crash, when its JSON is missing — rename `watchlists/revolut_transactions.json` to check.
 - **Transactions** (`/transactions`): ‹ › month navigation and "All time"; click a bar to open that month; category chips filter the bars and the table; search box; kind filters (All / Expenses / Income / Internal moves — internal rows render greyed); "Show all" after 30 rows; the interest section at the bottom (daily bars, monthly effective rate).
-- **Holdings** (`/holdings`): KPI cards, sector donut, stocks table with position columns (Qty/Avg Price/Value €/P/L €/P/L %). Data joins DEGIRO `positions.json` + Revolut; crypto rows (BTC-USD, ETH-USD) have Revolut positions with no cost basis, so P/L cells are `—` — useful for null-handling checks.
-- **Watchlists** (`/watchlists` → e.g. `/watchlists/cryptos`): table without position columns.
-- Table sorting: click Type / Market Cap (all pages) and Qty / Value € / P/L € / P/L % (Holdings) headers; asc → desc toggle, missing values sort last.
+- **Holdings** (`/holdings`): KPI cards, sector donut, stocks table with position columns (Qty/Avg Price/Value €/P/L €/P/L %). Data joins DEGIRO `positions.json` + Revolut; crypto rows (BTC, ETH) have Revolut positions with no cost basis, so P/L cells are `—` — useful for null-handling checks.
+- Table sorting: click Type / Market Cap and Qty / Value € / P/L € / P/L % headers; asc → desc toggle, missing values sort last.
 
 ## Gotchas
 

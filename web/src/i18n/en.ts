@@ -36,9 +36,6 @@ const en = {
     loading: "Loading…",
     updated: (date: string, time: string) => `Updated ${date} · ${time}`,
   },
-  errors: {
-    watchlist: (slug: string, message: string) => `Could not load ${slug}.json (${message})`,
-  },
   stocksTable: {
     name: "Name",
     type: "Type",

@@ -25,7 +25,7 @@ interface Props {
   stocks: Stock[];
   active: Sector | null;
   onActiveChange: (sector: Sector | null) => void;
-  /** EUR market value per watchlist symbol; switches to value weighting. */
+  /** EUR market value per symbol; switches to value weighting. */
   valueBySymbol?: Map<string, number>;
   /** Total cash (DEGIRO + Revolut) in EUR, shown as a stock-less "Cash" slice. */
   cashEur?: number;

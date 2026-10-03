@@ -1,14 +1,4 @@
-export interface WatchlistMeta {
-  name: string;
-  slug: string;
-  id: string;
-  is_active: boolean;
-  created: string;
-  modified: string;
-  modified_by_device: string;
-  symbol_count: number;
-}
-
+/** One Holdings row, built from a DEGIRO or Revolut position (useHoldings). */
 export interface Stock {
   symbol: string;
   name: string;
@@ -20,14 +10,9 @@ export interface Stock {
   marketCap: number | null;
 }
 
-export interface WatchlistDetail extends WatchlistMeta {
-  stocks: Stock[];
-}
-
 // Mirror of watchlists/marketcaps.json written by export_marketcaps.py. Keyed
-// by every symbol spelling the app uses for a company ("VWCE.DE" from a
-// watchlist, "VWCE" from DEGIRO), so a row looks its market cap up by whatever
-// symbol it carries. `at` is per entry: a symbol no source answered for on the
+// by every symbol spelling of a company ("VWCE.DE" on Yahoo, "VWCE" at
+// DEGIRO), so a row looks its market cap up by whatever symbol it carries. `at` is per entry: a symbol no source answered for on the
 // last run keeps the value (and timestamp) of the run that did resolve it.
 export interface MarketCapEntry {
   marketCap: number;
@@ -56,8 +41,7 @@ export interface Position {
   symbol: string;
   name: string;
   /** DEGIRO's product classification ("STOCK", "ETF", "FUND", …), mapped to a
-   * watchlist `symbolType` for positions with no watchlist entry. Absent in
-   * files from exports before the standalone-position feature. */
+   * `symbolType` for the row's type icon. Absent in older exports. */
   productType?: string | null;
   quantity: number;
   avgPrice: number;
@@ -127,13 +111,13 @@ export interface RevolutCash {
 }
 
 export interface RevolutPosition {
-  /** Revolut-native symbol ("BTC"), joined to watchlist "BTC-USD" in App. */
+  /** Revolut-native symbol ("BTC"). */
   symbol: string;
   name: string;
   quantity: number;
   currency: string;
   /** Live spot price in `priceCurrency` (USD) — crypto's conventional quote
-   * currency, so this matches what the Stocks app shows. Absent in files from
+   * currency, as price sites show it. Absent in files from
    * older exports, which only carried the EUR price. */
   lastPrice?: number | null;
   /** Currency of `lastPrice`; absent in files from older exports. */

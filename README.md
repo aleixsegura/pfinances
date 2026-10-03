@@ -1,8 +1,8 @@
 # Plout
 
 A local personal-finance dashboard. A set of Python exporters pull your data straight from the
-sources — Apple Stocks watchlists, DEGIRO (positions, dividends, fees), Revolut (cash + crypto)
-and public market indicators — into plain JSON under `watchlists/`, and a Vite + React app in
+sources — DEGIRO (positions, dividends, fees), Revolut (cash + crypto) and public market
+data — into plain JSON under `watchlists/`, and a Vite + React app in
 `web/` reads that folder live and renders it. It also prepares the Spanish income-tax return
 (IRPF): FIFO capital gains, the two-month repurchase rule (art. 33.5 f LIRPF) and a filing pack.
 
@@ -35,7 +35,6 @@ Real data never reaches the repository:
 
 | Exporter | Writes | Feeds |
 |---|---|---|
-| `export_watchlists.py` | `watchlists/*.json/.csv/.md`, `index.json` | Holdings (names, exchange and type from your `Holdings` watchlist) |
 | `export_degiro.py` | `positions.json` | Holdings |
 | `export_revolut.py` | `revolut.json`, `revolut_trades.json`, `revolut_transactions.json` | Dashboard, Holdings, Transactions |
 | `export_dividends.py` | `dividends.json` | Dividends |
@@ -43,52 +42,6 @@ Real data never reaches the repository:
 | `export_taxes.py` | `taxes.json`, `renta/renta-<year>.{json,md}` | Tax return |
 | `export_marketcaps.py` | `marketcaps.json` | The Market Cap column, everywhere (runs itself on `npm run dev`) |
 | `history.py` | `history.json` | The portfolio chart on Holdings |
-
-## Apple Stocks watchlists
-
-### How it works
-
-- Reads the local mirror of your iCloud CloudKit private database (`~/Library/Group Containers/group.com.apple.stocks/...`), which holds every watchlist name and its symbols exactly as they appear in the app.
-- Enriches each symbol with company name, exchange, type, last price and market cap from the Stocks app's own cached quote data. (The market cap the web app shows comes from `export_marketcaps.py` instead — see below — and this cached one is only its fallback.)
-
-### Requirements
-
-- Python 3.10+ (standard library only, no dependencies to install)
-- **Full Disk Access** for your terminal app: System Settings → Privacy & Security → Full Disk Access → enable your terminal. Without this the script cannot read the Stocks app's data.
-
-### Setup
-
-1. Grant Full Disk Access as described above.
-
-### Usage
-
-```bash
-python3 export_watchlists.py
-```
-
-This creates a `watchlists/` folder containing:
-
-```
-watchlists/
-  README.md          # summary table of all watchlists
-  index.json          # export metadata without full stock lists
-  my-symbols.json/.csv/.md
-  holdings.json/.csv/.md
-  ...one set of files per watchlist
-```
-
-Filenames are stable slugs of the watchlist name, so re-running the script overwrites the same files instead of piling up timestamped copies.
-
-#### Options
-
-| Flag | Description |
-|---|---|
-| `--format {json,csv,markdown,all}` | Which file format(s) to write per watchlist (default: `all`) |
-| `--output-dir DIR` | Where to create the `watchlists/` folder (default: current directory) |
-
-### Known limitations
-
-- Watchlists you've never opened in the app on this device may be missing metadata (name/price) for their symbols until you view them once so the Stocks app caches the quote data.
 
 ## Broker exporters
 
@@ -125,7 +78,7 @@ Descriptions are localised to your account language, so charges are matched by k
 
 Revolut has no personal API, so `export_revolut.py` drives the Revolut web app with Playwright, capturing the app's own internal JSON responses for cash (current + savings/"Boosted" accounts) and crypto balances. Everything is normalized to EUR via Coinbase's public API (no key needed).
 
-Crypto positions carry two prices, because the two answer different questions: `lastPriceEur` drives the portfolio maths, while `lastPrice` (in USD, crypto's conventional quote currency) is what the Holdings table displays — it is the number the Apple Stocks app shows, and it sits ~13% above the EUR one. The table prefers this live price over the watchlist's `lastPrice`, which is Apple's cached quote and only refreshes when `export_watchlists.py` runs.
+Crypto positions carry two prices, because the two answer different questions: `lastPriceEur` drives the portfolio maths, while `lastPrice` (in USD, crypto's conventional quote currency) is what the Holdings table displays — it is the number every price site shows, and it sits ~13% above the EUR one.
 
 One-time setup:
 
@@ -297,17 +250,17 @@ can check it.
 
 ## Market caps
 
-Nothing to run: `npm run dev` starts the exporter itself (a small Vite plugin), in the background, and reloads the page if it wrote anything new. It resolves the **Market Cap** column from public quote APIs into `watchlists/marketcaps.json`, so it no longer depends on the Apple Stocks watchlists: anything you hold at DEGIRO without an entry in the phone-synced watchlist — and any symbol the Stocks app never cached a market cap for — used to show "—".
+Nothing to run: `npm run dev` starts the exporter itself (a small Vite plugin), in the background, and reloads the page if it wrote anything new. It resolves the **Market Cap** column from public quote APIs into `watchlists/marketcaps.json`.
 
-Symbols come from what is already exported (every watchlist file, `positions.json`, `revolut.json`); ETFs and funds are skipped, as their size is AUM rather than a market cap. Sources are keyless and tried in order:
+Symbols come from what is already exported (`positions.json`, `revolut.json`); a DEGIRO position's Yahoo symbol is derived from its exchange; ETFs and funds are skipped, as their size is AUM rather than a market cap. Sources are keyless and tried in order:
 
 | Source | Covers |
 |---|---|
 | Yahoo Finance `v7/finance/quote` | everything, non-US listings included (`VWCE.DE`, `AIR.PA`, …), batched 50 symbols per request |
 | `api.nasdaq.com` | US symbols, as the fallback for when Yahoo rate-limits (it often does, with a 429 on the cookie/crumb handshake) |
-| CoinGecko | crypto (`BTC-USD`, and Revolut's bare `BTC`) |
+| CoinGecko | crypto (Revolut's bare `BTC`, `ETH`, …) |
 
-Values are written under every symbol spelling the app uses for a company, so a row finds its market cap whether it came from a watchlist (`VWCE.DE`) or from DEGIRO (`VWCE`). A symbol nothing answered for keeps the value from the previous run — each entry carries its own `at` — so a rate-limited Yahoo never empties the file, and the web app falls back to the watchlist's own cached value when a symbol has no entry at all.
+Values are written under every symbol spelling of a company — Yahoo's `VWCE.DE` and DEGIRO's `VWCE` — so a row finds its market cap by whichever it carries. A symbol nothing answered for keeps the value from the previous run — each entry carries its own `at` — so a rate-limited Yahoo never empties the file; a symbol with no entry at all shows "—".
 
 Most dev-server starts cost nothing: `--max-age-hours` makes the exporter exit before its first request when the file is younger than 12 hours *and* already covers every symbol. A stock you just bought has no entry yet, so it refreshes straight away instead of waiting for that window to pass.
 

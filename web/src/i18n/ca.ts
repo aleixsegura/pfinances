@@ -35,10 +35,6 @@ const ca: Translations = {
     loading: "Carregant…",
     updated: (date: string, time: string) => `Actualitzat ${date} · ${time}`,
   },
-  errors: {
-    watchlist: (slug: string, message: string) =>
-      `No s'ha pogut carregar ${slug}.json (${message})`,
-  },
   stocksTable: {
     name: "Nom",
     type: "Tipus",

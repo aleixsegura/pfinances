@@ -6,7 +6,6 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { useTranslation } from "./i18n/LanguageContext";
 import type {
   DividendsFile,
   HistoryFile,
@@ -15,7 +14,6 @@ import type {
   RevolutFile,
   RevolutTransactionsFile,
   TaxesFile,
-  WatchlistDetail,
 } from "./types";
 
 interface AppData {
@@ -99,7 +97,7 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Written by export_marketcaps.py; same silent degrade as positions.json —
-    // without it the table falls back to the watchlist's cached market caps.
+    // without it the Market Cap column shows "—".
     fetch("/marketcaps.json")
       .then((res) => {
         const isJson = res.headers.get("content-type")?.includes("application/json");
@@ -146,12 +144,8 @@ export function useAppData(): AppData {
 
 /** Look a symbol's market cap up in marketcaps.json (export_marketcaps.py).
  *
- * Preferred over the watchlist's own `marketCap` because that one is whatever
- * the Apple Stocks app last cached — missing entirely for anything not in a
- * watchlist, and only refreshed when export_watchlists.py runs. Entries are
- * written under every symbol spelling, so an exact hit is the normal case; the
- * bare-ticker retry only covers a position exported after the last market-cap
- * run ("VWCE" for the watchlist's "VWCE.DE").
+ * Entries are written under every symbol spelling, so an exact hit is the
+ * normal case; the bare-ticker retry covers a Yahoo-style "VWCE.DE".
  */
 export function useMarketCap(): (symbol: string) => number | null {
   const { marketCaps } = useAppData();
@@ -164,31 +158,4 @@ export function useMarketCap(): (symbol: string) => number | null {
     },
     [marketCaps],
   );
-}
-
-export function useWatchlistDetail(slug: string) {
-  const { t } = useTranslation();
-  const [detail, setDetail] = useState<WatchlistDetail | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (!slug) return;
-    setDetail(null);
-    setLoading(true);
-    setError(null);
-    fetch(`/${slug}.json`)
-      .then((res) => {
-        // Same content-type check as above: an unknown slug SPA-fallbacks to
-        // index.html with a 200, which would otherwise surface as a SyntaxError.
-        const isJson = res.headers.get("content-type")?.includes("application/json");
-        if (!res.ok || !isJson) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((data: WatchlistDetail) => setDetail(data))
-      .catch((err) => setError(t.errors.watchlist(slug, err.message)))
-      .finally(() => setLoading(false));
-  }, [slug, t]);
-
-  return { detail, error, loading };
 }

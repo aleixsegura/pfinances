@@ -58,7 +58,7 @@ from degiro_connector.trading.models.transaction import HistoryRequest
 from export_degiro import connect, fetch_product_meta
 from export_dividends import to_eur
 from export_revolut import crypto_price_eur, crypto_price_eur_at
-from export_watchlists import SCRIPT_DIR
+from common import SCRIPT_DIR
 
 # Quantities carry 8 decimals for crypto, so exact float comparison never
 # holds and matching a sale against a dozen lots leaves float dust behind.

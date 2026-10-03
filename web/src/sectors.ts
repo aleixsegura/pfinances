@@ -2,8 +2,8 @@ import type { Stock } from "./types";
 import type { Translations } from "./i18n/en";
 import { symbolConfig } from "./symbolConfig";
 
-// Sectors are NOT present in the exported data (the Stocks app / Yahoo feed has
-// no sector field). Until the exporter enriches each symbol with a sector — most
+// Sectors are NOT present in the exported data (DEGIRO's positions carry no
+// sector field). Until the exporter enriches each symbol with a sector — most
 // likely via FMP's company profile — holdings are classified by hand in
 // symbols.json, falling back to symbolType for crypto and currency positions.
 //
@@ -26,9 +26,8 @@ export const SECTOR_ORDER = [
 export type Sector = (typeof SECTOR_ORDER)[number] | "Other";
 
 // Equities and ETFs carry no sector in the source data, so they're classified
-// by hand in symbols.json (see symbolConfig.ts). Keyed by whichever symbol
-// reaches the table: the *watchlist* one when the holding is in Apple Stocks,
-// DEGIRO's own for a position with no watchlist entry. Unknown names → Other.
+// by hand in symbols.json (see symbolConfig.ts), keyed by DEGIRO's symbol.
+// Unknown names → Other.
 function configuredSector(symbol: string): Sector | undefined {
   const sector = symbolConfig().sectors[symbol];
   return (SECTOR_ORDER as readonly string[]).includes(sector) ? (sector as Sector) : undefined;
@@ -68,7 +67,7 @@ export interface SectorSlice {
  * order the donut and its legend render), with any unclassified symbols folded
  * into an "Other" slice. Color slots follow this ranking.
  *
- * With `valueBySymbol` (EUR market value per watchlist symbol, from DEGIRO
+ * With `valueBySymbol` (EUR market value per symbol, from DEGIRO
  * and Revolut positions) slices are value-weighted; stocks without a value
  * are excluded entirely. Without it, every holding counts equally.
  *

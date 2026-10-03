@@ -39,7 +39,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from export_watchlists import ENV_FILE, _load_env_file
+from common import ENV_FILE, load_env_file
 from history import record_snapshot
 
 import requests
@@ -65,7 +65,7 @@ TOTP_POLL_SECONDS = 5
 
 
 def get_env(name: str) -> str | None:
-    return os.environ.get(name) or _load_env_file(ENV_FILE).get(name) or None
+    return os.environ.get(name) or load_env_file(ENV_FILE).get(name) or None
 
 
 def connect() -> tuple[TradingAPI, int | None]:
@@ -375,10 +375,8 @@ def build_positions(
                 "id": row["id"],
                 "symbol": product.get("symbol") or row["id"],
                 "name": product.get("name") or "",
-                # DEGIRO's own classification ("STOCK", "ETF", "FUND", …). The
-                # web app needs it to render a type icon for positions that
-                # aren't in an Apple Stocks watchlist, which is the only other
-                # place a symbol's type comes from.
+                # DEGIRO's own classification ("STOCK", "ETF", "FUND", …),
+                # which the web app turns into the row's type icon.
                 "productType": product.get("productType"),
                 "quantity": size,
                 "avgPrice": round(break_even, 4),

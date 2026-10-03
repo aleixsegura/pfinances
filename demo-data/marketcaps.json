@@ -33,62 +33,8 @@
       "source": "yahoo",
       "at": "2026-09-15T09:30:00"
     },
-    "VWCE.DE": {
-      "marketCap": 14200000000,
-      "currency": "EUR",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
     "O": {
       "marketCap": 49800000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "GOOGL": {
-      "marketCap": 2140000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "AMZN": {
-      "marketCap": 1980000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "META": {
-      "marketCap": 1420000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "TSLA": {
-      "marketCap": 980000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "JNJ": {
-      "marketCap": 398000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "KO": {
-      "marketCap": 287000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "PG": {
-      "marketCap": 401000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "BTC-USD": {
-      "marketCap": 1900000000000,
       "currency": "USD",
       "source": "yahoo",
       "at": "2026-09-15T09:30:00"
@@ -99,38 +45,8 @@
       "source": "yahoo",
       "at": "2026-09-15T09:30:00"
     },
-    "ETH-USD": {
-      "marketCap": 402000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
     "ETH": {
       "marketCap": 402000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "SOL-USD": {
-      "marketCap": 98000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "SOL": {
-      "marketCap": 98000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "ADA-USD": {
-      "marketCap": 16000000000,
-      "currency": "USD",
-      "source": "yahoo",
-      "at": "2026-09-15T09:30:00"
-    },
-    "ADA": {
-      "marketCap": 16000000000,
       "currency": "USD",
       "source": "yahoo",
       "at": "2026-09-15T09:30:00"
