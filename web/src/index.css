@@ -40,42 +40,35 @@
   --elevation-card: 0 1px 2px rgba(35, 38, 55, 0.06);
   --elevation-pop: 0 8px 24px rgba(35, 38, 55, 0.14);
 
-  /* Categorical palette, searched rather than picked: every hue sits at OKLCH
-     chroma ~0.067 (the palette is deliberately muted, well below the dataviz
-     validator's chroma floor), so separation comes from lightness spread and
-     hue order instead of saturation. The search constrained adjacent slots to
-     >= 15.5 ΔE for normal vision and >= 6.5 ΔE under simulated protanopia and
-     deuteranopia, with every slot >= 3:1 on --bg-surface; the worst adjacent
-     pair lands at 9.4 ΔE (deutan). Pairs in the 6.5-8 band would be legal only
-     with secondary encoding, so every chart still carries a legend, direct
-     labels and 2px gaps — identity is never color-alone. */
-  --chart-1: #4d5980; /* Woad */
-  --chart-2: #9e735b; /* Clay */
-  --chart-3: #3c6245; /* Forest */
-  --chart-4: #b37f7e; /* Rose */
-  --chart-5: #25666a; /* Deep teal */
-  --chart-6: #897a43; /* Olive gold */
-  --chart-7: #ac7fa7; /* Mauve */
-  --chart-8: #747f53; /* Moss */
-  --chart-9: #355e7a; /* Steel */
-  --chart-10: #967fa8; /* Lilac */
+  /* Categorical palette as a hue gradient: slots are handed out by rank
+     (largest slice first), so the biggest slices get neighbouring, related
+     tones: indigo -> violet -> pink -> coral -> amber -> green -> teal -> blue.
+     Identity is never colour-alone: every chart also carries a legend, direct
+     labels and 2px gaps. */
+  --chart-1: #5a5fe0; /* Indigo */
+  --chart-2: #8b5cf6; /* Violet */
+  --chart-3: #c084fc; /* Orchid */
+  --chart-4: #ec4899; /* Fuchsia */
+  --chart-5: #ff7a66; /* Coral */
+  --chart-6: #f5a524; /* Amber */
+  --chart-7: #22c58b; /* Green */
+  --chart-8: #14b8a6; /* Teal */
+  --chart-9: #2d9cdb; /* Azure */
+  --chart-10: #3b4cca; /* Cobalt */
   --chart-other: #9fa1b0;
 
-  /* Sector slots, in SECTOR_ORDER (sectors.ts) — slot N is that sector's
-     identity, so reordering there means moving these with it. The ramp above
-     was already ordered for adjacent separation *as a ring* (slot 10 neighbours
-     slot 1, the way the donut closes), so these map straight through: the
-     tightest neighbouring pair in the donut is 8.5 ΔE under deuteranopia. */
-  --sector-1: var(--chart-1); /* Technology */
-  --sector-2: var(--chart-2); /* Materials */
-  --sector-3: var(--chart-3); /* Utilities */
-  --sector-4: var(--chart-4); /* Crypto */
-  --sector-5: var(--chart-5); /* Energy */
-  --sector-6: var(--chart-6); /* Healthcare */
-  --sector-7: var(--chart-7); /* Consumer Staples */
-  --sector-8: var(--chart-8); /* Financials */
-  --sector-9: var(--chart-9); /* Currency / FX */
-  --sector-10: var(--chart-10); /* Cash */
+  /* Sector slots: slot N is the N-th largest slice (see sectorBreakdown), so
+     they map straight onto the gradient above. */
+  --sector-1: var(--chart-1);
+  --sector-2: var(--chart-2);
+  --sector-3: var(--chart-3);
+  --sector-4: var(--chart-4);
+  --sector-5: var(--chart-5);
+  --sector-6: var(--chart-6);
+  --sector-7: var(--chart-7);
+  --sector-8: var(--chart-8);
+  --sector-9: var(--chart-9);
+  --sector-10: var(--chart-10);
   --sector-other: var(--chart-other);
 }
 
@@ -150,13 +143,29 @@
   }
 }
 
-/* The card recipe every page shares: near-white, dyed hairline, soft radius and
-   a whisper of shadow so cards lift off the canvas instead of drawing a box. */
+/* The card recipe every page shares: a square, ink-ruled panel on the dyed
+   canvas. No radius, no shadow; structure comes from the 1px ink rules. */
 @utility card {
-  border-radius: 1rem;
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--text-primary);
   background: var(--bg-surface);
-  box-shadow: var(--elevation-card);
+}
+
+/* A run of cards fused into one continuous panel: the container draws the top
+   and left rules, each card its own right and bottom, so neighbours share a
+   single line instead of floating apart. Ragged last rows just stay open. */
+@utility panel-grid {
+  border-top: 1px solid var(--text-primary);
+  border-left: 1px solid var(--text-primary);
+  & > .card {
+    border-width: 0 1px 1px 0;
+    border-color: var(--text-primary);
+  }
+}
+
+/* Card header strip: the label sits on a slightly lifted band above a rule. */
+@utility card-head {
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--hairline-strong);
 }
 
 /* Active-sector table row: the tint is data-driven (each row sets --row-tint

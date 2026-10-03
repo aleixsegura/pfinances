@@ -24,12 +24,11 @@ export const CATEGORY_ORDER = [
 
 const CHART_SLOTS = 10;
 
-/** CSS colour for a category: the ten chart slots in CATEGORY_ORDER, then
- * the neutral "other" tone. `extraOrder` lets a page assign stable slots to
- * categories outside the fixed list (in the order it first met them). */
-export function categoryColorVar(category: string, extraOrder: string[] = []): string {
-  const fixed = (CATEGORY_ORDER as readonly string[]).indexOf(category);
-  const slot = fixed !== -1 ? fixed : CATEGORY_ORDER.length + extraOrder.indexOf(category);
+/** CSS colour for a category by its rank in `ranking` (largest first), so the
+ * biggest categories get neighbouring tones of the chart gradient. Categories
+ * missing from the ranking, past the ten slots, or "other" are neutral. */
+export function categoryColorVar(category: string, ranking: string[]): string {
+  const slot = ranking.indexOf(category);
   if (slot < 0 || slot >= CHART_SLOTS || category === "other") return "var(--chart-other)";
   return `var(--chart-${slot + 1})`;
 }

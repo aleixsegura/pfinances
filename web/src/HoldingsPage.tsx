@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useAppData } from "./data";
 import { useTranslation } from "./i18n/LanguageContext";
 import PortfolioChart from "./PortfolioChart";
 import PortfolioKpis from "./PortfolioKpis";
 import SectorDonut from "./SectorDonut";
 import StocksTable from "./StocksTable";
-import type { Sector } from "./sectors";
+import { sectorBreakdown, sectorVar, type Sector } from "./sectors";
 import { useHoldings } from "./useHoldings";
 import { shortDate } from "./format";
 
@@ -29,6 +29,16 @@ export default function HoldingsPage() {
   } = useHoldings();
   const [activeSector, setActiveSector] = useState<Sector | null>(null);
   const { t } = useTranslation();
+  // Same slices the donut renders, so a highlighted row takes its slice's color.
+  const sectorSlices = useMemo(
+    () =>
+      sectorBreakdown(
+        stocks,
+        showPositions ? valueBySymbol : undefined,
+        showPositions && totalCashEur > 0 ? totalCashEur : undefined,
+      ),
+    [stocks, showPositions, valueBySymbol, totalCashEur],
+  );
 
   if (loading) return <p className="text-secondary">{t.common.loading}</p>;
   // The watchlist is enrichment now, not the row source, so a missing or failed
@@ -75,6 +85,10 @@ export default function HoldingsPage() {
       <StocksTable
         stocks={stocks}
         activeSector={activeSector}
+        sectorColor={(sector) => {
+          const slice = sectorSlices.find((s) => s.sector === sector);
+          return sectorVar(slice ? slice.colorSlot : 0);
+        }}
         positionsData={showPositions ? { posBySymbol, revolutPosBySymbol } : undefined}
       />
       {showPositions && positions && <UpdatedNote updatedAt={positions.updatedAt} />}

@@ -12,11 +12,9 @@ import { portfolioTotals, revolutInputs, type CashSource } from "./portfolioMath
 import {
   categoryColorVar,
   categoryLabel,
-  deltaPct,
   interestInMonth,
   interestSeries,
   monthKey,
-  previousMonth,
   topCategories,
 } from "./transactions";
 import TypeIcon from "./TypeIcon";
@@ -85,15 +83,21 @@ export default function DashboardPage() {
 
   const month = monthKey();
   const thisMonth = transactions?.months.find((m) => m.month === month) ?? null;
-  const lastMonth = transactions?.months.find((m) => m.month === previousMonth(month)) ?? null;
   const spent = thisMonth?.expenses ?? 0;
-  const spentDelta = deltaPct(spent, lastMonth?.expenses);
+  // Refunds that pushed a category below zero; the total is net of them.
+  const refunded = Object.values(thisMonth?.byCategory ?? {}).reduce((s, v) => (v < 0 ? s - v : s), 0);
   const categories = useMemo(() => {
-    const entries = Object.entries(thisMonth?.byCategory ?? {});
+    // Categories whose refunds outweigh purchases net out below zero; a donut
+    // can't show that, and "-131 €" reads as a bug, so leave them out.
+    const entries = Object.entries(thisMonth?.byCategory ?? {}).filter(([, v]) => v > 0);
     const total = entries.reduce((s, [, v]) => s + v, 0);
-    const rows = entries.map(([category, amount]) => ({ category, amount, count: 0, fraction: total ? amount / total : 0 }));
+    const rows = entries
+      .map(([category, amount]) => ({ category, amount, count: 0, fraction: total ? amount / total : 0 }))
+      .sort((a, b) => b.amount - a.amount);
     return topCategories(rows, DONUT_CATEGORIES);
   }, [thisMonth]);
+  // Largest first: colors are dealt out by rank so big slices get related tones.
+  const categoryRanking = useMemo(() => categories.map((c) => c.category), [categories]);
 
   const interestMonth = interestInMonth(transactions, month);
   const interestPoints = useMemo(() => interestSeries(transactions, 30).map((d) => d.amount), [transactions]);
@@ -113,7 +117,6 @@ export default function DashboardPage() {
   );
   const upcoming = (dividends?.upcoming ?? []).filter((u) => u.payDate);
 
-  const today = new Date();
   const updatedAt = positions?.updatedAt ?? revolut?.updatedAt ?? transactions?.updatedAt;
 
   const sourceLabel = (s: CashSource) =>
@@ -123,12 +126,9 @@ export default function DashboardPage() {
     <>
       <header className="mb-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h1 className="font-display text-[26px] font-semibold tracking-tight">{t.dashboard.title}</h1>
-        <p className="text-sm text-secondary">
-          {capFirst(today.toLocaleDateString(locale, { weekday: "long", day: "numeric", month: "long", year: "numeric" }))}
-        </p>
       </header>
 
-      <div className="grid grid-cols-12 gap-4">
+      <div className="panel-grid grid grid-cols-12">
         {/* Net worth hero */}
         <Card className="col-span-12 lg:col-span-8">
           <div className="flex flex-wrap items-start justify-between gap-4">
@@ -197,7 +197,6 @@ export default function DashboardPage() {
                             {t.dashboard.aer(aer.toLocaleString("es-ES", { maximumFractionDigits: 2 }))}
                           </span>
                         )}
-                        {interestMonth > 0 && <span>{t.dashboard.interestThisMonth(eur.format(interestMonth))}</span>}
                       </div>
                     )}
                     {s.key === "degiro" && s.currency !== "EUR" && (
@@ -258,12 +257,10 @@ export default function DashboardPage() {
             <>
               <div className="flex items-baseline gap-3">
                 <span className="text-2xl font-semibold tabular-nums">{eur.format(spent)}</span>
-                {spentDelta !== null && (
-                  <span className={`text-xs tabular-nums ${spentDelta > 0 ? "text-loss" : "text-gain"}`}>
-                    {t.dashboard.vsLastMonth(`${pctSigned.format(spentDelta)}%`)}
-                  </span>
-                )}
               </div>
+              {refunded > 0 && (
+                <p className="mt-1 text-xs text-secondary">{t.dashboard.includesRefunds(eur0.format(refunded))}</p>
+              )}
               {categories.length === 0 ? (
                 <p className="mt-2 text-sm text-secondary">{t.dashboard.noSpending}</p>
               ) : (
@@ -273,7 +270,7 @@ export default function DashboardPage() {
                       key: c.category,
                       label: categoryLabel(t, c.category),
                       value: c.amount,
-                      color: categoryColorVar(c.category),
+                      color: categoryColorVar(c.category, categoryRanking),
                     }))}
                     size={120}
                     thickness={18}
@@ -289,7 +286,7 @@ export default function DashboardPage() {
                         onMouseEnter={() => setActiveCategory(c.category)}
                         onMouseLeave={() => setActiveCategory(null)}
                       >
-                        <span className="size-2.5 flex-none rounded-[3px]" style={{ background: categoryColorVar(c.category) }} />
+                        <span className="size-2.5 flex-none rounded-[3px]" style={{ background: categoryColorVar(c.category, categoryRanking) }} />
                         <span className="min-w-0 flex-1 truncate text-primary">{categoryLabel(t, c.category)}</span>
                         <span className="tabular-nums text-secondary">{eur0.format(c.amount)}</span>
                       </li>
@@ -341,7 +338,7 @@ export default function DashboardPage() {
           ) : (
             <ul className="m-0 flex list-none flex-col divide-y divide-hairline p-0">
               {recent.map((tx) => (
-                <TransactionRow key={tx.legId} tx={tx} locale={locale} />
+                <TransactionRow key={tx.legId} tx={tx} locale={locale} ranking={categoryRanking} />
               ))}
             </ul>
           )}
@@ -393,13 +390,13 @@ function NoTransactions() {
 }
 
 /** One compact statement row, shared by the dashboard list. */
-export function TransactionRow({ tx, locale }: { tx: RevolutTransaction; locale: string }) {
+export function TransactionRow({ tx, locale, ranking }: { tx: RevolutTransaction; locale: string; ranking: string[] }) {
   const { t } = useTranslation();
   const isIn = tx.amountEur > 0;
   const title = tx.merchant ?? tx.description ?? categoryLabel(t, tx.category);
   return (
     <li className={`flex items-center gap-3 py-2 first:pt-0 last:pb-0 ${tx.kind === "transfer" ? "opacity-60" : ""}`}>
-      <span className="size-2.5 flex-none rounded-[3px]" style={{ background: categoryColorVar(tx.category) }} aria-hidden />
+      <span className="size-2.5 flex-none rounded-[3px]" style={{ background: categoryColorVar(tx.category, ranking) }} aria-hidden />
       <div className="min-w-0 flex-1">
         <div className="truncate text-sm font-medium text-primary">{title}</div>
         <div className="truncate text-xs text-secondary">

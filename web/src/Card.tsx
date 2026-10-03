@@ -15,10 +15,12 @@ interface Props {
  * surface recipe from index.css. */
 export default function Card({ title, action, children, className = "", dense = false }: Props) {
   return (
-    <section className={`card flex min-w-0 flex-col ${dense ? "px-5 py-4" : "px-6 py-5"} ${className}`}>
+    <section className={`card flex min-w-0 flex-col ${className}`}>
       {(title || action) && (
-        <header className="mb-3 flex items-baseline justify-between gap-3">
-          {title && <h2 className="text-[15px] font-semibold text-primary">{title}</h2>}
+        <header className="card-head flex items-baseline justify-between gap-3 px-5 py-2">
+          {title && (
+            <h2 className="text-[11.5px] font-semibold uppercase tracking-[0.08em] text-secondary">{title}</h2>
+          )}
           {action && (
             <Link
               to={action.to}
@@ -29,7 +31,7 @@ export default function Card({ title, action, children, className = "", dense = 
           )}
         </header>
       )}
-      {children}
+      <div className={`flex min-w-0 flex-1 flex-col ${dense ? "px-5 py-4" : "px-6 py-5"}`}>{children}</div>
     </section>
   );
 }

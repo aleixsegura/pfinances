@@ -7,9 +7,9 @@ import { symbolConfig } from "./symbolConfig";
 // likely via FMP's company profile — holdings are classified by hand in
 // symbols.json, falling back to symbolType for crypto and currency positions.
 //
-// SECTOR_ORDER fixes each sector's identity (and therefore its color slot): the
-// slice color follows the sector, never its rank in the chart. Keep colors in
-// sync with the --sector-N custom properties in index.css.
+// SECTOR_ORDER fixes each sector's identity and tie-break order. Colors follow
+// the rank in the chart (largest slice = --sector-1, ...), so the biggest
+// slices always get neighbouring tones of the gradient in index.css.
 export const SECTOR_ORDER = [
   "Technology",
   "Materials",
@@ -47,12 +47,6 @@ export function sectorFor(stock: Stock): Sector {
   return configuredSector(stock.symbol) ?? "Other";
 }
 
-/** Fixed color slot for a sector (1-based); 0 = "Other". */
-export function colorSlotForSector(sector: Sector): number {
-  const i = (SECTOR_ORDER as readonly string[]).indexOf(sector);
-  return i === -1 ? 0 : i + 1;
-}
-
 /** CSS custom-property reference for a color slot, matching index.css. */
 export function sectorVar(colorSlot: number): string {
   return colorSlot === 0 ? "var(--sector-other)" : `var(--sector-${colorSlot})`;
@@ -65,14 +59,14 @@ export interface SectorSlice {
   fraction: number;
   /** EUR market value of the sector; null when weighting by count. */
   value: number | null;
-  /** Fixed color slot index (1-based) matching --sector-N in CSS; 0 = Other. */
+  /** Color slot (1-based, by rank) matching --sector-N in CSS; 0 = Other. */
   colorSlot: number;
 }
 
 /**
  * Group stocks into sector slices, returned heaviest-weight first (the same
  * order the donut and its legend render), with any unclassified symbols folded
- * into an "Other" slice. Colors still follow SECTOR_ORDER, not this ranking.
+ * into an "Other" slice. Color slots follow this ranking.
  *
  * With `valueBySymbol` (EUR market value per watchlist symbol, from DEGIRO
  * and Revolut positions) slices are value-weighted; stocks without a value
@@ -124,6 +118,10 @@ export function sectorBreakdown(
   push("Other", 0);
 
   // Heaviest sector first; ties keep SECTOR_ORDER (Other last) so the order is
-  // stable across renders.
-  return slices.sort((a, b) => b.fraction - a.fraction);
+  // stable across renders. Colors are then dealt out by rank; "Other" stays
+  // neutral. Past the ten slots the ramp wraps.
+  slices.sort((a, b) => b.fraction - a.fraction);
+  let rank = 0;
+  for (const s of slices) s.colorSlot = s.sector === "Other" ? 0 : (rank++ % 10) + 1;
+  return slices;
 }

@@ -2,7 +2,7 @@ import { useMemo, useState, type CSSProperties } from "react";
 import type { Position, RevolutPosition, Stock } from "./types";
 import TypeIcon from "./TypeIcon";
 import { useTranslation } from "./i18n/LanguageContext";
-import { colorSlotForSector, sectorFor, sectorVar, type Sector } from "./sectors";
+import { sectorFor, type Sector } from "./sectors";
 
 const numberFormat = new Intl.NumberFormat("es-ES", {
   maximumFractionDigits: 2,
@@ -90,6 +90,8 @@ interface Props {
   stocks: Stock[];
   /** Highlighted sector (holdings only); rows outside it get de-emphasized. */
   activeSector?: Sector | null;
+  /** Color of a sector's donut slice, for the active-row tint. */
+  sectorColor?: (sector: Sector) => string;
   /** Position joins (holdings only); absent ⇒ hide Qty/Avg/Value/P&L columns. */
   positionsData?: {
     posBySymbol: Map<string, Position>;
@@ -132,7 +134,12 @@ function SortableTh({
   );
 }
 
-export default function StocksTable({ stocks, activeSector = null, positionsData }: Props) {
+export default function StocksTable({
+  stocks,
+  activeSector = null,
+  sectorColor = () => "var(--sector-other)",
+  positionsData,
+}: Props) {
   const { t } = useTranslation();
   const showPositions = positionsData !== undefined;
   const [sort, setSort] = useState<SortState | null>(null);
@@ -230,7 +237,7 @@ export default function StocksTable({ stocks, activeSector = null, positionsData
           {sortedStocks.map((s) => {
             const rowSector = sectorFor(s);
             const isActive = activeSector !== null && rowSector === activeSector;
-            const tint = sectorVar(colorSlotForSector(rowSector));
+            const tint = sectorColor(rowSector);
             const p = showPositions ? positionsData.posBySymbol.get(s.symbol) : undefined;
             // Revolut positions (crypto) have no cost basis: Qty/Value only.
             const rp =

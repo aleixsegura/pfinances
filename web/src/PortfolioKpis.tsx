@@ -76,7 +76,7 @@ export default function PortfolioKpis({
 
   return (
     <section
-      className="mb-5 grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(170px,1fr))]"
+      className="panel-grid mb-5 grid [grid-template-columns:repeat(auto-fit,minmax(170px,1fr))]"
       aria-label={t.kpis.ariaLabel}
     >
       <KpiCard

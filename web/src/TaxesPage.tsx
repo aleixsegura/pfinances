@@ -273,7 +273,7 @@ function YearPanel({ year }: { year: TaxYear }) {
       )}
 
       <section
-        className="mb-6 grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(170px,1fr))]"
+        className="panel-grid mb-6 grid [grid-template-columns:repeat(auto-fit,minmax(170px,1fr))]"
         aria-label={t.taxes.totalsAria}
       >
         <div className={CARD}>

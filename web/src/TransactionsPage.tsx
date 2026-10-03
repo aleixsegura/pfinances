@@ -107,7 +107,13 @@ export default function TransactionsPage() {
     for (const m of file?.months ?? []) for (const c of Object.keys(m.byCategory)) if (!known.has(c) && !out.includes(c)) out.push(c);
     return out;
   }, [file]);
-  const color = (c: string) => categoryColorVar(c, extraCategories);
+  // Colors are dealt out by this period's spend (largest first); categories
+  // with no spend in the period follow, so the bars keep a stable color each.
+  const ranking = useMemo(() => {
+    const spent = categoryRows.map((c) => c.category);
+    return [...spent, ...[...CATEGORY_ORDER, ...extraCategories].filter((c) => !spent.includes(c))];
+  }, [categoryRows, extraCategories]);
+  const color = (c: string) => categoryColorVar(c, ranking);
 
   const legendCategories = useMemo(() => {
     const seen = new Set<string>();
@@ -129,7 +135,7 @@ export default function TransactionsPage() {
         .filter((s) => s.value > 0);
       return { key, label, segments };
     });
-  }, [file, period, isAll, category, legendCategories, locale, t]);
+  }, [file, period, isAll, category, legendCategories, ranking, locale, t]);
 
   const tableRows = useMemo(() => {
     return periodRows.filter((tx) => {
@@ -228,7 +234,7 @@ export default function TransactionsPage() {
         </div>
       </header>
 
-      <section className="mb-5 grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]" aria-label={t.transactions.title}>
+      <section className="panel-grid mb-5 grid [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]" aria-label={t.transactions.title}>
         <KpiCard
           dense
           label={t.transactions.spent}
@@ -247,7 +253,7 @@ export default function TransactionsPage() {
         <KpiCard dense label={t.transactions.avgPerDay} value={eur.format(summary.expenses / days)} />
       </section>
 
-      <div className="grid grid-cols-12 gap-4">
+      <div className="panel-grid grid grid-cols-12">
         <Card className="col-span-12" title={t.transactions.monthlyExpenses}>
           <p className="-mt-2 mb-3 text-xs text-secondary">{t.transactions.last12Months}</p>
           <Bars
@@ -400,7 +406,7 @@ export default function TransactionsPage() {
             <p className="text-sm text-secondary">{t.transactions.interest.noInterest}</p>
           ) : (
             <>
-              <div className="mb-4 grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]">
+              <div className="panel-grid mb-4 grid [grid-template-columns:repeat(auto-fit,minmax(150px,1fr))]">
                 <KpiCard dense label={t.transactions.interest.thisMonth} value={eur.format(interestInMonth(file, monthKey()))} valueClass="text-gain" />
                 <KpiCard dense label={t.transactions.interest.last30} value={eur.format(last30)} valueClass="text-gain" />
                 <KpiCard dense label={t.transactions.interest.total} value={eur.format(interest.total)} valueClass="text-gain" />
@@ -418,7 +424,7 @@ export default function TransactionsPage() {
                 )}
                 {savings && <KpiCard dense label={t.transactions.interest.balance} value={eur.format(savings.balanceEur)} />}
               </div>
-              <div className="grid grid-cols-12 gap-4">
+              <div className="panel-grid grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-7">
                   <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.04em] text-muted">{t.transactions.interest.daily}</h3>
                   <Bars
