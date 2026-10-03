@@ -3,7 +3,7 @@
 
 Two checks:
 
-1. Paths. Nothing under watchlists/ (real exports), no .env, no *.local.*
+1. Paths. Nothing under data/ (real exports), no .env, no *.local.*
    file, no broker/crypto side files may be tracked. Runs anywhere, CI included.
 2. Content. When the real exports exist (i.e. on the owner's machine), every
    symbol and asset name found in them is searched for in the tracked files.
@@ -22,11 +22,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "watchlists"
+DATA = ROOT / "data"
 DEMO = ROOT / "demo-data"
 
 FORBIDDEN_PATHS = [
-    "watchlists/*",
+    "data/*",
     ".env",
     "*.local.*",
     "crypto_cost_basis.json",

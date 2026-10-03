@@ -109,7 +109,7 @@ export default function DividendsPage() {
           </code>{" "}
           {t.dividends.noDataOutro}{" "}
           <code className="rounded bg-elevated px-1.5 py-0.5 text-[0.85em]">
-            watchlists/dividends.json
+            data/dividends.json
           </code>
           .
         </p>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export market capitalisations to watchlists/marketcaps.json.
+Export market capitalisations to data/marketcaps.json.
 
 Market cap is resolved from public quote APIs for what is already exported:
 the DEGIRO positions and the Revolut crypto holdings. ETFs and funds are
@@ -371,7 +371,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default=".",
-        help="Directory containing the watchlists/ folder (default: current dir)",
+        help="Directory containing the data/ folder (default: current dir)",
     )
     parser.add_argument(
         "--max-age-hours",
@@ -384,7 +384,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    out_dir = Path(args.output_dir).resolve() / "watchlists"
+    out_dir = Path(args.output_dir).resolve() / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / OUT_NAME
 

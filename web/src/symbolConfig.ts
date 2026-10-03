@@ -1,6 +1,6 @@
 // Per-symbol knowledge that isn't in any exported file: which sector an equity
 // or ETF belongs to. It lives in `symbols.json` next to the rest of the data (gitignored
-// `watchlists/` for real use, `demo-data/` for the demo) rather than in code,
+// `data/` for real use, `demo-data/` for the demo) rather than in code,
 // so the source never names what's actually held. demo-data/symbols.json
 // shows the shape.
 

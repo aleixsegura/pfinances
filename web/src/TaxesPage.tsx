@@ -79,7 +79,7 @@ export default function TaxesPage() {
           </code>{" "}
           {t.taxes.noDataOutro}{" "}
           <code className="rounded bg-elevated px-1.5 py-0.5 text-[0.85em]">
-            watchlists/taxes.json
+            data/taxes.json
           </code>
           .
         </p>

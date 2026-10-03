@@ -3,8 +3,8 @@
 Daily portfolio-value history, appended by the broker exporters.
 
 `record_snapshot()` reads whichever of positions.json (DEGIRO) and
-revolut.json exist in the watchlists/ directory and upserts an entry for the
-current local date into watchlists/history.json — one entry per day, so
+revolut.json exist in the data/ directory and upserts an entry for the
+current local date into data/history.json — one entry per day, so
 re-running an exporter the same day just refreshes that day's numbers. When
 only one exporter ran, the other source's last-known state on disk is still
 folded in; its `updatedAt` records how stale it is.
@@ -61,10 +61,10 @@ def _revolut_entry(revolut_file: dict | None) -> dict | None:
     }
 
 
-def record_snapshot(watchlists_dir: Path) -> Path:
+def record_snapshot(data_dir: Path) -> Path:
     """Upsert today's (local date) portfolio snapshot in history.json."""
-    degiro = _degiro_entry(_read_json(watchlists_dir / "positions.json"))
-    revolut = _revolut_entry(_read_json(watchlists_dir / "revolut.json"))
+    degiro = _degiro_entry(_read_json(data_dir / "positions.json"))
+    revolut = _revolut_entry(_read_json(data_dir / "revolut.json"))
 
     portfolio_value = (degiro["valueEur"] if degiro else 0.0) + (
         revolut["cryptoValueEur"] if revolut else 0.0
@@ -81,7 +81,7 @@ def record_snapshot(watchlists_dir: Path) -> Path:
         "totalEur": round(portfolio_value + cash, 2),
     }
 
-    history_file = watchlists_dir / "history.json"
+    history_file = data_dir / "history.json"
     history = _read_json(history_file)
     if history is None or not isinstance(history.get("days"), list):
         if history_file.exists():

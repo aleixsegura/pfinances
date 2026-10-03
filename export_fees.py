@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export DEGIRO fees and commissions to watchlists/fees.json.
+Export DEGIRO fees and commissions to data/fees.json.
 
 Reuses export_degiro.py's login and export_dividends.py's cash-statement
 fetch, then keeps only the *cost* movements — what DEGIRO actually charged the
@@ -195,7 +195,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default=".",
-        help="Directory containing the watchlists/ folder (default: current dir)",
+        help="Directory containing the data/ folder (default: current dir)",
     )
     parser.add_argument(
         "--debug",
@@ -210,7 +210,7 @@ def main() -> None:
         raise SystemExit(f"--from must be YYYY-MM-DD, got {args.from_date!r}")
     to_date = date.today()
 
-    out_dir = Path(args.output_dir).resolve() / "watchlists"
+    out_dir = Path(args.output_dir).resolve() / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / "fees.json"
 

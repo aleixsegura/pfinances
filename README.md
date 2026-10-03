@@ -2,7 +2,7 @@
 
 A local personal-finance dashboard. A set of Python exporters pull your data straight from the
 sources — DEGIRO (positions, dividends, fees), Revolut (cash + crypto) and public market
-data — into plain JSON under `watchlists/`, and a Vite + React app in
+data — into plain JSON under `data/`, and a Vite + React app in
 `web/` reads that folder live and renders it. It also prepares the Spanish income-tax return
 (IRPF): FIFO capital gains, the two-month repurchase rule (art. 33.5 f LIRPF) and a filing pack.
 
@@ -16,7 +16,7 @@ The repo ships with synthetic fixtures in `demo-data/` (regenerate with
 ```bash
 cd web
 npm install      # Node 20 — see web/.nvmrc
-npm run demo     # http://localhost:5175, serves demo-data/ instead of watchlists/
+npm run demo     # http://localhost:5175, serves demo-data/ instead of data/
 npm run build:demo   # static build in web/dist-demo/, deployable to any static host
 ```
 
@@ -24,9 +24,9 @@ npm run build:demo   # static build in web/dist-demo/, deployable to any static 
 
 Real data never reaches the repository:
 
-- Every export, credential and cost-basis file is gitignored (`watchlists/`, `.env`, `*.local.*`, …).
+- Every export, credential and cost-basis file is gitignored (`data/`, `.env`, `*.local.*`, …).
 - Anything the app needs to know per symbol — sectors, DEGIRO ticker aliases — lives in
-  `watchlists/symbols.json`, not in code (`demo-data/symbols.json` shows the shape).
+  `data/symbols.json`, not in code (`demo-data/symbols.json` shows the shape).
 - `scripts/privacy_check.py` fails when a private file is tracked and, on a machine with real
   exports, when any tracked file mentions a symbol found in them. Enable it before every commit
   with `git config core.hooksPath .githooks`; CI runs it too, alongside gitleaks.
@@ -45,7 +45,7 @@ Real data never reaches the repository:
 
 ## Broker exporters
 
-Both exporters write into the same `watchlists/` folder the web app serves, and read credentials/keys from a gitignored `.env` (see `.env.example`).
+Both exporters write into the same `data/` folder the web app serves, and read credentials/keys from a gitignored `.env` (see `.env.example`).
 
 ### DEGIRO
 
@@ -54,7 +54,7 @@ Both exporters write into the same `watchlists/` folder the web app serves, and 
 python3 export_degiro.py
 ```
 
-Logs in with `DEGIRO_USERNAME`/`DEGIRO_PASSWORD` from `.env` (approve the in-app confirmation when prompted) and writes portfolio positions and account totals to `watchlists/positions.json`.
+Logs in with `DEGIRO_USERNAME`/`DEGIRO_PASSWORD` from `.env` (approve the in-app confirmation when prompted) and writes portfolio positions and account totals to `data/positions.json`.
 
 DEGIRO's portfolio endpoint prices every position at the *previous* close (today's P/L comes back as exactly 0), so positions are then re-priced from the same vwd quote feed the DEGIRO app itself uses — 15-minute delayed on exchanges the account has no real-time licence for. Each position records where its price came from in `lastPriceSource` (`vwd` or `degiro-snapshot`) and when in `lastPriceAt`. Pass `--no-quotes` to keep DEGIRO's raw previous-close snapshot.
 
@@ -64,7 +64,7 @@ DEGIRO's portfolio endpoint prices every position at the *previous* close (today
 .venv/bin/python export_fees.py
 ```
 
-Pulls the same cash statement as the dividend exporter and keeps only what DEGIRO *charged* the account, split into `transaction`, `connectivity`, `currency` and `other`, into `watchlists/fees.json`. There is no fees page: buy and sell commissions already reach the UI inside the tax return's acquisition and disposal values. What this file adds is the rest — connectivity, custody and FX — which `export_taxes.py` reads back to raise its non-deductible-fees notice. Read it directly for anything beyond that.
+Pulls the same cash statement as the dividend exporter and keeps only what DEGIRO *charged* the account, split into `transaction`, `connectivity`, `currency` and `other`, into `data/fees.json`. There is no fees page: buy and sell commissions already reach the UI inside the tax return's acquisition and disposal values. What this file adds is the rest — connectivity, custody and FX — which `export_taxes.py` reads back to raise its non-deductible-fees notice. Read it directly for anything beyond that.
 
 Descriptions are localised to your account language, so charges are matched by keyword. A movement only counts as a fee if its description actually says so ("comisión", "coste", "fee", "AutoFX"), which is what keeps DEGIRO's `Cambio de Divisa (Débito)`/`(Crédito)` pairs — the conversion itself, not a charge on it — out of the total. Run with `--debug` to print every distinct movement description next to the category it landed in; if something is mis-bucketed, adjust `FEE_CATEGORIES` / `FEE_TOKENS` in the script.
 
@@ -72,7 +72,7 @@ Descriptions are localised to your account language, so charges are matched by k
 |---|---|
 | `--from YYYY-MM-DD` | Earliest date to scan (default: `2015-01-01`) |
 | `--debug` | Print every cash-movement description with its category and exit |
-| `--output-dir DIR` | Where the `watchlists/` folder lives (default: current directory) |
+| `--output-dir DIR` | Where the `data/` folder lives (default: current directory) |
 
 ### Revolut
 
@@ -93,7 +93,7 @@ Then just run:
 python3 export_revolut.py
 ```
 
-A browser window opens automatically. **If your session is still active, it captures and closes on its own.** Otherwise, log in there (phone number, passcode, approve the push in the Revolut phone app) and it continues once you're in, writing `watchlists/revolut.json`.
+A browser window opens automatically. **If your session is still active, it captures and closes on its own.** Otherwise, log in there (phone number, passcode, approve the push in the Revolut phone app) and it continues once you're in, writing `data/revolut.json`.
 
 Note: Revolut runs the web app behind Cloudflare and does not keep the session across browser restarts, so the window must be visible (headless is blocked) and you'll typically re-approve a login each run. This is as unattended as a personal Revolut account allows — there is no official API.
 
@@ -105,12 +105,12 @@ Note: Revolut runs the web app behind Cloudflare and does not keep the session a
 | `--no-transactions` | Skip the transactions / interest export |
 | `--debug` | Dump every captured Revolut API response to `.revolut-debug/` (gitignored — contains personal financial data). Use this to re-pin `CAPTURE_PATTERNS` in the script if Revolut changes their internal API. |
 | `--headless` | Run with no visible window (usually blocked by Cloudflare; expert use) |
-| `--output-dir DIR` | Where the `watchlists/` folder lives (default: current directory) |
+| `--output-dir DIR` | Where the `data/` folder lives (default: current directory) |
 
 ### Revolut transactions and Boosted interest
 
 The same run also pages the EUR current account's full history and the Boosted account's own
-pocket (where the daily interest is credited) into `watchlists/revolut_transactions.json`, the
+pocket (where the daily interest is credited) into `data/revolut_transactions.json`, the
 file behind the **Dashboard** spending/interest cards and the **Transactions** page. The web app
 only asks for the latest page; older rows are reached by replaying the app's own call with an
 upper timestamp bound (`to=`), tried against `TRANSACTIONS_PAGE_PARAMS` in order — the first
@@ -149,7 +149,7 @@ The only exporter that needs a *ledger* rather than a snapshot. `positions.json`
 still hold, so a position sold in full disappears from it entirely, and DEGIRO's own realised P/L
 mixes gains with buy fees. So this one rebuilds the history from trades and matches every sale
 against its purchases with **FIFO**, which is what article 37.2 LIRPF requires for *valores
-homogéneos*, writing `watchlists/taxes.json`.
+homogéneos*, writing `data/taxes.json`.
 
 Sales made in a year are declared in the return filed the following spring: sell something in
 2026 and it goes in the 2026 return, filed in 2027. The page has one tab per fiscal year and
@@ -198,7 +198,7 @@ What it works out for you:
 
 ### The filing pack
 
-Each run also writes `watchlists/renta/renta-<year>.json` and `.md`. The JSON has every figure
+Each run also writes `data/renta/renta-<year>.json` and `.md`. The JSON has every figure
 field by field under the form's own labels; the Markdown is the brief an agent reads before
 touching Renta Web — which section to open, in what order, and three standing rules: invent no
 figure, stop and ask if a label doesn't match, never submit the return.
@@ -250,7 +250,7 @@ can check it.
 
 ## Market caps
 
-Nothing to run: `npm run dev` starts the exporter itself (a small Vite plugin), in the background, and reloads the page if it wrote anything new. It resolves the **Market Cap** column from public quote APIs into `watchlists/marketcaps.json`.
+Nothing to run: `npm run dev` starts the exporter itself (a small Vite plugin), in the background, and reloads the page if it wrote anything new. It resolves the **Market Cap** column from public quote APIs into `data/marketcaps.json`.
 
 Symbols come from what is already exported (`positions.json`, `revolut.json`); a DEGIRO position's Yahoo symbol is derived from its exchange; ETFs and funds are skipped, as their size is AUM rather than a market cap. Sources are keyless and tried in order:
 
@@ -273,7 +273,7 @@ You can still run it by hand — it needs no credentials and no browser — whic
 ## Portfolio history
 
 `history.py` is not run directly — the broker exporters call `record_snapshot()`, which upserts
-one entry per local date into `watchlists/history.json` from whichever of `positions.json` and
+one entry per local date into `data/history.json` from whichever of `positions.json` and
 `revolut.json` exist. Re-running an exporter the same day refreshes that day's numbers rather
 than appending a duplicate; the portfolio-value chart on Holdings reads the result.
 
@@ -281,7 +281,7 @@ than appending a duplicate; the portfolio-value chart on Holdings reads the resu
 
 `web/` is the Plout dashboard — Vite + React + TypeScript + Tailwind, in a single muted
 palette (dyed-cloth canvas, near-white cards, sea-green gains, madder losses — there is no dark theme),
-in English / Català / Español. It reads `watchlists/` live (Vite's `publicDir` points at it, so no
+in English / Català / Español. It reads `data/` live (Vite's `publicDir` points at it, so no
 data is copied or committed), which means every page degrades gracefully to an empty state until
 you've run the exporter behind it.
 
@@ -296,8 +296,8 @@ you've run the exporter behind it.
 ```bash
 cd web
 npm install    # Node 20 — see web/.nvmrc
-npm run dev    # your real data from watchlists/ (npm run demo for the synthetic one)
+npm run dev    # your real data from data/ (npm run demo for the synthetic one)
 ```
 
 Then open the printed local URL in your browser. Never deploy `npm run build`'s `dist/`: it
-bundles `watchlists/`. Only `npm run build:demo` (→ `dist-demo/`) is meant to be published.
+bundles `data/`. Only `npm run build:demo` (→ `dist-demo/`) is meant to be published.

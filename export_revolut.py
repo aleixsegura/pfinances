@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Export Revolut cash balances (current + savings) and crypto holdings to
-watchlists/revolut.json.
+data/revolut.json.
 
 Revolut has no personal API, so this drives the Revolut web app
 (https://app.revolut.com) with Playwright and a persistent browser profile,
@@ -17,7 +17,7 @@ the push notification in the Revolut phone app. The session persists in
 
 Besides balances, the EUR current account's full transaction history and the
 Boosted (savings) account's daily interest are exported to
-watchlists/revolut_transactions.json — see write_transactions.
+data/revolut_transactions.json — see write_transactions.
 
 Balances arrive in minor units (cents, satoshis) and are converted with
 Coinbase's public spot API, which also quotes fiat pairs. Every position and
@@ -1193,7 +1193,7 @@ def write_transactions(
     since: datetime | None = None,
     debug_dir: Path | None = None,
 ) -> None:
-    """Fetch and write watchlists/revolut_transactions.json.
+    """Fetch and write data/revolut_transactions.json.
 
     Incremental by default: rows older than what the file already holds (minus
     TRANSACTIONS_REFETCH_DAYS) are not requested again, so a routine run costs
@@ -1302,7 +1302,7 @@ def write_transactions(
 
 
 def write_crypto_ledger(context, headers, captured, ccy: Currencies, out_dir: Path) -> None:
-    """Fetch and write watchlists/revolut_trades.json.
+    """Fetch and write data/revolut_trades.json.
 
     Pockets are not filtered by state: a closed pocket still holds the history
     of what went through it, which is exactly what a full exit leaves behind.
@@ -1359,7 +1359,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default=".",
-        help="Directory containing the watchlists/ folder (default: current dir)",
+        help="Directory containing the data/ folder (default: current dir)",
     )
     parser.add_argument(
         "--login",
@@ -1408,7 +1408,7 @@ def main() -> None:
     positions = build_positions(captured, ccy)
     total_cash_eur = round(sum(c["amountEur"] for c in cash), 2)
 
-    out_dir = Path(args.output_dir).resolve() / "watchlists"
+    out_dir = Path(args.output_dir).resolve() / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / "revolut.json"
 

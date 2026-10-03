@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export DEGIRO portfolio positions to watchlists/positions.json.
+Export DEGIRO portfolio positions to data/positions.json.
 
 Uses the unofficial degiro-connector library (pip3 install -r requirements.txt)
 to log in with DEGIRO_USERNAME / DEGIRO_PASSWORD from .env (or environment),
@@ -470,7 +470,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default=".",
-        help="Directory containing the watchlists/ folder (default: current dir)",
+        help="Directory containing the data/ folder (default: current dir)",
     )
     parser.add_argument(
         "--no-quotes",
@@ -479,7 +479,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    out_dir = Path(args.output_dir).resolve() / "watchlists"
+    out_dir = Path(args.output_dir).resolve() / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / "positions.json"
 

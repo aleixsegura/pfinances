@@ -15,7 +15,7 @@ const PROJECT_ROOT = path.resolve(__dirname, "..");
 const MARKET_CAPS_MAX_AGE_HOURS = 12;
 
 /**
- * Refresh watchlists/marketcaps.json when the dev server starts.
+ * Refresh data/marketcaps.json when the dev server starts.
  *
  * Market cap is the one column with no broker behind it, and having to
  * remember a separate `python export_marketcaps.py` before opening the page
@@ -29,7 +29,7 @@ function marketCaps(): Plugin {
     configureServer(server: ViteDevServer) {
       const venvPython = path.join(PROJECT_ROOT, ".venv/bin/python");
       const python = fs.existsSync(venvPython) ? venvPython : "python3";
-      const outFile = path.join(PROJECT_ROOT, "watchlists/marketcaps.json");
+      const outFile = path.join(PROJECT_ROOT, "data/marketcaps.json");
       const before = fs.statSync(outFile, { throwIfNoEntry: false })?.mtimeMs;
 
       const child = spawn(
@@ -59,10 +59,10 @@ function marketCaps(): Plugin {
   };
 }
 
-// Serves the sibling `watchlists/` folder (gitignored, written by the
+// Serves the sibling `data/` folder (gitignored, written by the
 // exporters) as static files at the site root, so the app can fetch
 // /positions.json and the rest without a backend or data duplication.
 export default defineConfig({
   plugins: [react(), tailwindcss(), marketCaps()],
-  publicDir: path.resolve(__dirname, "../watchlists"),
+  publicDir: path.resolve(__dirname, "../data"),
 });

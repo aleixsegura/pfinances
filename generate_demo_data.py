@@ -1,5 +1,5 @@
 """Generates synthetic demo fixtures into demo-data/, mirroring the shape of
-watchlists/*.json without touching real data. Ad-hoc script for a live demo /
+data/*.json without touching real data. Ad-hoc script for a live demo /
 issue #13 (synthetic fixtures) — not wired into the regular export pipeline.
 """
 import json

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Export what has to be declared in the Spanish IRPF to watchlists/taxes.json.
+Export what has to be declared in the Spanish IRPF to data/taxes.json.
 
 This is the only exporter that needs a *ledger* rather than a snapshot:
 positions.json shows what you still hold, so a position sold in full vanishes
@@ -30,8 +30,8 @@ Sources, in the order they are merged:
                 are skipped rather than counted twice.
 
 Everything is grouped by fiscal year — sales made in 2026 are declared in the
-2026 return, filed in 2027 — and written to watchlists/taxes.json for the
-Renta page, plus a filing pack under watchlists/renta/ meant to be read by an
+2026 return, filed in 2027 — and written to data/taxes.json for the
+Renta page, plus a filing pack under data/renta/ meant to be read by an
 agent driving Renta Web.
 
 None of this is tax advice: every figure carries the inputs it came from so
@@ -875,7 +875,7 @@ def load_revolut_ledger(out_dir: Path) -> dict:
     Best-effort like load_manual: this file only exists once the Revolut export
     has run with a live session, and its absence just means "nothing to add".
     """
-    path = out_dir / "watchlists" / "revolut_trades.json"
+    path = out_dir / "data" / "revolut_trades.json"
     empty = {"trades": [], "deposits": [], "rewards": []}
     if not path.exists():
         return empty
@@ -1291,7 +1291,7 @@ def estimate_savings_tax(base: float) -> float:
 
 def load_dividends(out_dir: Path) -> list[dict]:
     """Payments already exported by export_dividends.py, if it has ever run."""
-    path = out_dir / "watchlists" / "dividends.json"
+    path = out_dir / "data" / "dividends.json"
     if not path.exists():
         return []
     try:
@@ -1369,7 +1369,7 @@ def crypto_value_at_year_end(out_dir: Path, year: str) -> tuple[float, str] | No
     For a year still running there is no year end yet, so the latest snapshot
     is returned instead and the caller says which date it actually is.
     """
-    path = out_dir / "watchlists" / "history.json"
+    path = out_dir / "data" / "history.json"
     if not path.exists():
         return None
     try:
@@ -1387,7 +1387,7 @@ def non_deductible_fees(out_dir: Path, year: str) -> float:
     """Connectivity and custody charges: real costs, but not deductible in the
     IRPF. Only the commissions inherent to a purchase or a sale are, and those
     are already inside the acquisition and disposal values."""
-    path = out_dir / "watchlists" / "fees.json"
+    path = out_dir / "data" / "fees.json"
     if not path.exists():
         return 0.0
     try:
@@ -1412,7 +1412,7 @@ def foreign_holdings_at_year_end(out_dir: Path, year: str) -> tuple[float, float
     running has no year end, so the latest snapshot stands in and the caller
     says which date it really is.
     """
-    path = out_dir / "watchlists" / "history.json"
+    path = out_dir / "data" / "history.json"
     if not path.exists():
         return None
     try:
@@ -2276,7 +2276,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default=".",
-        help="Directory containing the watchlists/ folder (default: current dir)",
+        help="Directory containing the data/ folder (default: current dir)",
     )
     parser.add_argument(
         "--no-degiro",
@@ -2302,7 +2302,7 @@ def main() -> None:
     to_date = date.today()
 
     root = Path(args.output_dir).resolve()
-    out_dir = root / "watchlists"
+    out_dir = root / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     degiro_trades: list[dict] = []

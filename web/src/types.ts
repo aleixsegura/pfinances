@@ -10,7 +10,7 @@ export interface Stock {
   marketCap: number | null;
 }
 
-// Mirror of watchlists/marketcaps.json written by export_marketcaps.py. Keyed
+// Mirror of data/marketcaps.json written by export_marketcaps.py. Keyed
 // by every symbol spelling of a company ("VWCE.DE" on Yahoo, "VWCE" at
 // DEGIRO), so a row looks its market cap up by whatever symbol it carries. `at` is per entry: a symbol no source answered for on the
 // last run keeps the value (and timestamp) of the run that did resolve it.
@@ -33,7 +33,7 @@ export interface MarketCapsFile {
   entries: Record<string, MarketCapEntry>;
 }
 
-// Mirror of watchlists/positions.json written by export_degiro.py. Monetary
+// Mirror of data/positions.json written by export_degiro.py. Monetary
 // value/cost/P&L fields are in the DEGIRO account base currency (EUR);
 // avgPrice/lastPrice are in the product's own currency (`currency`).
 export interface Position {
@@ -91,7 +91,7 @@ export interface PositionsFile {
   positions: Position[];
 }
 
-// Mirror of watchlists/revolut.json written by export_revolut.py. All EUR
+// Mirror of data/revolut.json written by export_revolut.py. All EUR
 // fields are converted by the exporter; `amount` is in the pocket's own
 // currency.
 export interface RevolutCash {
@@ -151,7 +151,7 @@ export interface RevolutFile {
   positions: RevolutPosition[];
 }
 
-// Mirror of watchlists/history.json written by history.py: one snapshot per
+// Mirror of data/history.json written by history.py: one snapshot per
 // local date, appended each time an exporter runs. Dates are ascending and
 // unique (lightweight-charts requires both).
 export interface HistoryDay {
@@ -177,7 +177,7 @@ export interface HistoryFile {
   days: HistoryDay[];
 }
 
-// Mirror of watchlists/dividends.json written by export_dividends.py. One entry
+// Mirror of data/dividends.json written by export_dividends.py. One entry
 // per (product, settlement day); gross/tax/net are in the payment's own
 // `currency` (USD for US stocks, EUR for Xetra ETFs) — no FX conversion, so the
 // page totals per currency. `tax` is the withholding, booked negative.
@@ -220,7 +220,7 @@ export interface DividendsFile {
   upcoming?: UpcomingDividend[];
 }
 
-// Mirror of watchlists/taxes.json written by export_taxes.py. Everything is in
+// Mirror of data/taxes.json written by export_taxes.py. Everything is in
 // EUR: DEGIRO already books trades in the account's base currency, and crypto
 // lots are converted at the ECB reference rate of their trade date.
 //
@@ -428,7 +428,7 @@ export interface TaxesFile {
   trades: TaxTrade[];
 }
 
-// Mirror of watchlists/revolut_transactions.json written by export_revolut.py
+// Mirror of data/revolut_transactions.json written by export_revolut.py
 // (write_transactions): the EUR current account's statement plus the Boosted
 // account's interest credits, one row per leg, newest first, with the monthly
 // aggregates precomputed so the pages only render.
